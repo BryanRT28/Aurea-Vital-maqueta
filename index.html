@@ -93,14 +93,14 @@
 
 <!-- TopNavBar -->
 <header class="fixed top-0 left-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-gris-claro shadow-sm h-[88px]">
-    <div class="max-w-[1280px] mx-auto h-full px-6 md:px-12 flex justify-between items-center relative">
+    <div class="max-w-[1280px] mx-auto h-full px-6 md:px-12 flex items-center relative">
         <!-- Logo en Header -->
-        <a class="flex items-center group py-2" href="#inicio">
+        <a class="flex items-center shrink-0 py-2" href="#inicio">
             <img src="img/logo-removebg-preview.png" alt="Logo Áurea Vital" class="h-20 md:h-20 w-auto object-contain transition-transform group-hover:scale-105" />
         </a>
 
-        <!-- Menú Escritorio -->
-        <nav class="hidden md:flex items-center gap-6 lg:gap-8 font-headline text-xs font-bold uppercase tracking-wider text-gris-principal">
+        <!-- Menú (Mantiene su posición limpia respecto al logo) -->
+        <nav class="hidden md:flex items-center gap-5 lg:gap-7 font-headline text-xs font-bold uppercase tracking-wider text-gris-principal ml-12 lg:ml-16">
             <a class="hover:text-oro-rosa transition-colors py-1" href="#inicio">Inicio</a>
             <a class="hover:text-oro-rosa transition-colors py-1" href="#servicios">Especialidades</a>
             <a class="hover:text-oro-rosa transition-colors py-1" href="#paquetes">Tarifas y Packs</a>
@@ -109,15 +109,15 @@
             <a class="hover:text-oro-rosa transition-colors py-1" href="#contacto">Contacto</a>
         </nav>
 
-        <!-- Botón Acción Escritorio -->
-        <div class="hidden lg:flex items-center gap-4">
+        <!-- Botón Acción Escritorio (Solo este elemento se mueve a la derecha con -mr-3) -->
+        <div class="hidden lg:flex items-center gap-4 ml-auto -mr-3">
             <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20una%20cita%20en%20Áurea%20Centro%20Integral." target="_blank" class="bg-oro-rosa text-white font-headline text-xs uppercase font-bold tracking-widest px-6 py-3 rounded-full hover:bg-oro-rosa/90 transition-all shadow-sm hover:shadow-md">
                 Agenda tu Cita
             </a>
         </div>
 
         <!-- Botón Menú Móvil -->
-        <button id="menu-btn" aria-label="Menú Principal" type="button" class="md:hidden text-gris-principal p-2 focus:outline-none">
+        <button id="menu-btn" aria-label="Menú Principal" type="button" class="md:hidden text-gris-principal p-2 focus:outline-none ml-auto">
             <span class="material-symbols-outlined text-3xl pointer-events-none">menu</span>
         </button>
 
