@@ -94,13 +94,9 @@
 <!-- TopNavBar -->
 <header class="fixed top-0 left-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-gris-claro shadow-sm h-[88px]">
     <div class="max-w-[1280px] mx-auto h-full px-6 md:px-12 flex justify-between items-center relative">
-        <!-- Logo e Isotipo -->
-        <a class="flex items-center gap-3 group" href="#inicio">
-            <img src="img/logo.jpg" alt="Logo Áurea Vital" class="h-20 w-20 rounded-full object-cover border border-oro-rosa/30 transition-transform group-hover:scale-105" />
-            <div class="flex flex-col">
-                <span class="font-headline font-bold text-oro-rosa text-xl md:text-2xl leading-tight tracking-tight">ÁUREA Vital</span>
-                <span class="font-body text-[10px] tracking-widest text-gris-principal uppercase font-semibold">Centro Integral</span>
-            </div>
+        <!-- Logo en Header -->
+        <a class="flex items-center group py-2" href="#inicio">
+            <img src="img/logo-removebg-preview.png" alt="Logo Áurea Vital" class="h-20 md:h-20 w-auto object-contain transition-transform group-hover:scale-105" />
         </a>
 
         <!-- Menú Escritorio -->
@@ -600,10 +596,10 @@
 <footer class="w-full bg-[#222222] text-white/80 font-body text-xs py-16 px-6 md:px-12">
 <div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
     
+    <!-- Columna Logo y Descripción -->
     <div class="md:col-span-2 space-y-4">
-        <a class="flex items-center gap-3 font-headline text-2xl font-bold text-oro-rosa" href="#inicio">
-            <img src="img/logo.jpg" alt="Logo Áurea Vital" class="h-16 w-16 rounded-full object-cover border border-oro-rosa/30" />
-            ÁUREA Centro Integral Vital
+        <a class="inline-block py-1 group" href="#inicio">
+            <img src="img/logo-removebg-preview.png" alt="Logo Áurea Vital" class="h-16 md:h-20 w-auto object-contain brightness-0 invert transition-transform group-hover:scale-105" />
         </a>
         <p class="max-w-sm text-white/70 leading-relaxed text-sm">
             Psicología clínica basada en evidencia, acompañamiento humano y resultados medibles en Chorrillos, Lima.
@@ -613,6 +609,7 @@
         </p>
     </div>
 
+    <!-- Columna Contacto -->
     <div class="space-y-3">
         <h4 class="font-headline font-bold text-sm text-dorado uppercase tracking-wider">Contacto</h4>
         <ul class="space-y-2 text-white/70">
@@ -637,7 +634,7 @@
         </ul>
     </div>
 
-    <!-- Redes Sociales -->
+    <!-- Columna Redes Sociales -->
     <div class="space-y-4">
         <h4 class="font-headline font-bold text-sm text-dorado uppercase tracking-wider">Síguenos en Redes</h4>
         <div class="flex flex-col space-y-3 font-headline text-xs text-white/70">
