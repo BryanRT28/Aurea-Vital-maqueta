@@ -1094,7 +1094,7 @@
         }
     });
 
-    // --- 2. LÓGICA DEL VISOR DE IMÁGENES (ZOOM EXACTO Y PAN LIBRE) ---
+    // --- 2. LÓGICA DEL VISOR DE IMÁGENES (ZOOM Y PAN) ---
     let scale = 1;
     let translateX = 0;
     let translateY = 0;
@@ -1151,15 +1151,29 @@
         }
     }
 
+    // --- ESTA ES LA FUNCIÓN CLAVE CORREGIDA ---
     function updateTransform() {
         const modalImg = document.getElementById('modal-img');
-        if (modalImg) {
-            // Límites de arrastre dinámicos
-            const maxTx = (modalImg.offsetWidth * scale) / 2;
-            const maxTy = (modalImg.offsetHeight * scale) / 2;
+        const modal = document.getElementById('image-modal');
 
-            translateX = Math.max(-maxTx, Math.min(maxTx, translateX));
-            translateY = Math.max(-maxTy, Math.min(maxTy, translateY));
+        if (modalImg && modal) {
+            // Si la escala llega a su tamaño original (1 o menos), forzar centrado absoluto
+            if (scale <= 1) {
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+            } else {
+                // Calcular márgenes dinámicos como un resorte para centrar al achicar
+                const containerRect = modal.getBoundingClientRect();
+                const imgWidth = modalImg.offsetWidth * scale;
+                const imgHeight = modalImg.offsetHeight * scale;
+
+                const maxTx = Math.max(0, (imgWidth - containerRect.width) / 2);
+                const maxTy = Math.max(0, (imgHeight - containerRect.height) / 2);
+
+                translateX = Math.max(-maxTx, Math.min(maxTx, translateX));
+                translateY = Math.max(-maxTy, Math.min(maxTy, translateY));
+            }
 
             modalImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
             modalImg.style.cursor = scale > 1 ? (isDragging ? 'grabbing' : 'grab') : 'zoom-in';
