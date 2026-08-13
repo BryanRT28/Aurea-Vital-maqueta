@@ -1034,6 +1034,7 @@
 <!-- AOS JS & Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+    // --- 1. CONFIGURACIÓN INICIAL & MENÚ MÓVIL ---
     if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
     }
@@ -1093,27 +1094,30 @@
         }
     });
 
-    // Variables de control de Zoom y Desplazamiento (Pan)
-    let zoomLevel = 1;
-    const minZoom = 1;
-    const maxZoom = 4;
-
+    // --- 2. LÓGICA DEL VISOR DE IMÁGENES (ZOOM EXACTO Y PAN LIBRE) ---
+    let scale = 1;
+    let translateX = 0;
+    let translateY = 0;
     let isDragging = false;
     let startX = 0;
     let startY = 0;
-    let translateX = 0;
-    let translateY = 0;
+    const minScale = 1;
+    const maxScale = 5;
+
+    // Variables Touch
+    let initialTouchDistance = 0;
 
     function openModal(imageSrc) {
         const modal = document.getElementById('image-modal');
         const modalImg = document.getElementById('modal-img');
         if (modal && modalImg) {
             modalImg.src = imageSrc;
-            resetZoomAndPan();
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+            updateTransform();
             
             modal.classList.remove('hidden');
-            
-            // Bloquear scroll de la web de fondo
             document.documentElement.classList.add('overflow-hidden');
             document.body.classList.add('overflow-hidden');
         }
@@ -1125,163 +1129,173 @@
             modal.classList.add('hidden');
             document.documentElement.classList.remove('overflow-hidden');
             document.body.classList.remove('overflow-hidden');
-            resetZoomAndPan();
-        }
-    }
-
-    function resetZoomAndPan() {
-        zoomLevel = 1;
-        translateX = 0;
-        translateY = 0;
-        isDragging = false;
-        const modalImg = document.getElementById('modal-img');
-        if (modalImg) {
-            modalImg.style.transform = `translate(0px, 0px) scale(1)`;
-            modalImg.style.cursor = 'zoom-in';
+            
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+            updateTransform();
         }
     }
 
     function updateTransform() {
         const modalImg = document.getElementById('modal-img');
         if (modalImg) {
-            modalImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoomLevel})`;
-            if (zoomLevel > 1) {
-                modalImg.style.cursor = isDragging ? 'grabbing' : 'grab';
-            } else {
-                modalImg.style.cursor = 'zoom-in';
-            }
+            // Límites de arrastre: permite moverse hasta que el borde de la foto toque el centro de la pantalla
+            const maxTx = (modalImg.offsetWidth * scale) / 2;
+            const maxTy = (modalImg.offsetHeight * scale) / 2;
+
+            translateX = Math.max(-maxTx, Math.min(maxTx, translateX));
+            translateY = Math.max(-maxTy, Math.min(maxTy, translateY));
+
+            modalImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+            modalImg.style.cursor = scale > 1 ? (isDragging ? 'grabbing' : 'grab') : 'zoom-in';
         }
     }
 
-// Variables para gestos táctiles (Touch/Móvil)
-let initialTouchDistance = 0;
-let initialZoom = 1;
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
 
-document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('image-modal');
-    const modalImg = document.getElementById('modal-img');
+        if (modal && modalImg) {
+            modalImg.addEventListener('dragstart', (e) => e.preventDefault());
 
-    if (modal && modalImg) {
-        modalImg.addEventListener('dragstart', (e) => e.preventDefault());
-
-        // --- MOUSE / ESCRITORIO ---
-        modal.addEventListener('wheel', (e) => {
-            e.preventDefault();
-            const rect = modalImg.getBoundingClientRect();
-            const mouseX = e.clientX - rect.left;
-            const mouseY = e.clientY - rect.top;
-            let prevZoom = zoomLevel;
-
-            if (e.deltaY < 0) {
-                zoomLevel = Math.min(zoomLevel * 1.25, maxZoom);
-            } else {
-                zoomLevel = Math.max(zoomLevel / 1.25, minZoom);
-            }
-
-            if (zoomLevel === minZoom) {
-                translateX = 0;
-                translateY = 0;
-            } else {
-                const factor = (zoomLevel / prevZoom) - 1;
-                translateX -= (mouseX - rect.width / 2) * factor;
-                translateY -= (mouseY - rect.height / 2) * factor;
-            }
-            updateTransform();
-        }, { passive: false });
-
-        modalImg.addEventListener('mousedown', (e) => {
-            e.preventDefault();
-            if (zoomLevel > 1) {
-                isDragging = true;
-                startX = e.clientX - translateX;
-                startY = e.clientY - translateY;
-                modalImg.style.cursor = 'grabbing';
-            }
-        });
-
-        window.addEventListener('mousemove', (e) => {
-            if (isDragging && zoomLevel > 1) {
+            // --- ESCRITORIO: ZOOM EXACTO DONDE ESTÁ EL MOUSE ---
+            modal.addEventListener('wheel', (e) => {
                 e.preventDefault();
-                translateX = e.clientX - startX;
-                translateY = e.clientY - startY;
-                updateTransform();
-            }
-        });
+                
+                const zoomSensitivity = 0.15;
+                const delta = e.deltaY < 0 ? 1 + zoomSensitivity : 1 - zoomSensitivity;
+                const newScale = Math.max(minScale, Math.min(scale * delta, maxScale));
 
-        window.addEventListener('mouseup', () => {
-            if (isDragging) {
-                isDragging = false;
-                modalImg.style.cursor = zoomLevel > 1 ? 'grab' : 'zoom-in';
-            }
-        });
+                if (newScale !== scale) {
+                    const ratio = newScale / scale;
+                    const containerRect = modal.getBoundingClientRect();
+                    
+                    // Centro exacto de la pantalla
+                    const centerX = containerRect.left + containerRect.width / 2;
+                    const centerY = containerRect.top + containerRect.height / 2;
 
-        // --- MÓVIL / TÁCTIL (TOUCH EVENTS) ---
-        modalImg.addEventListener('touchstart', (e) => {
-            if (e.touches.length === 1) {
-                // Arrastre con 1 dedo
-                if (zoomLevel > 1) {
+                    // Posición de la flecha respecto al centro de la pantalla
+                    const mouseX = e.clientX - centerX;
+                    const mouseY = e.clientY - centerY;
+
+                    // Desplazar el plano de la imagen para anclar el punto bajo el mouse
+                    translateX = mouseX - (mouseX - translateX) * ratio;
+                    translateY = mouseY - (mouseY - translateY) * ratio;
+
+                    scale = newScale;
+                    updateTransform();
+                }
+            }, { passive: false });
+
+            // --- ESCRITORIO: ARRASTRE (PAN) HACIA TODOS LOS LADOS ---
+            modalImg.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                if (scale > 1) {
+                    isDragging = true;
+                    startX = e.clientX - translateX;
+                    startY = e.clientY - translateY;
+                    updateTransform();
+                }
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (isDragging && scale > 1) {
+                    e.preventDefault();
+                    translateX = e.clientX - startX;
+                    translateY = e.clientY - startY;
+                    updateTransform();
+                }
+            });
+
+            window.addEventListener('mouseup', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    updateTransform();
+                }
+            });
+
+            // --- MÓVIL: TOUCH (ARRASTRE Y PINZA EXACTA) ---
+            modalImg.addEventListener('touchstart', (e) => {
+                if (e.touches.length === 1 && scale > 1) {
                     isDragging = true;
                     startX = e.touches[0].clientX - translateX;
                     startY = e.touches[0].clientY - translateY;
+                } else if (e.touches.length === 2) {
+                    isDragging = false;
+                    initialTouchDistance = Math.hypot(
+                        e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY
+                    );
                 }
-            } else if (e.touches.length === 2) {
-                // Pinza con 2 dedos (Pinch to zoom)
-                isDragging = false;
-                initialTouchDistance = Math.hypot(
-                    e.touches[0].clientX - e.touches[1].clientX,
-                    e.touches[0].clientY - e.touches[1].clientY
-                );
-                initialZoom = zoomLevel;
-            }
-        }, { passive: false });
+            }, { passive: false });
 
-        modalImg.addEventListener('touchmove', (e) => {
-            if (e.touches.length === 1 && isDragging && zoomLevel > 1) {
-                e.preventDefault(); // Evita scroll nativo
-                translateX = e.touches[0].clientX - startX;
-                translateY = e.touches[0].clientY - startY;
-                updateTransform();
-            } else if (e.touches.length === 2) {
-                e.preventDefault(); // Evita zoom de la página completa
-                const currentDistance = Math.hypot(
-                    e.touches[0].clientX - e.touches[1].clientX,
-                    e.touches[0].clientY - e.touches[1].clientY
-                );
-                if (initialTouchDistance > 0) {
-                    const scaleChange = currentDistance / initialTouchDistance;
-                    zoomLevel = Math.min(Math.max(initialZoom * scaleChange, minZoom), maxZoom);
-                    if (zoomLevel === minZoom) {
-                        translateX = 0;
-                        translateY = 0;
+            modalImg.addEventListener('touchmove', (e) => {
+                if (e.touches.length === 1 && isDragging && scale > 1) {
+                    e.preventDefault();
+                    translateX = e.touches[0].clientX - startX;
+                    translateY = e.touches[0].clientY - startY;
+                    updateTransform();
+                } else if (e.touches.length === 2) {
+                    e.preventDefault();
+                    const currentDistance = Math.hypot(
+                        e.touches[0].clientX - e.touches[1].clientX,
+                        e.touches[0].clientY - e.touches[1].clientY
+                    );
+
+                    if (initialTouchDistance > 0) {
+                        const ratio = currentDistance / initialTouchDistance;
+                        const newScale = Math.max(minScale, Math.min(scale * ratio, maxScale));
+
+                        if (newScale !== scale) {
+                            const scaleRatio = newScale / scale;
+                            const containerRect = modal.getBoundingClientRect();
+                            const centerX = containerRect.left + containerRect.width / 2;
+                            const centerY = containerRect.top + containerRect.height / 2;
+
+                            const touchCenterX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+                            const touchCenterY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+
+                            const mouseX = touchCenterX - centerX;
+                            const mouseY = touchCenterY - centerY;
+
+                            translateX = mouseX - (mouseX - translateX) * scaleRatio;
+                            translateY = mouseY - (mouseY - translateY) * scaleRatio;
+
+                            scale = newScale;
+                            initialTouchDistance = currentDistance;
+                            updateTransform();
+                        }
                     }
+                }
+            }, { passive: false });
+
+            modalImg.addEventListener('touchend', (e) => {
+                if (e.touches.length < 2) initialTouchDistance = 0;
+                if (e.touches.length === 0) {
+                    isDragging = false;
                     updateTransform();
                 }
-            }
-        }, { passive: false });
+            });
+        }
+    });
 
-        modalImg.addEventListener('touchend', (e) => {
-            if (e.touches.length < 2) {
-                initialTouchDistance = 0;
-            }
-            if (e.touches.length === 0) {
-                isDragging = false;
-            }
-        });
-    }
-});
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
 </script>
 
-<!-- MODAL LIGHTBOX CON DRAG NATIVO DESACTIVADO -->
-<div id="image-modal" class="fixed inset-0 bg-black/90 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-md select-none overflow-hidden" onclick="closeModal()">
+<!-- MODAL LIGHTBOX FLUIDO -->
+<div id="image-modal" class="fixed inset-0 bg-black/95 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-md select-none overflow-hidden" onclick="closeModal()">
     <button onclick="closeModal()" class="absolute top-6 right-6 text-white hover:text-oro-rosa text-4xl transition-colors focus:outline-none z-20" aria-label="Cerrar modal">
         &times;
     </button>
     
-    <div class="relative max-w-5xl max-h-[90vh] flex items-center justify-center overflow-hidden select-none" onclick="event.stopPropagation()">
+    <div class="relative w-full h-full flex items-center justify-center overflow-hidden" onclick="event.stopPropagation()">
         <img id="modal-img" src="" alt="Imagen ampliada" 
              draggable="false" 
              ondragstart="return false;"
-             class="max-w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl border border-white/10 transition-transform duration-100 ease-out origin-center cursor-zoom-in select-none" />
+             class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl cursor-zoom-in select-none will-change-transform" />
     </div>
 </div>
 </body>
