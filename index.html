@@ -1139,13 +1139,26 @@
 
     function updateTransform() {
         const modalImg = document.getElementById('modal-img');
-        if (modalImg) {
-            // Límites de arrastre: permite moverse hasta que el borde de la foto toque el centro de la pantalla
-            const maxTx = (modalImg.offsetWidth * scale) / 2;
-            const maxTy = (modalImg.offsetHeight * scale) / 2;
+        const modal = document.getElementById('image-modal');
+        
+        if (modalImg && modal) {
+            // CORRECCIÓN CLAVE: Forzar centrado absoluto si la escala es 1 o menor
+            if (scale <= 1) {
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+            } else {
+                // Limitar el desplazamiento basándose en el tamaño real de la ventana vs la imagen escalada
+                const containerRect = modal.getBoundingClientRect();
+                const imgWidth = modalImg.offsetWidth * scale;
+                const imgHeight = modalImg.offsetHeight * scale;
 
-            translateX = Math.max(-maxTx, Math.min(maxTx, translateX));
-            translateY = Math.max(-maxTy, Math.min(maxTy, translateY));
+                const maxTx = Math.max(0, (imgWidth - containerRect.width) / 2);
+                const maxTy = Math.max(0, (imgHeight - containerRect.height) / 2);
+
+                translateX = Math.max(-maxTx, Math.min(maxTx, translateX));
+                translateY = Math.max(-maxTy, Math.min(maxTy, translateY));
+            }
 
             modalImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
             modalImg.style.cursor = scale > 1 ? (isDragging ? 'grabbing' : 'grab') : 'zoom-in';
