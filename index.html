@@ -10,6 +10,7 @@
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&family=Source+Sans+3:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
 
 <!-- AOS CSS (Animaciones al Scroll) -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
@@ -138,21 +139,21 @@
 
 <main class="w-full">
 
-<!-- HERO SECTION -->
+<!-- HERO SECTION (Con la tipografía original Libre Caslon Text) -->
 <section class="relative w-full min-h-[90vh] flex items-center overflow-hidden" id="inicio">
     <div class="absolute inset-0 w-full h-full">
         <img alt="Atención psicológica y acompañamiento en Áurea Centro Integral Vital" class="w-full h-full object-cover object-center" src="img/hero.jpg"/>
-        <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
     </div>
 
     <div class="max-w-[1280px] w-full mx-auto px-6 md:px-12 py-16 relative z-10">
         <div class="max-w-xl flex flex-col items-start gap-6 text-white" data-aos="fade-right" data-aos-duration="1000">
-            <span class="inline-block px-4 py-1.5 bg-oro-rosa text-white font-headline text-xs font-bold uppercase tracking-widest rounded-full shadow-md">
+            <span class="inline-block px-4 py-1.5 bg-oro-rosa text-white font-body text-xs font-bold uppercase tracking-widest rounded-full shadow-md">
                 Chorrillos, Lima
             </span>
 
-            <h1 class="font-headline text-4xl sm:text-5xl lg:text-6xl text-white font-extrabold leading-tight drop-shadow-md">
-                Acompañamos tu proceso con <span class="text-dorado">empatía y profesionalismo</span>
+            <h1 class="font-['Libre_Caslon_Text'] text-4xl sm:text-5xl lg:text-6xl text-white leading-tight drop-shadow-md">
+                Acompañamos tu proceso con <span class="italic font-normal text-dorado">empatía y profesionalismo</span>
             </h1>
 
             <p class="font-body text-base md:text-lg text-white/90 leading-relaxed drop-shadow">
@@ -162,7 +163,7 @@
             <div class="p-4 bg-black/40 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg flex items-center gap-4 w-full">
                 <span class="material-symbols-outlined text-dorado text-3xl shrink-0 fill-icon">psychology</span>
                 <div>
-                    <p class="font-headline font-bold text-sm text-white">"Respira, estás donde necesitas estar"</p>
+                    <p class="font-['Libre_Caslon_Text'] font-bold text-sm text-white">"Respira, estás donde necesitas estar"</p>
                     <p class="font-body text-xs text-white/80">Un espacio seguro, humano y confidencial para crecer.</p>
                 </div>
             </div>
@@ -180,7 +181,7 @@
     </div>
 </section>
 
-<!-- SERVICIOS Y ESPECIALIDADES (COMPLETO: 6 TARJETAS) -->
+<!-- SERVICIOS Y ESPECIALIDADES (LIQUID GLASS CON FOTOS VERTICALES) -->
 <section class="py-24 px-6 md:px-12 bg-surface" id="servicios">
 <div class="max-w-[1280px] mx-auto space-y-12">
     
@@ -190,18 +191,19 @@
         <p class="font-body text-base text-gris-principal">Atención integral diseñada para cada etapa del desarrollo y necesidad emocional.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-[420px]">
+    <!-- Grilla simétrica 3x2 con alto estándar original -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-[440px]">
         
-        <!-- Especialidad 1: Neurodesarrollo -->
+        <!-- 1. NEURODESARROLLO -->
         <div class="rounded-3xl overflow-hidden relative group soft-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Neurodesarrollo" src="https://placehold.co/600x800/D9D9D9/666769?text=Imagen" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-8 text-white">
-                <div class="w-12 h-12 bg-verde-jade rounded-full flex items-center justify-center mb-4 text-white shrink-0 shadow-md">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Neurodesarrollo" src="img/neurodesarrollo.webp" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-transparent flex flex-col justify-end p-7 text-white">
+                <div class="w-12 h-12 bg-verde-jade rounded-full flex items-center justify-center mb-3 text-white shrink-0 shadow-md">
                     <span class="material-symbols-outlined text-2xl">neurology</span>
                 </div>
-                <h3 class="font-headline text-2xl md:text-3xl text-white mb-2 font-bold">Neurodesarrollo</h3>
-                <p class="font-body text-sm text-white/80 leading-relaxed line-clamp-3">
-                    Intervenciones orientadas a potenciar habilidades cognitivas, motrices y promover el desarrollo integral de niños y adolescentes.
+                <h3 class="font-headline text-2xl text-white mb-2 font-bold leading-snug">Neurodesarrollo</h3>
+                <p class="font-body text-xs text-white/90 leading-relaxed line-clamp-4">
+                    Acompañamiento clínico e intervenciones personalizadas para potenciar habilidades cognitivas, del lenguaje, sociales y conductuales en niños y adolescentes (TEA, TDAH y aprendizaje), fomentando su autonomía junto a la familia.
                 </p>
                 <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20*Neurodesarrollo*." target="_blank" class="mt-4 font-headline text-xs font-bold uppercase tracking-wider text-dorado flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
@@ -209,67 +211,73 @@
             </div>
         </div>
 
-        <!-- Especialidad 2: Apoyo Familiar -->
+        <!-- 2. ACOMPAÑAMIENTO Y ORIENTACIÓN FAMILIAR -->
         <div class="rounded-3xl overflow-hidden relative group soft-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="200">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Apoyo Familiar" src="https://placehold.co/600x800/D9D9D9/666769?text=Imagen" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-8 text-white">
-                <div class="w-12 h-12 bg-oro-rosa rounded-full flex items-center justify-center mb-4 text-white shrink-0 shadow-md">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Apoyo Familiar" src="img/acompañamiento-familiar.webp" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-transparent flex flex-col justify-end p-7 text-white">
+                <div class="w-12 h-12 bg-oro-rosa rounded-full flex items-center justify-center mb-3 text-white shrink-0 shadow-md">
                     <span class="material-symbols-outlined text-2xl">family_restroom</span>
                 </div>
-                <h3 class="font-headline text-2xl md:text-3xl text-white mb-2 font-bold">Apoyo Familiar</h3>
-                <p class="font-body text-sm text-white/80 leading-relaxed line-clamp-3">
-                    Orientación y herramientas prácticas para que padres y cuidadores participen activamente en el proceso terapéutico.
+                <h3 class="font-headline text-2xl text-white mb-2 font-bold leading-snug">Acompañamiento y Orientación Familiar</h3>
+                <p class="font-body text-xs text-white/90 leading-relaxed line-clamp-4">
+                    Orientación práctica y estrategias personalizadas para padres y cuidadores. Fortalecemos la comunicación, regulación emocional, conducta y convivencia, convirtiendo a la familia en un aliado activo del proceso.
                 </p>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20*Apoyo%20Familiar*." target="_blank" class="mt-4 font-headline text-xs font-bold uppercase tracking-wider text-dorado flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20*Acompa%C3%B1amiento%20y%20Orientaci%C3%B3n%20Familiar*." target="_blank" class="mt-4 font-headline text-xs font-bold uppercase tracking-wider text-dorado flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
                 </a>
             </div>
         </div>
 
-        <!-- Especialidad 3: Psicoterapia Infantil -->
+        <!-- 3. ESCUELA DE PADRES PARA COLEGIOS -->
         <div class="rounded-3xl overflow-hidden relative group soft-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="300">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Psicoterapia Infantil" src="https://placehold.co/600x800/D9D9D9/666769?text=Imagen" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-8 text-white">
-                <div class="w-12 h-12 bg-azul-pizarra rounded-full flex items-center justify-center mb-4 text-white shrink-0 shadow-md">
-                    <span class="material-symbols-outlined text-2xl">child_care</span>
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Escuela de Padres para Colegios" src="img/escuela-de-padres.webp" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-transparent flex flex-col justify-end p-7 text-white">
+                <div class="w-12 h-12 bg-oro-rosa rounded-full flex items-center justify-center mb-3 text-white shrink-0 shadow-md">
+                    <span class="material-symbols-outlined text-2xl">school</span>
                 </div>
-                <h3 class="font-headline text-2xl md:text-3xl text-white mb-2 font-bold">Psicoterapia Infantil</h3>
-                <p class="font-body text-sm text-white/80 leading-relaxed line-clamp-3">
-                    Acompañamiento a niños en el desarrollo de habilidades emocionales, conductuales y sociales mediante estrategias adaptadas.
+                <h3 class="font-headline text-2xl text-white mb-1 font-bold leading-snug">Escuela de Padres para Colegios</h3>
+                <p class="font-headline text-[10px] font-semibold text-dorado uppercase tracking-wide mb-2">
+                    "Comprender, actuar y transformar"
                 </p>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20*Psicoterapia%20Infantil*." target="_blank" class="mt-4 font-headline text-xs font-bold uppercase tracking-wider text-dorado flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <p class="font-body text-xs text-white/90 leading-relaxed line-clamp-3">
+                    Espacio de orientación práctica para familias de instituciones educativas. Brindamos herramientas reales sobre regulación emocional, comunicación, límites y crianza más allá de la charla tradicional.
+                </p>
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20*Escuela%20de%20Padres%20para%20Colegios*." target="_blank" class="mt-4 font-headline text-xs font-bold uppercase tracking-wider text-dorado flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
                 </a>
             </div>
         </div>
 
-        <!-- Especialidad 4: Psicoterapia Adolescentes -->
+        <!-- 4. PSICOTERAPIA PARA ADOLESCENTES -->
         <div class="rounded-3xl overflow-hidden relative group soft-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Psicoterapia Adolescentes" src="https://placehold.co/600x800/D9D9D9/666769?text=Imagen" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-8 text-white">
-                <div class="w-12 h-12 bg-verde-jade rounded-full flex items-center justify-center mb-4 text-white shrink-0 shadow-md">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Psicoterapia Adolescentes" src="img/psicologia-adolescentes.webp" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-transparent flex flex-col justify-end p-7 text-white">
+                <div class="w-12 h-12 bg-azul-pizarra rounded-full flex items-center justify-center mb-3 text-white shrink-0 shadow-md">
                     <span class="material-symbols-outlined text-2xl">face</span>
                 </div>
-                <h3 class="font-headline text-2xl md:text-3xl text-white mb-2 font-bold">Psicoterapia Adolescentes</h3>
-                <p class="font-body text-sm text-white/80 leading-relaxed line-clamp-3">
-                    Un espacio seguro y profesional para afrontar dificultades emocionales, familiares, académicas y personales.
+                <h3 class="font-headline text-2xl text-white mb-2 font-bold leading-snug">Psicoterapia Adolescentes</h3>
+                <p class="font-body text-xs text-white/90 leading-relaxed line-clamp-4">
+                    Un espacio seguro y confidencial para afrontar cambios emocionales, ansiedad, autoestima y relaciones. Brindamos herramientas prácticas para que el adolescente se comprenda, afronte retos y gane autonomía.
                 </p>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20*Psicoterapia%20Adolescentes*." target="_blank" class="mt-4 font-headline text-xs font-bold uppercase tracking-wider text-dorado flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20*Psicoterapia%20para%20Adolescentes*." target="_blank" class="mt-4 font-headline text-xs font-bold uppercase tracking-wider text-dorado flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
                 </a>
             </div>
         </div>
 
-        <!-- Especialidad 5: Evaluaciones Clínicas -->
+        <!-- 5. EVALUACIONES CLÍNICAS -->
         <div class="rounded-3xl overflow-hidden relative group soft-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="200">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Evaluaciones Psicológicas" src="https://placehold.co/600x800/D9D9D9/666769?text=Imagen" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-8 text-white">
-                <div class="w-12 h-12 bg-oro-rosa rounded-full flex items-center justify-center mb-4 text-white shrink-0 shadow-md">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Evaluaciones Psicológicas" src="img/evaluaciones.webp" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-transparent flex flex-col justify-end p-7 text-white">
+                <div class="w-12 h-12 bg-oro-rosa rounded-full flex items-center justify-center mb-3 text-white shrink-0 shadow-md">
                     <span class="material-symbols-outlined text-2xl">assignment</span>
                 </div>
-                <h3 class="font-headline text-2xl md:text-3xl text-white mb-2 font-bold">Evaluaciones Clínicas</h3>
-                <p class="font-body text-sm text-white/80 leading-relaxed line-clamp-3">
-                    Identificamos fortalezas, necesidades y dificultades mediante pruebas estandarizadas y observación clínica.
+                <h3 class="font-headline text-2xl text-white mb-1 font-bold leading-snug">Evaluaciones Clínicas</h3>
+                <p class="font-headline text-[10px] font-semibold text-dorado uppercase tracking-wide mb-2">
+                    "Evaluamos → Comprendemos → Orientamos → Intervenimos"
+                </p>
+                <p class="font-body text-xs text-white/90 leading-relaxed line-clamp-3">
+                    Evaluaciones integrales objetivas (entrevista, observación e instrumentos) para definir un diagnóstico preciso, informe claro y objetivos terapéuticos.
                 </p>
                 <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20*Evaluaciones%20Cl%C3%ADnicas*." target="_blank" class="mt-4 font-headline text-xs font-bold uppercase tracking-wider text-dorado flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
@@ -277,18 +285,21 @@
             </div>
         </div>
 
-        <!-- Especialidad 6: Deporte y Coaching -->
+        <!-- 6. PSICOLOGÍA DEPORTIVA & COACHING -->
         <div class="rounded-3xl overflow-hidden relative group soft-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="300">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Psicología Deportiva" src="https://placehold.co/600x800/D9D9D9/666769?text=Imagen" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-8 text-white">
-                <div class="w-12 h-12 bg-azul-pizarra rounded-full flex items-center justify-center mb-4 text-white shrink-0 shadow-md">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Psicología Deportiva" src="img/psicologia-deportiva.webp" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-transparent flex flex-col justify-end p-7 text-white">
+                <div class="w-12 h-12 bg-verde-jade rounded-full flex items-center justify-center mb-3 text-white shrink-0 shadow-md">
                     <span class="material-symbols-outlined text-2xl">sports_score</span>
                 </div>
-                <h3 class="font-headline text-2xl md:text-3xl text-white mb-2 font-bold">Deporte y Coaching</h3>
-                <p class="font-body text-sm text-white/80 leading-relaxed line-clamp-3">
-                    Acompañamiento especializado para fortalecer habilidades, confianza y alto desempeño profesional o deportivo.
+                <h3 class="font-headline text-2xl text-white mb-1 font-bold leading-snug">Psicología Deportiva & Coaching</h3>
+                <p class="font-headline text-[10px] font-semibold text-dorado uppercase tracking-wide mb-2">
+                    "Entrenamos la mente dentro y fuera de la cancha"
                 </p>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20*Psicolog%C3%ADa%20Deportiva*." target="_blank" class="mt-4 font-headline text-xs font-bold uppercase tracking-wider text-dorado flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                <p class="font-body text-xs text-white/90 leading-relaxed line-clamp-3">
+                    Fortalecemos la concentración, confianza y manejo de presión en equipos deportivos (fútbol), e impulsamos el liderazgo, comunicación y desarrollo personal mediante coaching empresarial.
+                </p>
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20*Psicolog%C3%ADa%20Deportiva%20%26%20Coaching*." target="_blank" class="mt-4 font-headline text-xs font-bold uppercase tracking-wider text-dorado flex items-center gap-1 group-hover:translate-x-1 transition-transform">
                     Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
                 </a>
             </div>
@@ -300,117 +311,407 @@
 
 <!-- TARIFAS Y PAQUETES PROMOCIONALES -->
 <section class="py-20 px-6 md:px-12 bg-background border-t border-gris-claro/50" id="paquetes">
-<div class="max-w-[1280px] mx-auto space-y-12">
+<div class="max-w-[1280px] mx-auto space-y-16">
     
+    <!-- Encabezado de Sección -->
     <div class="text-center max-w-2xl mx-auto space-y-3" data-aos="fade-up">
-        <span class="font-headline text-xs font-bold uppercase tracking-widest text-oro-rosa">Inversión en tu Salud</span>
-        <h2 class="font-headline text-3xl sm:text-5xl font-extrabold text-on-surface">Paquetes y Tarifas Promocionales</h2>
-        <p class="font-body text-base text-gris-principal">Diseñamos opciones accesibles para dar seguimiento continuo a tu proceso terapéutico.</p>
+        <span class="font-headline text-xs font-semibold uppercase tracking-widest text-oro-rosa">Inversión en tu Salud</span>
+        <h2 class="font-headline text-3xl sm:text-4xl font-bold text-on-surface tracking-tight">Tarifas y Planes Especiales</h2>
+        <p class="font-body text-base text-gris-principal font-normal">Transparencia, compromiso y opciones diseñadas para acompañar tu proceso terapéutico.</p>
     </div>
 
-    <!-- Grid de Paquetes -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        
-        <!-- Tamizaje -->
-        <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow" data-aos="zoom-in-up" data-aos-delay="100">
-            <div class="space-y-3">
-                <span class="inline-block bg-gris-claro/50 text-gris-principal px-3 py-1 rounded-full font-headline text-[11px] font-bold">Evaluación Inicial</span>
-                <h3 class="font-headline text-xl font-bold text-on-surface">Tamizaje Terapéutico</h3>
-                <p class="font-body text-xs text-gris-principal">Ideal si tu hijo ya tuvo terapia o diagnóstico previo. Se realiza en 1 día.</p>
-                <div class="pt-2">
-                    <span class="font-headline text-3xl font-bold text-oro-rosa">S/ 100</span>
-                    <span class="font-body text-xs text-gris-principal"> / sesión única</span>
-                </div>
-            </div>
-            <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20una%20*Evaluaci%C3%B3n%20de%20Tamizaje%20por%20S/%20100*." target="_blank" class="mt-6 block text-center py-2.5 rounded-full bg-oro-rosa text-white font-headline text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                Agendar Evaluación
-            </a>
+    <!-- 1. EVALUACIONES PSICOLÓGICAS (INTEGRAL Y TAMIZAJE) -->
+    <div class="space-y-6">
+        <div class="border-b border-gris-claro pb-3" data-aos="fade-up">
+            <h3 class="font-headline text-xl font-bold text-on-surface">Procesos de Evaluación</h3>
+            <p class="font-body text-xs text-gris-principal font-normal">Punto de partida esencial para diagnosticar, comprender y trazar un plan de trabajo adecuado.</p>
         </div>
 
-        <!-- Pack 6 Sesiones -->
-        <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow" data-aos="zoom-in-up" data-aos-delay="200">
-            <div class="space-y-3">
-                <span class="inline-block bg-verde-jade/10 text-verde-jade px-3 py-1 rounded-full font-headline text-[11px] font-bold">Pack Continuidad</span>
-                <h3 class="font-headline text-xl font-bold text-on-surface">Pack 6 Sesiones</h3>
-                <p class="font-body text-xs text-gris-principal">Atención personalizada para niños, adolescentes o adultos.</p>
-                <div class="pt-2">
-                    <span class="font-headline text-3xl font-bold text-verde-jade">S/ 360</span>
-                    <span class="font-body text-xs text-gris-principal"> (S/ 60 por sesión)</span>
-                </div>
-            </div>
-            <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Pack%20de%206%20Sesiones%20por%20S/%20360*." target="_blank" class="mt-6 block text-center py-2.5 rounded-full bg-verde-jade text-white font-headline text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                Solicitar Pack 6
-            </a>
-        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Evaluación Integral -->
+            <div class="bg-surface p-7 rounded-3xl border border-oro-rosa/40 soft-shadow flex flex-col justify-between space-y-4 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between gap-2">
+                        <span class="inline-block bg-oro-rosa/15 text-oro-rosa px-3 py-1 rounded-full font-headline text-[10px] font-semibold uppercase tracking-wider">Incluye Informe Clínico</span>
+                        <div class="text-right">
+                            <span class="font-headline text-3xl font-bold text-oro-rosa">S/ 250</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-headline text-2xl font-bold text-on-surface">Evaluación Integral</h4>
+                        <p class="font-body text-xs text-gris-principal font-normal pt-1">Proceso completo de diagnóstico y retroalimentación para niños y adolescentes.</p>
+                    </div>
 
-        <!-- Pack 8 Sesiones -->
-        <div class="bg-surface p-6 rounded-3xl border-2 border-oro-rosa shadow-lg flex flex-col justify-between relative" data-aos="zoom-in-up" data-aos-delay="300">
-            <span class="absolute -top-3 right-6 bg-oro-rosa text-white px-3 py-0.5 rounded-full font-headline text-[10px] font-bold uppercase tracking-wider">Más Popular</span>
-            <div class="space-y-3">
-                <span class="inline-block bg-oro-rosa/15 text-oro-rosa px-3 py-1 rounded-full font-headline text-[11px] font-bold">Pack Recomendado</span>
-                <h3 class="font-headline text-xl font-bold text-on-surface">Pack 8 Sesiones</h3>
-                <p class="font-body text-xs text-gris-principal">Acompañamiento completo de mediano plazo.</p>
-                <div class="pt-2">
-                    <span class="font-headline text-3xl font-bold text-oro-rosa">S/ 420</span>
-                    <span class="font-body text-xs text-gris-principal"> (S/ 52.50 por sesión)</span>
-                </div>
-            </div>
-            <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Pack%20de%208%20Sesiones%20por%20S/%20420*." target="_blank" class="mt-6 block text-center py-2.5 rounded-full bg-oro-rosa text-white font-headline text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                Solicitar Pack 8
-            </a>
-        </div>
+                    <div class="p-4 bg-background rounded-2xl border border-gris-claro/60 space-y-2">
+                        <strong class="block font-headline text-xs text-on-surface">Estructura del proceso (4 sesiones):</strong>
+                        <ul class="space-y-1.5 font-body text-xs text-gris-principal font-normal">
+                            <li class="flex items-start gap-1.5"><span class="text-oro-rosa font-bold">1.ª</span> Reunion inicial con padres o apoderados.</li>
+                            <li class="flex items-start gap-1.5"><span class="text-oro-rosa font-bold">2.ª</span> Sesión de evaluación directa con el niño.</li>
+                            <li class="flex items-start gap-1.5"><span class="text-oro-rosa font-bold">3.ª</span> Segunda sesión de evaluación con el niño.</li>
+                            <li class="flex items-start gap-1.5"><span class="text-oro-rosa font-bold">4.ª</span> Entrega de informe y devolución con apoderado (20 min).</li>
+                        </ul>
+                    </div>
 
-        <!-- Pack 12 Sesiones -->
-        <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow" data-aos="zoom-in-up" data-aos-delay="400">
-            <div class="space-y-3">
-                <span class="inline-block bg-azul-pizarra/10 text-azul-pizarra px-3 py-1 rounded-full font-headline text-[11px] font-bold">Máximo Ahorro</span>
-                <h3 class="font-headline text-xl font-bold text-on-surface">Pack 12 Sesiones</h3>
-                <p class="font-body text-xs text-gris-principal">Ideal para procesos intensivos de neurodesarrollo o terapia integral.</p>
-                <div class="pt-2">
-                    <span class="font-headline text-3xl font-bold text-azul-pizarra">S/ 600</span>
-                    <span class="font-body text-xs text-gris-principal"> (S/ 50 por sesión)</span>
+                    <p class="font-body text-[11px] text-gris-principal italic">
+                        * Las dos primeras sesiones pueden realizarse el mismo día. Entrega de informe presencial o virtual (Lunes o Viernes de 9:00 a 11:00 a.m.).
+                    </p>
                 </div>
-            </div>
-            <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Pack%20de%2012%20Sesiones%20por%20S/%20600*." target="_blank" class="mt-6 block text-center py-2.5 rounded-full bg-azul-pizarra text-white font-headline text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                Solicitar Pack 12
-            </a>
-        </div>
 
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20una%20*Evaluaci%C3%B3n%20Integral%20(S/%20250)*." target="_blank" class="block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Solicitar Evaluación Integral
+                </a>
+            </div>
+
+            <!-- Evaluación de Tamizaje -->
+            <div class="bg-surface p-7 rounded-3xl border border-gris-claro soft-shadow flex flex-col justify-between space-y-4 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between gap-2">
+                        <span class="inline-block bg-verde-jade/15 text-verde-jade px-3 py-1 rounded-full font-headline text-[10px] font-semibold uppercase tracking-wider">Evaluación en 1 Día</span>
+                        <div class="text-right">
+                            <span class="font-headline text-3xl font-bold text-verde-jade">S/ 100</span>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-headline text-2xl font-bold text-on-surface">Tamizaje Terapéutico</h4>
+                        <p class="font-body text-xs text-gris-principal font-normal pt-1">Ideal para pacientes nuevos, ingresantes o reingresos (pausa mayor a 3 meses).</p>
+                    </div>
+
+                    <div class="p-4 bg-background rounded-2xl border border-gris-claro/60 space-y-2 font-body text-xs text-gris-principal font-normal leading-relaxed">
+                        <p>Diseñado para evaluar estado actual, contención emocional o posibles retrocesos en pacientes con diagnóstico previo.</p>
+                        <p class="pt-1 text-[11px] text-verde-jade font-semibold">✓ Incluye resumen de orientación (No incluye informe psicológico completo).</p>
+                    </div>
+
+                    <p class="font-body text-[11px] text-gris-principal italic">
+                        Paso fundamental para comprender tu situación emocional actual y diseñar un plan de trabajo a tu medida.
+                    </p>
+                </div>
+
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20un%20*Tamizaje%20Terap%C3%A9utico%20(S/%20100)*." target="_blank" class="block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Agendar Tamizaje
+                </a>
+            </div>
+
+        </div>
     </div>
 
-    <!-- Taller de Habilidades Sociales y Convenio Club Lima -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6">
+    <!-- 2. PROGRAMAS ESPECIALES (3 SESIONES X S/ 120) -->
+    <div class="space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gris-claro pb-3 gap-2" data-aos="fade-up">
+            <div>
+                <h3 class="font-headline text-lg font-semibold text-on-surface">Programas Enfocados de Acompañamiento</h3>
+                <p class="font-body text-xs text-gris-principal font-normal">Sesiones diseñadas para afrontar procesos de transición y sanación profunda.</p>
+            </div>
+            <span class="inline-block bg-oro-rosa/15 text-oro-rosa font-headline text-xs font-semibold px-4 py-1.5 rounded-full border border-oro-rosa/30 self-start sm:self-auto">
+                Promoción Especial: S/ 120 (3 Sesiones)
+            </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Promo 1: Reinicio Emocional -->
+            <div class="bg-surface p-6 rounded-3xl border border-oro-rosa/60 shadow-md flex flex-col justify-between relative group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="100">
+                <span class="absolute -top-3 right-6 bg-oro-rosa text-white px-3 py-0.5 rounded-full font-headline text-[10px] font-medium uppercase tracking-wider">Destacado</span>
+                <div class="space-y-3">
+                    <span class="inline-block bg-oro-rosa/15 text-oro-rosa px-3 py-1 rounded-full font-headline text-[10px] font-medium uppercase tracking-wider">Pack Sanación</span>
+                    <h4 class="font-headline text-lg font-bold text-on-surface">Reinicio Emocional</h4>
+                    <p class="font-body text-xs text-gris-principal italic font-normal">"3 sesiones para volver a ti, sanar, soltar y empezar de nuevo."</p>
+                    
+                    <ul class="space-y-1 font-body text-[11px] text-gris-principal pt-1 border-t border-gris-claro/60 font-normal">
+                        <li>• Manejo de agotamiento emocional</li>
+                        <li>• Cierre de rupturas y pérdidas</li>
+                        <li>• Reconexión con el amor propio</li>
+                    </ul>
+
+                    <div class="pt-2">
+                        <span class="font-headline text-2xl font-bold text-oro-rosa">S/ 120</span>
+                        <span class="font-body text-xs text-gris-principal font-normal"> / 3 sesiones</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20reservar%20el%20*Pack%20Reinicio%20Emocional%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="mt-6 block text-center py-2.5 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Reservar Pack
+                </a>
+            </div>
+
+            <!-- Promo 2: Pacientes Oncológicos -->
+            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="200">
+                <div class="space-y-3">
+                    <span class="inline-block bg-verde-jade/10 text-verde-jade px-3 py-1 rounded-full font-headline text-[10px] font-medium uppercase tracking-wider">Acompañamiento Clínico</span>
+                    <h4 class="font-headline text-lg font-bold text-on-surface">Pacientes Oncológicos</h4>
+                    <p class="font-body text-xs text-gris-principal italic font-normal">"Espacio seguro para expresar lo que sientes y fortalecer tu calma."</p>
+                    
+                    <ul class="space-y-1 font-body text-[11px] text-gris-principal pt-1 border-t border-gris-claro/60 font-normal">
+                        <li>• Manejo de la ansiedad y el miedo</li>
+                        <li>• Fortalecimiento del bienestar emocional</li>
+                        <li>• Recursos prácticos para el día a día</li>
+                    </ul>
+
+                    <div class="pt-2">
+                        <span class="font-headline text-2xl font-bold text-verde-jade">S/ 120</span>
+                        <span class="font-body text-xs text-gris-principal font-normal"> / 3 sesiones</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20de%20la%20*Terapia%20para%20Pacientes%20Oncol%C3%B3gicos%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="mt-6 block text-center py-2.5 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Solicitar Terapia
+                </a>
+            </div>
+
+            <!-- Promo 3: Procesos de Divorcio -->
+            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="300">
+                <div class="space-y-3">
+                    <span class="inline-block bg-oro-rosa/10 text-oro-rosa px-3 py-1 rounded-full font-headline text-[10px] font-medium uppercase tracking-wider">Transición de Vida</span>
+                    <h4 class="font-headline text-lg font-bold text-on-surface">Procesos de Divorcio</h4>
+                    <p class="font-body text-xs text-gris-principal italic font-normal">"Enfrentar el cambio, sanar y construir un nuevo comienzo."</p>
+                    
+                    <ul class="space-y-1 font-body text-[11px] text-gris-principal pt-1 border-t border-gris-claro/60 font-normal">
+                        <li>• Manejo de tristeza, enojo y ansiedad</li>
+                        <li>• Fortalecimiento de la autoestima</li>
+                        <li>• Claridad para la toma de decisiones</li>
+                    </ul>
+
+                    <div class="pt-2">
+                        <span class="font-headline text-2xl font-bold text-oro-rosa">S/ 120</span>
+                        <span class="font-body text-xs text-gris-principal font-normal"> / 3 sesiones</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20de%20la%20*Terapia%20en%20Procesos%20de%20Divorcio%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="mt-6 block text-center py-2.5 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Solicitar Terapia
+                </a>
+            </div>
+
+            <!-- Promo 4: Terapia de Duelo -->
+            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="400">
+                <div class="space-y-3">
+                    <span class="inline-block bg-azul-pizarra/10 text-azul-pizarra px-3 py-1 rounded-full font-headline text-[10px] font-medium uppercase tracking-wider">Proceso de Duelo</span>
+                    <h4 class="font-headline text-lg font-bold text-on-surface">Terapia de Duelo</h4>
+                    <p class="font-body text-xs text-gris-principal italic font-normal">"Transitar tu pérdida con amor, respeto y comprensión."</p>
+                    
+                    <ul class="space-y-1 font-body text-[11px] text-gris-principal pt-1 border-t border-gris-claro/60 font-normal">
+                        <li>• Validación de emociones y desahogo</li>
+                        <li>• Comprensión del proceso de duelo</li>
+                        <li>• Reconstrucción de vida con sentido</li>
+                    </ul>
+
+                    <div class="pt-2">
+                        <span class="font-headline text-2xl font-bold text-azul-pizarra">S/ 120</span>
+                        <span class="font-body text-xs text-gris-principal font-normal"> / 3 sesiones</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20de%20la%20*Terapia%20de%20Duelo%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="mt-6 block text-center py-2.5 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Solicitar Terapia
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 3. CONSULTAS INDIVIDUALES & PAQUETES STAFF AUREA -->
+    <div class="space-y-6 pt-4">
+        <div class="border-b border-gris-claro pb-3" data-aos="fade-up">
+            <h3 class="font-headline text-lg font-semibold text-on-surface">Consultas y Packs Terapéuticos (Staff ÁUREA)</h3>
+            <p class="font-body text-xs text-gris-principal font-normal">Seguimiento continuo adaptado a tus metas de desarrollo y salud mental.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Sesión Individual Staff -->
+            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                <div class="space-y-3">
+                    <span class="inline-block bg-gris-claro/50 text-gris-principal px-3 py-1 rounded-full font-headline text-[10px] font-semibold">Sesión Suelta</span>
+                    <h4 class="font-headline text-lg font-bold text-on-surface">Terapia Individual</h4>
+                    <p class="font-body text-xs text-gris-principal font-normal">Atención personalizada con profesionales del Staff de ÁUREA.</p>
+                    <div class="pt-2">
+                        <span class="font-headline text-3xl font-bold text-oro-rosa">S/ 80</span>
+                        <span class="font-body text-xs text-gris-principal font-normal"> / sesión</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20una%20*Terapia%20Individual%20(S/%2080)*." target="_blank" class="mt-6 block text-center py-2.5 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Agendar Sesión
+                </a>
+            </div>
+
+            <!-- Pack 6 Sesiones -->
+            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                <div class="space-y-3">
+                    <span class="inline-block bg-verde-jade/10 text-verde-jade px-3 py-1 rounded-full font-headline text-[10px] font-semibold">Pack Continuidad</span>
+                    <h4 class="font-headline text-lg font-bold text-on-surface">Pack 6 Sesiones</h4>
+                    <p class="font-body text-xs text-gris-principal font-normal">Acompañamiento enfocado para niños, adolescentes o adultos.</p>
+                    <div class="pt-2">
+                        <span class="font-headline text-3xl font-bold text-verde-jade">S/ 360</span>
+                        <span class="font-body text-xs text-gris-principal font-normal"> (S/ 60 x sesión)</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Pack%20de%206%20Sesiones%20(S/%20360)*." target="_blank" class="mt-6 block text-center py-2.5 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Solicitar Pack 6
+                </a>
+            </div>
+
+            <!-- Pack 8 Sesiones -->
+            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
+                <div class="space-y-3">
+                    <span class="inline-block bg-oro-rosa/15 text-oro-rosa px-3 py-1 rounded-full font-headline text-[10px] font-semibold">Pack Recomendado</span>
+                    <h4 class="font-headline text-lg font-bold text-on-surface">Pack 8 Sesiones</h4>
+                    <p class="font-body text-xs text-gris-principal font-normal">Acompañamiento completo de mediano plazo.</p>
+                    <div class="pt-2">
+                        <span class="font-headline text-3xl font-bold text-oro-rosa">S/ 420</span>
+                        <span class="font-body text-xs text-gris-principal font-normal"> (S/ 52.50 x sesión)</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Pack%20de%208%20Sesiones%20(S/%20420)*." target="_blank" class="mt-6 block text-center py-2.5 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Solicitar Pack 8
+                </a>
+            </div>
+
+            <!-- Pack 12 Sesiones -->
+            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="400">
+                <div class="space-y-3">
+                    <span class="inline-block bg-azul-pizarra/10 text-azul-pizarra px-3 py-1 rounded-full font-headline text-[10px] font-semibold">Máximo Ahorro</span>
+                    <h4 class="font-headline text-lg font-bold text-on-surface">Pack 12 Sesiones</h4>
+                    <p class="font-body text-xs text-gris-principal font-normal">Ideal para procesos intensivos de neurodesarrollo o terapia integral.</p>
+                    <div class="pt-2">
+                        <span class="font-headline text-3xl font-bold text-azul-pizarra">S/ 600</span>
+                        <span class="font-body text-xs text-gris-principal font-normal"> (S/ 50 x sesión)</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Pack%20de%2012%20Sesiones%20(S/%20600)*." target="_blank" class="mt-6 block text-center py-2.5 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Solicitar Pack 12
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 4. TARIFARIO DE SERVICIOS ESPECIALIZADOS -->
+    <div class="space-y-6 pt-4">
+        <div class="border-b border-gris-claro pb-3" data-aos="fade-up">
+            <h3 class="font-headline text-lg font-semibold text-on-surface">Otros Servicios Psicológicos</h3>
+            <p class="font-body text-xs text-gris-principal font-normal">Modalidades de atención especializadas y orientación profesional.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Terapia de Pareja y Familiar -->
+            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                <div class="space-y-3">
+                    <span class="inline-block bg-oro-rosa/15 text-oro-rosa px-3 py-1 rounded-full font-headline text-[10px] font-semibold">Vínculos & Familia</span>
+                    <h4 class="font-headline text-lg font-bold text-on-surface">Pareja & Familia</h4>
+                    <ul class="space-y-1 font-body text-xs text-gris-principal font-normal pt-1 border-t border-gris-claro/60">
+                        <li>• Atención Individual: <strong>S/ 100</strong></li>
+                        <li>• Terapia de Pareja: <strong>S/ 150</strong></li>
+                        <li>• Terapia Familiar: <strong>S/ 200</strong> <span class="text-[10px] text-gris-principal">(hasta 5 pers.)</span></li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20consultar%20por%20*Terapia%20de%20Pareja%20o%20Familiar*." target="_blank" class="mt-6 block text-center py-2.5 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Consultar Cita
+                </a>
+            </div>
+
+            <!-- Atención a Domicilio -->
+            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                <div class="space-y-3">
+                    <span class="inline-block bg-verde-jade/10 text-verde-jade px-3 py-1 rounded-full font-headline text-[10px] font-semibold">Servicio Presencial</span>
+                    <h4 class="font-headline text-lg font-bold text-on-surface">Atención a Domicilio</h4>
+                    <p class="font-body text-xs text-gris-principal font-normal">Sesión personalizada en la comodidad de tu hogar.</p>
+                    <div class="pt-2">
+                        <span class="font-headline text-2xl font-bold text-verde-jade">S/ 150</span>
+                        <span class="font-body text-[10px] text-gris-principal font-normal block">* Movilidad adicional según ubicación</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20solicitar%20informaci%C3%B3n%20sobre%20*Atenci%C3%B3n%20a%20Domicilio*." target="_blank" class="mt-6 block text-center py-2.5 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Solicitar Visita
+                </a>
+            </div>
+
+            <!-- Orientación Vocacional -->
+            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
+                <div class="space-y-3">
+                    <span class="inline-block bg-azul-pizarra/10 text-azul-pizarra px-3 py-1 rounded-full font-headline text-[10px] font-semibold">Futuro & Profesión</span>
+                    <h4 class="font-headline text-lg font-bold text-on-surface">Orientación Vocacional</h4>
+                    <p class="font-body text-xs text-gris-principal font-normal">Evaluación integral + asesoría personalizada de proyecto de vida.</p>
+                    <div class="pt-2">
+                        <span class="font-headline text-2xl font-bold text-azul-pizarra">S/ 120</span>
+                        <span class="font-body text-xs text-gris-principal font-normal"> / programa completo</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20una%20*Orientaci%C3%B3n%20Vocacional%20Integral%20(S/%20120)*." target="_blank" class="mt-6 block text-center py-2.5 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Iniciar Orientación
+                </a>
+            </div>
+
+            <!-- Adicionales y Reprogramaciones -->
+            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="400">
+                <div class="space-y-3">
+                    <span class="inline-block bg-gris-claro/50 text-gris-principal px-3 py-1 rounded-full font-headline text-[10px] font-semibold">Trámites & Políticas</span>
+                    <h4 class="font-headline text-lg font-bold text-on-surface">Informes & Políticas</h4>
+                    <ul class="space-y-1 font-body text-[11px] text-gris-principal font-normal border-t border-gris-claro/60 pt-1">
+                        <li>• Duplicado de informe: <strong>S/ 50</strong></li>
+                        <li>• 1.ª Reprogramación: <strong>Sin costo</strong></li>
+                        <li>• 2.ª Reprogramación: <strong>Penalidad S/ 25</strong></li>
+                    </ul>
+                </div>
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20solicitar%20un%20*Duplicado%20de%20Informe%20Psicol%C3%B3gico*." target="_blank" class="mt-6 block text-center py-2.5 rounded-full bg-gris-principal text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Solicitar Trámite
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 5. BLOQUE ESPECIAL: CONVENIOS Y TALLERES -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6">
         
         <!-- Taller Preadolescentes -->
-        <div class="bg-verde-jade/10 p-8 rounded-3xl border border-verde-jade/30 flex flex-col justify-between space-y-4" data-aos="fade-right">
+        <div class="bg-verde-jade/10 p-7 rounded-3xl border border-verde-jade/30 flex flex-col justify-between space-y-4 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
             <div class="space-y-2">
-                <span class="bg-verde-jade text-white text-[10px] font-headline uppercase font-bold px-3 py-1 rounded-full">12 a 16 Años</span>
-                <h3 class="font-headline text-2xl font-bold text-on-surface">Taller de Habilidades Sociales</h3>
-                <p class="font-body text-sm text-gris-principal leading-relaxed">
-                    Fortalece autoestima, comunicación asertiva, resolución de conflictos y relaciones saludables. Todos los jueves de agosto a las 6:00 p.m.
+                <span class="bg-verde-jade text-white text-[10px] font-headline uppercase font-semibold px-3 py-1 rounded-full">12 a 16 Años</span>
+                <h4 class="font-headline text-xl font-bold text-on-surface">Taller Habilidades Sociales</h4>
+                <p class="font-body text-xs text-gris-principal leading-relaxed font-normal">
+                    Fortalece autoestima, comunicación asertiva, resolución de conflictos y relaciones saludables. Todos los jueves a las 6:00 p.m.
                 </p>
-                <div class="pt-2 flex items-center gap-3">
-                    <span class="font-headline text-2xl font-bold text-verde-jade">S/ 200</span>
-                    <span class="font-body text-xs text-gris-principal">(Preventa Julio: S/ 170)</span>
+                <div class="pt-2 flex items-center gap-2">
+                    <span class="font-headline text-xl font-bold text-verde-jade">S/ 200</span>
+                    <span class="font-body text-[11px] text-gris-principal font-normal">(Preventa Julio: S/ 170)</span>
                 </div>
             </div>
-            <a href="https://wa.me/51922761436?text=Hola,%20deseo%20inscribir%20a%20mi%20hijo%20al%20*Taller%20de%20Habilidades%20Sociales*." target="_blank" class="block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-bold uppercase tracking-wider">
-                Reservar Vacante Taller
+            <a href="https://wa.me/51922761436?text=Hola,%20deseo%20inscribir%20a%20mi%20hijo%20al%20*Taller%20de%20Habilidades%20Sociales*." target="_blank" class="block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                Reservar Vacante
+            </a>
+        </div>
+
+        <!-- Convenio Institucional Colegios -->
+        <div class="bg-azul-pizarra/10 p-7 rounded-3xl border border-azul-pizarra/30 flex flex-col justify-between space-y-4 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
+            <div class="space-y-3">
+                <span class="bg-azul-pizarra text-white text-[10px] font-headline uppercase font-semibold px-3 py-1 rounded-full">Convenio Institucional</span>
+                <div>
+                    <h4 class="font-headline text-xl font-bold text-on-surface leading-tight">Áurea + Tu Colegio</h4>
+                    <p class="font-headline text-xs font-semibold text-azul-pizarra pt-0.5">Beneficios para la comunidad educativa</p>
+                </div>
+                
+                <ul class="space-y-1 font-body text-xs text-gris-principal pt-1 font-normal">
+                    <li class="flex items-start gap-1.5"><span class="text-azul-pizarra font-bold">✓</span> Tarifas preferenciales para familias</li>
+                    <li class="flex items-start gap-1.5"><span class="text-azul-pizarra font-bold">✓</span> Talleres para docentes</li>
+                    <li class="flex items-start gap-1.5"><span class="text-azul-pizarra font-bold">✓</span> Escuela de Padres sin costo</li>
+                </ul>
+            </div>
+            <a href="https://wa.me/51922761436?text=Hola,%20deseo%20solicitar%20informaci%C3%B3n%20sobre%20el%20*Convenio%20Institucional%20para%20Colegios*." target="_blank" class="block text-center py-3 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                Solicitar Convenio
             </a>
         </div>
 
         <!-- Convenio Club Lima -->
-        <div class="bg-oro-rosa/10 p-8 rounded-3xl border border-oro-rosa/30 flex flex-col justify-between space-y-4" data-aos="fade-left">
+        <div class="bg-oro-rosa/10 p-7 rounded-3xl border border-oro-rosa/30 flex flex-col justify-between space-y-4 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
             <div class="space-y-2">
-                <span class="bg-oro-rosa text-white text-[10px] font-headline uppercase font-bold px-3 py-1 rounded-full">Convenio Exclusivo</span>
-                <h3 class="font-headline text-2xl font-bold text-on-surface">Club Cultural Deportivo Lima</h3>
-                <p class="font-body text-sm text-gris-principal leading-relaxed">
-                    Accede a una primera entrevista de orientación psicológica inicial <strong>GRATUITA</strong> (Atenciones realizadas en las instalaciones del club).
+                <span class="bg-oro-rosa text-white text-[10px] font-headline uppercase font-semibold px-3 py-1 rounded-full">Convenio Exclusivo</span>
+                <h4 class="font-headline text-xl font-bold text-on-surface">Club Deportivo Lima</h4>
+                <p class="font-body text-xs text-gris-principal leading-relaxed font-normal">
+                    Primera entrevista de orientación psicológica inicial <strong class="font-semibold">GRATUITA</strong> (en instalaciones del club).
                 </p>
-                <p class="font-headline text-xs font-bold text-oro-rosa pt-2">Citas al WhatsApp Exclusivo: 907 805 210</p>
+                <p class="font-headline text-xs font-semibold text-oro-rosa pt-1">WhatsApp Exclusivo: 907 805 210</p>
             </div>
-            <a href="https://wa.me/51907805210?text=Hola,%20soy%20socio%20del%20Club%20Deportivo%20Lima%20y%20deseo%20agendar%20mi%20*Entrevista%20Gratuita*." target="_blank" class="block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-bold uppercase tracking-wider">
-                Agendar Cita Socio Club
+            <a href="https://wa.me/51907805210?text=Hola,%20soy%20socio%20del%20Club%20Deportivo%20Lima%20y%20deseo%20agendar%20mi%20*Entrevista%20Gratuita*." target="_blank" class="block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                Agendar Cita Socio
             </a>
         </div>
 
@@ -418,134 +719,180 @@
 </div>
 </section>
 
-<!-- CÓMO TRABAJAMOS -->
-<section class="py-20 px-6 md:px-12 bg-surface" id="metodo">
-<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-    
-    <div class="space-y-6" data-aos="fade-right">
-        <span class="font-headline text-xs font-bold uppercase tracking-widest text-oro-rosa">Procesos Claros</span>
-        <h2 class="font-headline text-3xl sm:text-5xl font-extrabold text-on-surface">¿Cómo trabajamos en Áurea?</h2>
-        <p class="font-body text-base text-gris-principal leading-relaxed">
-            Creemos en procesos estructurados e integrales para que cada persona comprenda su evolución paso a paso.
-        </p>
-
-        <div class="space-y-6 pt-2">
-            <div class="flex gap-4 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-oro-rosa/20 text-oro-rosa font-headline font-bold flex items-center justify-center shrink-0">1</div>
-                <div>
-                    <h3 class="font-headline font-bold text-lg text-on-surface">1. Evaluamos</h3>
-                    <p class="font-body text-sm text-gris-principal leading-relaxed">Identificamos fortalezas, necesidades y dificultades mediante entrevistas, observación clínica y pruebas estandarizadas.</p>
-                </div>
-            </div>
-
-            <div class="flex gap-4 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-oro-rosa/20 text-oro-rosa font-headline font-bold flex items-center justify-center shrink-0">2</div>
-                <div>
-                    <h3 class="font-headline font-bold text-lg text-on-surface">2. Intervenimos</h3>
-                    <p class="font-body text-sm text-gris-principal leading-relaxed">Diseñamos estrategias y objetivos adaptados a cada caso para trabajar de forma organizada y enfocada en el bienestar.</p>
-                </div>
-            </div>
-
-            <div class="flex gap-4 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-oro-rosa/20 text-oro-rosa font-headline font-bold flex items-center justify-center shrink-0">3</div>
-                <div>
-                    <h3 class="font-headline font-bold text-lg text-on-surface">3. Acompañamos y Medimos Avances</h3>
-                    <p class="font-body text-sm text-gris-principal leading-relaxed">Realizamos seguimiento constante para identificar progresos, reajustar metas y orientar a la familia.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="relative w-full h-[450px] rounded-3xl overflow-hidden shadow-lg border border-gris-claro" data-aos="flip-left" data-aos-duration="1000">
-        <img alt="Evaluación e intervención clínica en Áurea Centro Integral Vital" class="w-full h-full object-cover" src="https://placehold.co/800x600/D9D9D9/666769?text=Imagen"/>
-    </div>
-
-</div>
-</section>
-
-<!-- NUESTRO EQUIPO PROFESIONAL (COMPLETO: 6 MIEMBROS) -->
+<!-- NUESTRO EQUIPO PROFESIONAL (FOTOS MÁS GRANDES, TEXTO MÁS GRANDE Y 2 TARJETAS CENTRADAS) -->
 <section class="py-20 px-6 md:px-12 bg-background border-t border-gris-claro/50" id="equipo">
 <div class="max-w-[1280px] mx-auto space-y-12">
     
     <div class="text-center max-w-2xl mx-auto space-y-3" data-aos="fade-up">
-        <span class="font-headline text-xs font-bold uppercase tracking-widest text-oro-rosa">Atención Multidisciplinaria</span>
-        <h2 class="font-headline text-3xl sm:text-5xl font-extrabold text-on-surface">Conoce a Nuestro Equipo</h2>
-        <p class="font-body text-base text-gris-principal">El trabajo interdisciplinario nos permite brindar una atención más completa, cercana y profesional.</p>
+        <span class="font-headline text-xs font-semibold uppercase tracking-widest text-oro-rosa">Atención Multidisciplinaria</span>
+        <h2 class="font-headline text-3xl sm:text-4xl font-bold text-on-surface tracking-tight">Conoce a Nuestro Equipo</h2>
+        <p class="font-body text-base text-gris-principal font-normal">El trabajo interdisciplinario nos permite brindar una atención más completa, cercana y profesional.</p>
     </div>
 
-    <!-- Grid de Psicólogos -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Contenedor Flex Wrap para que las últimas 2 tarjetas queden perfectamente centradas abajo -->
+    <div class="flex flex-wrap justify-center gap-8 items-stretch">
         
-        <!-- Claudia Espinoza -->
-        <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col items-center text-center space-y-4 soft-shadow" data-aos="fade-up" data-aos-delay="100">
-            <img src="https://placehold.co/200x200/DB8780/FFFFFF?text=Imagen" alt="Lic. Claudia Espinoza" class="w-28 h-28 rounded-full object-cover border-2 border-oro-rosa/30" />
-            <div>
-                <h3 class="font-headline font-bold text-xl text-on-surface">Claudia Espinoza</h3>
-                <span class="font-headline text-xs font-bold text-oro-rosa">Lic. Psicología - Directora</span>
+        <!-- 1. Claudia Espinoza -->
+        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-oro-rosa/10 rounded-3xl border border-oro-rosa/20 p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+            <div class="space-y-5">
+                <div class="flex items-start gap-4">
+                    <!-- Foto más grande (144px x 176px) -->
+                    <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-oro-rosa/40 shadow-md shrink-0">
+                        <img src="img/claudia.webp" alt="Lic. Claudia Espinoza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div class="space-y-1 text-left">
+                        <span class="inline-block bg-oro-rosa text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">Directora</span>
+                        <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">Claudia Espinoza</h3>
+                        <p class="font-headline text-xs sm:text-sm font-semibold text-oro-rosa">Lic. en Psicología</p>
+                    </div>
+                </div>
+
+                <!-- Texto más legible (text-sm) -->
+                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
+                    Directora del Centro de Terapias ÁUREA. Cuenta con amplia experiencia en supervisión clínica directa en cada proceso terapéutico, garantizando un servicio altamente especializado.
+                </p>
+
+                <!-- Badges más legibles (text-xs) -->
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Supervisión Clínica</span>
+                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Acompañamiento Integral</span>
+                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Enfoque Humano</span>
+                </div>
             </div>
-            <p class="font-body text-xs text-gris-principal leading-relaxed">
-                Directora de Áurea Centro Integral Vital. Comprometida con el bienestar emocional, acompañamiento personalizado y amplia experiencia clínica.
-            </p>
+
+            <div class="pt-5 mt-5 border-t border-oro-rosa/20">
+                <p class="font-body text-xs italic text-oro-rosa text-center font-normal">
+                    "Experiencia, vocación y compromiso en cada proceso terapéutico."
+                </p>
+            </div>
         </div>
 
-        <!-- Elizabeth Manchego -->
-        <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col items-center text-center space-y-4 soft-shadow" data-aos="fade-up" data-aos-delay="200">
-            <img src="https://placehold.co/200x200/DB8780/FFFFFF?text=Imagen" alt="Lic. Mg. Elizabeth Manchego" class="w-28 h-28 rounded-full object-cover border-2 border-oro-rosa/30" />
-            <div>
-                <h3 class="font-headline font-bold text-xl text-on-surface">Elizabeth Manchego</h3>
-                <span class="font-headline text-xs font-bold text-oro-rosa">Lic. Mg. Psicología y Educación</span>
+        <!-- 2. Andrea G. Vives Solano -->
+        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-[#F9EFEA] rounded-3xl border border-oro-rosa/20 p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+            <div class="space-y-5">
+                <div class="flex items-start gap-4">
+                    <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-oro-rosa/40 shadow-md shrink-0">
+                        <img src="img/andrea.webp" alt="Lic. Andrea G. Vives Solano" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div class="space-y-1 text-left">
+                        <span class="inline-block bg-oro-rosa text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">Especialista Clínica</span>
+                        <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">Andrea G. Vives Solano</h3>
+                        <p class="font-headline text-xs sm:text-sm font-semibold text-oro-rosa">Lic. en Psicología</p>
+                    </div>
+                </div>
+
+                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
+                    Psicóloga con experiencia en las áreas educativa y clínica para niños, adolescentes, adultos y familias. Formación en Terapia Familiar Sistémica.
+                </p>
+
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Terapia Familiar Sistémica</span>
+                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Ansiedad y Estrés</span>
+                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Regulación Emocional</span>
+                </div>
             </div>
-            <p class="font-body text-xs text-gris-principal leading-relaxed">
-                Más de 20 años de experiencia en docencia y amplia trayectoria en intervención terapéutica infantil.
-            </p>
+
+            <div class="pt-5 mt-5 border-t border-oro-rosa/20">
+                <p class="font-body text-xs italic text-oro-rosa text-center font-normal">
+                    "Acompañar con empatía es construir espacios seguros para crecer."
+                </p>
+            </div>
         </div>
 
-        <!-- Paul Llontop -->
-        <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col items-center text-center space-y-4 soft-shadow" data-aos="fade-up" data-aos-delay="300">
-            <img src="https://placehold.co/200x200/DB8780/FFFFFF?text=Imagen" alt="Lic. Paul Llontop" class="w-28 h-28 rounded-full object-cover border-2 border-oro-rosa/30" />
-            <div>
-                <h3 class="font-headline font-bold text-xl text-on-surface">Paul Llontop</h3>
-                <span class="font-headline text-xs font-bold text-oro-rosa">Lic. Psicología Clínica (No Vidente)</span>
+        <!-- 3. Dhapne Astete -->
+        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-verde-jade/10 rounded-3xl border border-verde-jade/20 p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
+            <div class="space-y-5">
+                <div class="flex items-start gap-4">
+                    <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-verde-jade/40 shadow-md shrink-0">
+                        <img src="img/dhapne.webp" alt="Bach. Dhapne Astete" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div class="space-y-1 text-left">
+                        <span class="inline-block bg-verde-jade text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">Intervención Conductual</span>
+                        <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">Dhapne Astete</h3>
+                        <p class="font-headline text-xs sm:text-sm font-semibold text-verde-jade">Bach. de Psicología</p>
+                    </div>
+                </div>
+
+                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
+                    Especialista en Intervención Conductual, ABA y TCC. Cree en el poder del juego, la conexión y la confianza para acompañar el desarrollo infantil de forma cercana.
+                </p>
+
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">ABA & TCC</span>
+                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">Enfoque Lúdico</span>
+                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">Presencial y Virtual</span>
+                </div>
             </div>
-            <p class="font-body text-xs text-gris-principal leading-relaxed">
-                Atención presencial y virtual inclusiva. Especializado en intervención en abuso sexual infantil y orientación familiar.
-            </p>
+
+            <div class="pt-5 mt-5 border-t border-verde-jade/20">
+                <p class="font-body text-xs italic text-verde-jade text-center font-normal">
+                    "Cada pequeño avance es un gran paso hacia el desarrollo."
+                </p>
+            </div>
         </div>
 
-        <!-- Gianella Córdova -->
-        <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col items-center text-center space-y-4 soft-shadow" data-aos="fade-up" data-aos-delay="100">
-            <img src="https://placehold.co/200x200/DB8780/FFFFFF?text=Imagen" alt="Lic. Gianella Córdova" class="w-28 h-28 rounded-full object-cover border-2 border-oro-rosa/30" />
-            <div>
-                <h3 class="font-headline font-bold text-xl text-on-surface">Gianella Córdova</h3>
-                <span class="font-headline text-xs font-bold text-oro-rosa">Lic. Psicología</span>
+        <!-- 4. Paul Llontop (Centrado en la 2da fila) -->
+        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-[#E8F3EE] rounded-3xl border border-verde-jade/20 p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+            <div class="space-y-5">
+                <div class="flex items-start gap-4">
+                    <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-verde-jade/40 shadow-md shrink-0">
+                        <img src="img/paul.webp" alt="Lic. Paul Llontop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div class="space-y-1 text-left">
+                        <span class="inline-block bg-verde-jade text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">Especialista Clínico</span>
+                        <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">Paul Llontop</h3>
+                        <p class="font-headline text-xs sm:text-sm font-semibold text-verde-jade">Lic. en Psicología Clínica</p>
+                    </div>
+                </div>
+
+                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
+                    Experiencia clínica en niños, adolescentes y adultos. Especializado en abuso sexual infantil. Persona con discapacidad visual (CONADIS) de gran sensibilidad y resiliencia.
+                </p>
+
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">Abuso Sexual Infantil</span>
+                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">Orientación Docente</span>
+                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">Acreditado CONADIS</span>
+                </div>
             </div>
-            <p class="font-body text-xs text-gris-principal leading-relaxed">
-                Capacitada en intervención conductual, estrategias de comunicación en niños con TEA y técnicas ABA.
-            </p>
+
+            <div class="pt-5 mt-5 border-t border-verde-jade/20">
+                <p class="font-body text-xs italic text-verde-jade text-center font-normal">
+                    "Acompañar con empatía es construir espacios seguros para crecer."
+                </p>
+            </div>
         </div>
 
-        <!-- Dhapne Astete -->
-        <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col items-center text-center space-y-4 soft-shadow" data-aos="fade-up" data-aos-delay="200">
-            <img src="https://placehold.co/200x200/DB8780/FFFFFF?text=Imagen" alt="Bach. Dhapne Astete" class="w-28 h-28 rounded-full object-cover border-2 border-oro-rosa/30" />
-            <div>
-                <h3 class="font-headline font-bold text-xl text-on-surface">Dhapne Astete</h3>
-                <span class="font-headline text-xs font-bold text-oro-rosa">Bach. de Psicología</span>
-            </div>
-            <p class="font-body text-xs text-gris-principal leading-relaxed">
-                Especialista en Intervención Conductual, ABA y TCC. Acompaña el desarrollo emocional a través del juego.
-            </p>
-        </div>
+        <!-- 5. Chiara Ciccia (Centrado en la 2da fila) -->
+        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-azul-pizarra/10 rounded-3xl border border-azul-pizarra/20 p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+            <div class="space-y-5">
+                <div class="flex items-start gap-4">
+                    <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-azul-pizarra/40 shadow-md shrink-0">
+                        <img src="img/chiara.webp" alt="Chiara Ciccia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    </div>
+                    <div class="space-y-1 text-left">
+                        <span class="inline-block bg-azul-pizarra text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">Clínica Infantil</span>
+                        <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">Chiara Ciccia</h3>
+                        <p class="font-headline text-xs sm:text-sm font-semibold text-azul-pizarra">Practicante de Psicología</p>
+                    </div>
+                </div>
 
-        <!-- Andrea G. Vives Solano -->
-        <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col items-center text-center space-y-4 soft-shadow" data-aos="fade-up" data-aos-delay="300">
-            <img src="https://placehold.co/200x200/DB8780/FFFFFF?text=Imagen" alt="Lic. Andrea G. Vives Solano" class="w-28 h-28 rounded-full object-cover border-2 border-oro-rosa/30" />
-            <div>
-                <h3 class="font-headline font-bold text-xl text-on-surface">Andrea G. Vives Solano</h3>
-                <span class="font-headline text-xs font-bold text-oro-rosa">Lic. Psicología</span>
+                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
+                    Estudiante del 11.° ciclo de la U. de Lima (Tercio Superior). Formación en Psicoterapia Humanista, trastornos del neurodesarrollo y voluntaria bombera activa.
+                </p>
+
+                <div class="flex flex-wrap gap-1.5 pt-1">
+                    <span class="bg-white/80 text-gris-principal border border-azul-pizarra/20 px-3 py-1 rounded-lg text-xs font-body">Psicoterapia Humanista</span>
+                    <span class="bg-white/80 text-gris-principal border border-azul-pizarra/20 px-3 py-1 rounded-lg text-xs font-body">Neurodesarrollo</span>
+                    <span class="bg-white/80 text-gris-principal border border-azul-pizarra/20 px-3 py-1 rounded-lg text-xs font-body">Trilingüe</span>
+                </div>
             </div>
-            <p class="font-body text-xs text-gris-principal leading-relaxed">
-                Formación en Terapia Familiar Sistémica. Experiencia en evaluación e intervención clínica infanto-juvenil y adultos.
-            </p>
+
+            <div class="pt-5 mt-5 border-t border-azul-pizarra/20">
+                <p class="font-body text-xs italic text-azul-pizarra text-center font-normal">
+                    "Regulación emocional, trabajo en equipo y toma de decisiones."
+                </p>
+            </div>
         </div>
 
     </div>
@@ -594,10 +941,10 @@
 
 <!-- FOOTER -->
 <footer class="w-full bg-[#222222] text-white/80 font-body text-xs py-16 px-6 md:px-12">
-<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
     
     <!-- Columna Logo y Descripción -->
-    <div class="md:col-span-2 space-y-4">
+    <div class="lg:col-span-2 space-y-4">
         <a class="inline-block py-1 group" href="#inicio">
             <img src="img/logo-removebg-preview.png" alt="Logo Áurea Vital" class="h-16 md:h-20 w-auto object-contain brightness-0 invert transition-transform group-hover:scale-105" />
         </a>
@@ -612,26 +959,41 @@
     <!-- Columna Contacto -->
     <div class="space-y-3">
         <h4 class="font-headline font-bold text-sm text-dorado uppercase tracking-wider">Contacto</h4>
-        <ul class="space-y-2 text-white/70">
+        <ul class="space-y-2.5 text-white/70">
             <li>
                 <a class="hover:text-oro-rosa transition-colors flex items-center gap-2" href="https://wa.me/51922761436" target="_blank">
-                    <span class="material-symbols-outlined text-base">call</span>
+                    <span class="material-symbols-outlined text-base text-oro-rosa">call</span>
                     <span>WhatsApp General: 922 761 436</span>
                 </a>
             </li>
             <li>
                 <a class="hover:text-oro-rosa transition-colors flex items-center gap-2" href="https://wa.me/51907805210" target="_blank">
-                    <span class="material-symbols-outlined text-base">call</span>
+                    <span class="material-symbols-outlined text-base text-oro-rosa">call</span>
                     <span>WhatsApp Club Lima: 907 805 210</span>
                 </a>
             </li>
             <li>
                 <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-base shrink-0">mail</span>
+                    <span class="material-symbols-outlined text-base text-oro-rosa shrink-0">mail</span>
                     <span>admision.calma@gmail.com</span>
                 </div>
             </li>
         </ul>
+    </div>
+
+    <!-- NUEVA COLUMNA: Horario de Atención -->
+    <div class="space-y-3">
+        <h4 class="font-headline font-bold text-sm text-dorado uppercase tracking-wider">Horario de Atención</h4>
+        <div class="space-y-2 text-white/70 text-xs leading-relaxed">
+            <div class="flex items-start gap-2">
+                <span class="material-symbols-outlined text-base text-oro-rosa shrink-0 pt-0.5">schedule</span>
+                <div class="space-y-1">
+                    <p><strong class="text-white/90">Lunes a Viernes:</strong><br>07:00 a.m. – 07:00 a.m. (24 hrs / Previa Cita)</p>
+                    <p><strong class="text-white/90">Sábado:</strong><br>01:00 a.m. – 01:00 a.m.</p>
+                    <p><strong class="text-white/90">Domingo:</strong><br><span class="text-oro-rosa">Cerrado</span></p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Columna Redes Sociales -->
