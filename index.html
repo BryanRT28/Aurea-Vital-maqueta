@@ -1153,94 +1153,23 @@
         }
     }
 
-    // Control de eventos de rueda (Zoom al punto del mouse) y arrastre (Pan)
-    document.addEventListener('DOMContentLoaded', () => {
-        const modal = document.getElementById('image-modal');
-        const modalImg = document.getElementById('modal-img');
+// Variables para gestos táctiles (Touch/Móvil)
+let initialTouchDistance = 0;
+let initialZoom = 1;
 
-        if (modal && modalImg) {
-            // Zoom dirigido al cursor con el Scroll
-            modal.addEventListener('wheel', (e) => {
-                e.preventDefault();
-                
-                const rect = modalImg.getBoundingClientRect();
-                const mouseX = e.clientX - rect.left;
-                const mouseY = e.clientY - rect.top;
-
-                let prevZoom = zoomLevel;
-
-                if (e.deltaY < 0) {
-                    // Scroll Arriba: Zoom In dirigiéndose al punto del puntero
-                    zoomLevel = Math.min(zoomLevel * 1.25, maxZoom);
-                } else {
-                    // Scroll Abajo: Zoom Out
-                    zoomLevel = Math.max(zoomLevel / 1.25, minZoom);
-                }
-
-                if (zoomLevel === minZoom) {
-                    translateX = 0;
-                    translateY = 0;
-                } else {
-                    // Ajuste dinámico de traslación para centrar la coordenada del ratón
-                    const factor = (zoomLevel / prevZoom) - 1;
-                    translateX -= (mouseX - rect.width / 2) * factor;
-                    translateY -= (mouseY - rect.height / 2) * factor;
-                }
-
-                updateTransform();
-            }, { passive: false });
-
-            // Arrastrar (Drag & Pan) al mantener presionado el mouse cuando hay zoom
-            modalImg.addEventListener('mousedown', (e) => {
-                if (zoomLevel > 1) {
-                    isDragging = true;
-                    startX = e.clientX - translateX;
-                    startY = e.clientY - translateY;
-                    modalImg.style.cursor = 'grabbing';
-                }
-            });
-
-            window.addEventListener('mousemove', (e) => {
-                if (isDragging && zoomLevel > 1) {
-                    e.preventDefault();
-                    translateX = e.clientX - startX;
-                    translateY = e.clientY - startY;
-                    updateTransform();
-                }
-            });
-
-            window.addEventListener('mouseup', () => {
-                if (isDragging) {
-                    isDragging = false;
-                    modalImg.style.cursor = zoomLevel > 1 ? 'grab' : 'zoom-in';
-                }
-            });
-        }
-    });
-
-    // Cerrar con Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeModal();
-        }
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('image-modal');
     const modalImg = document.getElementById('modal-img');
 
     if (modal && modalImg) {
-        // Desactivar arrastre nativo del navegador
         modalImg.addEventListener('dragstart', (e) => e.preventDefault());
 
-        // Zoom dirigido al cursor con la rueda del mouse
+        // --- MOUSE / ESCRITORIO ---
         modal.addEventListener('wheel', (e) => {
             e.preventDefault();
-            
             const rect = modalImg.getBoundingClientRect();
             const mouseX = e.clientX - rect.left;
             const mouseY = e.clientY - rect.top;
-
             let prevZoom = zoomLevel;
 
             if (e.deltaY < 0) {
@@ -1257,13 +1186,11 @@
                 translateX -= (mouseX - rect.width / 2) * factor;
                 translateY -= (mouseY - rect.height / 2) * factor;
             }
-
             updateTransform();
         }, { passive: false });
 
-        // Arrastrar personalizado (Pan) al presionar y mover
         modalImg.addEventListener('mousedown', (e) => {
-            e.preventDefault(); // Previene la selección de texto o arrastre de la imagen
+            e.preventDefault();
             if (zoomLevel > 1) {
                 isDragging = true;
                 startX = e.clientX - translateX;
@@ -1285,6 +1212,59 @@
             if (isDragging) {
                 isDragging = false;
                 modalImg.style.cursor = zoomLevel > 1 ? 'grab' : 'zoom-in';
+            }
+        });
+
+        // --- MÓVIL / TÁCTIL (TOUCH EVENTS) ---
+        modalImg.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 1) {
+                // Arrastre con 1 dedo
+                if (zoomLevel > 1) {
+                    isDragging = true;
+                    startX = e.touches[0].clientX - translateX;
+                    startY = e.touches[0].clientY - translateY;
+                }
+            } else if (e.touches.length === 2) {
+                // Pinza con 2 dedos (Pinch to zoom)
+                isDragging = false;
+                initialTouchDistance = Math.hypot(
+                    e.touches[0].clientX - e.touches[1].clientX,
+                    e.touches[0].clientY - e.touches[1].clientY
+                );
+                initialZoom = zoomLevel;
+            }
+        }, { passive: false });
+
+        modalImg.addEventListener('touchmove', (e) => {
+            if (e.touches.length === 1 && isDragging && zoomLevel > 1) {
+                e.preventDefault(); // Evita scroll nativo
+                translateX = e.touches[0].clientX - startX;
+                translateY = e.touches[0].clientY - startY;
+                updateTransform();
+            } else if (e.touches.length === 2) {
+                e.preventDefault(); // Evita zoom de la página completa
+                const currentDistance = Math.hypot(
+                    e.touches[0].clientX - e.touches[1].clientX,
+                    e.touches[0].clientY - e.touches[1].clientY
+                );
+                if (initialTouchDistance > 0) {
+                    const scaleChange = currentDistance / initialTouchDistance;
+                    zoomLevel = Math.min(Math.max(initialZoom * scaleChange, minZoom), maxZoom);
+                    if (zoomLevel === minZoom) {
+                        translateX = 0;
+                        translateY = 0;
+                    }
+                    updateTransform();
+                }
+            }
+        }, { passive: false });
+
+        modalImg.addEventListener('touchend', (e) => {
+            if (e.touches.length < 2) {
+                initialTouchDistance = 0;
+            }
+            if (e.touches.length === 0) {
+                isDragging = false;
             }
         });
     }
