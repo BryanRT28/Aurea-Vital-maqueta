@@ -104,7 +104,7 @@
         <nav class="hidden md:flex items-center gap-5 lg:gap-7 font-headline text-xs font-bold uppercase tracking-wider text-gris-principal ml-12 lg:ml-16">
             <a class="hover:text-oro-rosa transition-colors py-1" href="#inicio">Inicio</a>
             <a class="hover:text-oro-rosa transition-colors py-1" href="#servicios">Especialidades</a>
-            <a class="hover:text-oro-rosa transition-colors py-1" href="#paquetes">Tarifas y Packs</a>
+            <a class="hover:text-oro-rosa transition-colors py-1" href="#paquetes">Tarifas y Bloques Terapéuticos</a>
             <a class="hover:text-oro-rosa transition-colors py-1" href="#equipo">Nuestro Equipo</a>
             <a class="hover:text-oro-rosa transition-colors py-1" href="#contacto">Contacto</a>
         </nav>
@@ -410,96 +410,63 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
             <!-- Promo 1: Reinicio Emocional -->
-            <div class="bg-surface p-6 rounded-3xl border border-oro-rosa/60 shadow-md flex flex-col justify-between relative group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="100">
-                <span class="absolute -top-3 right-6 bg-oro-rosa text-white px-3 py-0.5 rounded-full font-headline text-xs font-medium uppercase tracking-wider">Destacado</span>
-                <div class="space-y-3.5">
-                    <span class="inline-block bg-oro-rosa/15 text-oro-rosa px-3 py-1 rounded-full font-headline text-xs font-medium uppercase tracking-wider">Pack Sanación</span>
-                    <h4 class="font-headline text-xl font-bold text-on-surface">Reinicio Emocional</h4>
-                    <p class="font-body text-sm text-gris-principal italic font-normal">"3 sesiones para volver a ti, sanar, soltar y empezar de nuevo."</p>
-                    
-                    <ul class="space-y-1.5 font-body text-xs sm:text-sm text-gris-principal pt-2 border-t border-gris-claro/60 font-normal">
-                        <li>• Manejo de agotamiento emocional</li>
-                        <li>• Cierre de rupturas y pérdidas</li>
-                        <li>• Reconexión con el amor propio</li>
-                    </ul>
-
-                    <div class="pt-2">
-                        <span class="font-headline text-3xl font-bold text-oro-rosa">S/ 120</span>
-                        <span class="font-body text-sm text-gris-principal font-normal"> / 3 sesiones</span>
+            <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="100">
+                <div class="relative overflow-hidden aspect-[3/4] bg-background cursor-pointer" onclick="openModal('img/reinicio.webp')">
+                    <img src="img/reinicio.webp" alt="Pack Reinicio Emocional" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined text-3xl">zoom_in</span>
                     </div>
                 </div>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20reservar%20el%20*Pack%20Reinicio%20Emocional%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Reservar Pack
-                </a>
+                <div class="p-5 bg-surface border-t border-gris-claro/50">
+                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20reservar%20el%20*Pack%20Reinicio%20Emocional%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
+                        Reservar Pack
+                    </a>
+                </div>
             </div>
 
             <!-- Promo 2: Pacientes Oncológicos -->
-            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="200">
-                <div class="space-y-3.5">
-                    <span class="inline-block bg-verde-jade/10 text-verde-jade px-3 py-1 rounded-full font-headline text-xs font-medium uppercase tracking-wider">Acompañamiento Clínico</span>
-                    <h4 class="font-headline text-xl font-bold text-on-surface">Pacientes Oncológicos</h4>
-                    <p class="font-body text-sm text-gris-principal italic font-normal">"Espacio seguro para expresar lo que sientes y fortalecer tu calma."</p>
-                    
-                    <ul class="space-y-1.5 font-body text-xs sm:text-sm text-gris-principal pt-2 border-t border-gris-claro/60 font-normal">
-                        <li>• Manejo de la ansiedad y el miedo</li>
-                        <li>• Fortalecimiento del bienestar emocional</li>
-                        <li>• Recursos prácticos para el día a día</li>
-                    </ul>
-
-                    <div class="pt-2">
-                        <span class="font-headline text-3xl font-bold text-verde-jade">S/ 120</span>
-                        <span class="font-body text-sm text-gris-principal font-normal"> / 3 sesiones</span>
+            <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="200">
+                <div class="relative overflow-hidden aspect-[3/4] bg-background cursor-pointer" onclick="openModal('img/oncologicos.webp')">
+                    <img src="img/oncologicos.webp" alt="Terapia para Pacientes Oncológicos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined text-3xl">zoom_in</span>
                     </div>
                 </div>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20de%20la%20*Terapia%20para%20Pacientes%20Oncol%C3%B3gicos%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Solicitar Terapia
-                </a>
+                <div class="p-5 bg-surface border-t border-gris-claro/50">
+                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20de%20la%20*Terapia%20para%20Pacientes%20Oncol%C3%B3gicos%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
+                        Solicitar Terapia
+                    </a>
+                </div>
             </div>
 
             <!-- Promo 3: Procesos de Divorcio -->
-            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="300">
-                <div class="space-y-3.5">
-                    <span class="inline-block bg-oro-rosa/10 text-oro-rosa px-3 py-1 rounded-full font-headline text-xs font-medium uppercase tracking-wider">Transición de Vida</span>
-                    <h4 class="font-headline text-xl font-bold text-on-surface">Procesos de Divorcio</h4>
-                    <p class="font-body text-sm text-gris-principal italic font-normal">"Enfrentar el cambio, sanar y construir un nuevo comienzo."</p>
-                    
-                    <ul class="space-y-1.5 font-body text-xs sm:text-sm text-gris-principal pt-2 border-t border-gris-claro/60 font-normal">
-                        <li>• Manejo de tristeza, enojo y ansiedad</li>
-                        <li>• Fortalecimiento de la autoestima</li>
-                        <li>• Claridad para la toma de decisiones</li>
-                    </ul>
-
-                    <div class="pt-2">
-                        <span class="font-headline text-3xl font-bold text-oro-rosa">S/ 120</span>
-                        <span class="font-body text-sm text-gris-principal font-normal"> / 3 sesiones</span>
+            <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="300">
+                <div class="relative overflow-hidden aspect-[3/4] bg-background cursor-pointer" onclick="openModal('img/divorcios.webp')">
+                    <img src="img/divorcios.webp" alt="Terapia en Procesos de Divorcio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined text-3xl">zoom_in</span>
                     </div>
                 </div>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20de%20la%20*Terapia%20en%20Procesos%20de%20Divorcio%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Solicitar Terapia
-                </a>
+                <div class="p-5 bg-surface border-t border-gris-claro/50">
+                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20de%20la%20*Terapia%20en%20Procesos%20de%20Divorcio%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
+                        Solicitar Terapia
+                    </a>
+                </div>
             </div>
 
             <!-- Promo 4: Terapia de Duelo -->
-            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="400">
-                <div class="space-y-3.5">
-                    <span class="inline-block bg-azul-pizarra/10 text-azul-pizarra px-3 py-1 rounded-full font-headline text-xs font-medium uppercase tracking-wider">Proceso de Duelo</span>
-                    <h4 class="font-headline text-xl font-bold text-on-surface">Terapia de Duelo</h4>
-                    <p class="font-body text-sm text-gris-principal italic font-normal">"Transitar tu pérdida con amor, respeto y comprensión."</p>
-                    
-                    <ul class="space-y-1.5 font-body text-xs sm:text-sm text-gris-principal pt-2 border-t border-gris-claro/60 font-normal">
-                        <li>• Validación de emociones y desahogo</li>
-                        <li>• Comprensión del proceso de duelo</li>
-                        <li>• Reconstrucción de vida con sentido</li>
-                    </ul>
-
-                    <div class="pt-2">
-                        <span class="font-headline text-3xl font-bold text-azul-pizarra">S/ 120</span>
-                        <span class="font-body text-sm text-gris-principal font-normal"> / 3 sesiones</span>
+            <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="400">
+                <div class="relative overflow-hidden aspect-[3/4] bg-background cursor-pointer" onclick="openModal('img/duelo.webp')">
+                    <img src="img/duelo.webp" alt="Terapia de Duelo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined text-3xl">zoom_in</span>
                     </div>
                 </div>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20de%20la%20*Terapia%20de%20Duelo%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Solicitar Terapia
-                </a>
+                <div class="p-5 bg-surface border-t border-gris-claro/50">
+                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20de%20la%20*Terapia%20de%20Duelo%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="block text-center py-3 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
+                        Solicitar Terapia
+                    </a>
+                </div>
             </div>
 
         </div>
@@ -508,7 +475,7 @@
     <!-- 3. CONSULTAS INDIVIDUALES & PAQUETES STAFF AUREA -->
     <div class="space-y-6 pt-4">
         <div class="border-b border-gris-claro pb-3" data-aos="fade-up">
-            <h3 class="font-headline text-2xl font-bold text-on-surface">Consultas y Packs Terapéuticos</h3>
+            <h3 class="font-headline text-2xl font-bold text-on-surface">Consultas y Bloques Terapéuticos</h3>
             <p class="font-body text-sm text-gris-principal font-normal">Seguimiento continuo adaptado a tus metas de desarrollo y salud mental.</p>
         </div>
 
@@ -530,51 +497,51 @@
                 </a>
             </div>
 
-            <!-- Pack 6 Sesiones -->
+            <!-- Bloque 6 Sesiones -->
             <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
                 <div class="space-y-3.5">
-                    <span class="inline-block bg-verde-jade/10 text-verde-jade px-3 py-1 rounded-full font-headline text-xs font-semibold">Pack Continuidad</span>
-                    <h4 class="font-headline text-xl font-bold text-on-surface">Pack 6 Sesiones</h4>
+                    <span class="inline-block bg-verde-jade/10 text-verde-jade px-3 py-1 rounded-full font-headline text-xs font-semibold">Bloque Continuidad</span>
+                    <h4 class="font-headline text-xl font-bold text-on-surface">Bloque Terapéutico de 6 Sesiones</h4>
                     <p class="font-body text-sm text-gris-principal font-normal">Acompañamiento enfocado para niños, adolescentes o adultos.</p>
                     <div class="pt-2">
                         <span class="font-headline text-3xl font-bold text-verde-jade">S/ 360</span>
                         <span class="font-body text-sm text-gris-principal font-normal"> (S/ 60 x sesión)</span>
                     </div>
                 </div>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Pack%20de%206%20Sesiones%20(S/%20360)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Solicitar Pack 6
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Bloque%20Terapéutico%20de%206%20Sesiones%20(S/%20360)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Solicitar Bloque Terapéutico
                 </a>
             </div>
 
-            <!-- Pack 8 Sesiones -->
+            <!-- Bloque 8 Sesiones -->
             <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
                 <div class="space-y-3.5">
-                    <span class="inline-block bg-oro-rosa/15 text-oro-rosa px-3 py-1 rounded-full font-headline text-xs font-semibold">Pack Recomendado</span>
-                    <h4 class="font-headline text-xl font-bold text-on-surface">Pack 8 Sesiones</h4>
+                    <span class="inline-block bg-oro-rosa/15 text-oro-rosa px-3 py-1 rounded-full font-headline text-xs font-semibold">Bloque Recomendado</span>
+                    <h4 class="font-headline text-xl font-bold text-on-surface">Bloque Terapéutico de 8 Sesiones</h4>
                     <p class="font-body text-sm text-gris-principal font-normal">Acompañamiento completo de mediano plazo.</p>
                     <div class="pt-2">
                         <span class="font-headline text-3xl font-bold text-oro-rosa">S/ 420</span>
                         <span class="font-body text-sm text-gris-principal font-normal"> (S/ 52.50 x sesión)</span>
                     </div>
                 </div>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Pack%20de%208%20Sesiones%20(S/%20420)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Solicitar Pack 8
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Bloque%20Terapéutico%20de%208%20Sesiones%20(S/%20420)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Solicitar Bloque Terapéutico
                 </a>
             </div>
 
-            <!-- Pack 12 Sesiones -->
+            <!-- Bloque 12 Sesiones -->
             <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="400">
                 <div class="space-y-3.5">
                     <span class="inline-block bg-azul-pizarra/10 text-azul-pizarra px-3 py-1 rounded-full font-headline text-xs font-semibold">Máximo Ahorro</span>
-                    <h4 class="font-headline text-xl font-bold text-on-surface">Pack 12 Sesiones</h4>
+                    <h4 class="font-headline text-xl font-bold text-on-surface">Bloque Terapéutico de 12 Sesiones</h4>
                     <p class="font-body text-sm text-gris-principal font-normal">Ideal para procesos intensivos de neurodesarrollo o terapia integral.</p>
                     <div class="pt-2">
                         <span class="font-headline text-3xl font-bold text-azul-pizarra">S/ 600</span>
                         <span class="font-body text-sm text-gris-principal font-normal"> (S/ 50 x sesión)</span>
                     </div>
                 </div>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Pack%20de%2012%20Sesiones%20(S/%20600)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Solicitar Pack 12
+                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Bloque%20Terapéutico%20de%2012%20Sesiones%20(S/%20600)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                    Solicitar Bloque Terapéutico
                 </a>
             </div>
 
@@ -1125,6 +1092,217 @@
             });
         }
     });
+
+    // Variables de control de Zoom y Desplazamiento (Pan)
+    let zoomLevel = 1;
+    const minZoom = 1;
+    const maxZoom = 4;
+
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+    let translateX = 0;
+    let translateY = 0;
+
+    function openModal(imageSrc) {
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+        if (modal && modalImg) {
+            modalImg.src = imageSrc;
+            resetZoomAndPan();
+            
+            modal.classList.remove('hidden');
+            
+            // Bloquear scroll de la web de fondo
+            document.documentElement.classList.add('overflow-hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('image-modal');
+        if (modal) {
+            modal.classList.add('hidden');
+            document.documentElement.classList.remove('overflow-hidden');
+            document.body.classList.remove('overflow-hidden');
+            resetZoomAndPan();
+        }
+    }
+
+    function resetZoomAndPan() {
+        zoomLevel = 1;
+        translateX = 0;
+        translateY = 0;
+        isDragging = false;
+        const modalImg = document.getElementById('modal-img');
+        if (modalImg) {
+            modalImg.style.transform = `translate(0px, 0px) scale(1)`;
+            modalImg.style.cursor = 'zoom-in';
+        }
+    }
+
+    function updateTransform() {
+        const modalImg = document.getElementById('modal-img');
+        if (modalImg) {
+            modalImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${zoomLevel})`;
+            if (zoomLevel > 1) {
+                modalImg.style.cursor = isDragging ? 'grabbing' : 'grab';
+            } else {
+                modalImg.style.cursor = 'zoom-in';
+            }
+        }
+    }
+
+    // Control de eventos de rueda (Zoom al punto del mouse) y arrastre (Pan)
+    document.addEventListener('DOMContentLoaded', () => {
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+
+        if (modal && modalImg) {
+            // Zoom dirigido al cursor con el Scroll
+            modal.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                
+                const rect = modalImg.getBoundingClientRect();
+                const mouseX = e.clientX - rect.left;
+                const mouseY = e.clientY - rect.top;
+
+                let prevZoom = zoomLevel;
+
+                if (e.deltaY < 0) {
+                    // Scroll Arriba: Zoom In dirigiéndose al punto del puntero
+                    zoomLevel = Math.min(zoomLevel * 1.25, maxZoom);
+                } else {
+                    // Scroll Abajo: Zoom Out
+                    zoomLevel = Math.max(zoomLevel / 1.25, minZoom);
+                }
+
+                if (zoomLevel === minZoom) {
+                    translateX = 0;
+                    translateY = 0;
+                } else {
+                    // Ajuste dinámico de traslación para centrar la coordenada del ratón
+                    const factor = (zoomLevel / prevZoom) - 1;
+                    translateX -= (mouseX - rect.width / 2) * factor;
+                    translateY -= (mouseY - rect.height / 2) * factor;
+                }
+
+                updateTransform();
+            }, { passive: false });
+
+            // Arrastrar (Drag & Pan) al mantener presionado el mouse cuando hay zoom
+            modalImg.addEventListener('mousedown', (e) => {
+                if (zoomLevel > 1) {
+                    isDragging = true;
+                    startX = e.clientX - translateX;
+                    startY = e.clientY - translateY;
+                    modalImg.style.cursor = 'grabbing';
+                }
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (isDragging && zoomLevel > 1) {
+                    e.preventDefault();
+                    translateX = e.clientX - startX;
+                    translateY = e.clientY - startY;
+                    updateTransform();
+                }
+            });
+
+            window.addEventListener('mouseup', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    modalImg.style.cursor = zoomLevel > 1 ? 'grab' : 'zoom-in';
+                }
+            });
+        }
+    });
+
+    // Cerrar con Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('modal-img');
+
+    if (modal && modalImg) {
+        // Desactivar arrastre nativo del navegador
+        modalImg.addEventListener('dragstart', (e) => e.preventDefault());
+
+        // Zoom dirigido al cursor con la rueda del mouse
+        modal.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            
+            const rect = modalImg.getBoundingClientRect();
+            const mouseX = e.clientX - rect.left;
+            const mouseY = e.clientY - rect.top;
+
+            let prevZoom = zoomLevel;
+
+            if (e.deltaY < 0) {
+                zoomLevel = Math.min(zoomLevel * 1.25, maxZoom);
+            } else {
+                zoomLevel = Math.max(zoomLevel / 1.25, minZoom);
+            }
+
+            if (zoomLevel === minZoom) {
+                translateX = 0;
+                translateY = 0;
+            } else {
+                const factor = (zoomLevel / prevZoom) - 1;
+                translateX -= (mouseX - rect.width / 2) * factor;
+                translateY -= (mouseY - rect.height / 2) * factor;
+            }
+
+            updateTransform();
+        }, { passive: false });
+
+        // Arrastrar personalizado (Pan) al presionar y mover
+        modalImg.addEventListener('mousedown', (e) => {
+            e.preventDefault(); // Previene la selección de texto o arrastre de la imagen
+            if (zoomLevel > 1) {
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                modalImg.style.cursor = 'grabbing';
+            }
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (isDragging && zoomLevel > 1) {
+                e.preventDefault();
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                updateTransform();
+            }
+        });
+
+        window.addEventListener('mouseup', () => {
+            if (isDragging) {
+                isDragging = false;
+                modalImg.style.cursor = zoomLevel > 1 ? 'grab' : 'zoom-in';
+            }
+        });
+    }
+});
 </script>
+
+<!-- MODAL LIGHTBOX CON DRAG NATIVO DESACTIVADO -->
+<div id="image-modal" class="fixed inset-0 bg-black/90 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-md select-none overflow-hidden" onclick="closeModal()">
+    <button onclick="closeModal()" class="absolute top-6 right-6 text-white hover:text-oro-rosa text-4xl transition-colors focus:outline-none z-20" aria-label="Cerrar modal">
+        &times;
+    </button>
+    
+    <div class="relative max-w-5xl max-h-[90vh] flex items-center justify-center overflow-hidden select-none" onclick="event.stopPropagation()">
+        <img id="modal-img" src="" alt="Imagen ampliada" 
+             draggable="false" 
+             ondragstart="return false;"
+             class="max-w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl border border-white/10 transition-transform duration-100 ease-out origin-center cursor-zoom-in select-none" />
+    </div>
+</div>
 </body>
 </html>
