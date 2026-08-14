@@ -1315,15 +1315,14 @@
     });
 </script>
 
-<!-- MODAL LIGHTBOX FLUIDO Y OPTIMIZADO PARA MÓVILES -->
-<div id="image-modal" class="fixed inset-0 bg-black/95 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-md select-none overflow-hidden touch-none" onclick="closeModal()">
+<!-- MODAL LIGHTBOX FLUIDO Y OPTIMIZADO -->
+<div id="image-modal" class="fixed inset-0 bg-black/95 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-md select-none overflow-hidden touch-none" onclick="if(event.target.id !== 'modal-img') closeModal()">
     
-    <!-- Botón X con área táctil ampliada y ontouchend para respuesta inmediata en móvil -->
     <button onclick="closeModal(); event.stopPropagation();" ontouchend="closeModal(); event.stopPropagation();" class="absolute top-4 right-4 p-4 text-white hover:text-oro-rosa text-4xl transition-colors focus:outline-none z-[200]" aria-label="Cerrar modal">
         &times;
     </button>
     
-    <div class="relative w-full h-full flex items-center justify-center overflow-hidden touch-none" onclick="event.stopPropagation()">
+    <div class="relative w-full h-full flex items-center justify-center overflow-hidden touch-none">
         <img id="modal-img" src="" alt="Imagen ampliada" 
              draggable="false" 
              ondragstart="return false;"
