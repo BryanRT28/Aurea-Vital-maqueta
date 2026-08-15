@@ -1,1339 +1,680 @@
 <!DOCTYPE html>
-<html class="light scroll-smooth" lang="es">
+<html class="scroll-smooth overflow-x-hidden" lang="es">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ÁUREA Centro Integral Vital | Psicología Clínica y Neurodesarrollo en Chorrillos</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <title>Queen Nail | Salón de Uñas en Los Olivos</title>
 
-<!-- Google Fonts: Montserrat & Source Sans 3 + Material Symbols -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..900;1,300..900&family=Source+Sans+3:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+    <!-- Google Fonts & Material Symbols -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 
-<!-- AOS CSS (Animaciones al Scroll) -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        "colors": {
-            // Paleta Oficial
-            "oro-rosa": "#DB8780",
-            "dorado": "#D4AF87",
-            "gris-principal": "#666769",
-            "gris-claro": "#D9D9D9",
-            "verde-jade": "#3F7D73",
-            "azul-pizarra": "#004E7A",
-            
-            // Estructura Tailwind
-            "primary": "#DB8780",
-            "secondary": "#3F7D73",
-            "tertiary": "#004E7A",
-            "background": "#F7F7F7",
-            "surface": "#FFFFFF",
-            "surface-container": "#D9D9D9",
-            "on-surface": "#2A2A2A",
-            "on-surface-variant": "#666769"
-        },
-        "borderRadius": {
-            "DEFAULT": "0.5rem",
-            "lg": "1rem",
-            "xl": "1.5rem",
-            "full": "9999px"
-        },
-        "fontFamily": {
-            "body": ["Source Sans 3", "sans-serif"],
-            "headline": ["Montserrat", "sans-serif"]
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b10e6b",
+                        "primary-hover": "#8c0053",
+                        "primary-fixed": "#ffd9e4",
+                        "secondary": "#635c61",
+                        "tertiary": "#a2325a",
+                        "background": "#FDF2F8",
+                        "surface": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "on-surface": "#121c2a",
+                        "on-surface-variant": "#574048",
+                        "outline-variant": "#debec8"
+                    },
+                    fontFamily: {
+                        headline: ["Playfair Display", "serif"],
+                        body: ["Manrope", "sans-serif"]
+                    },
+                    boxShadow: {
+                        "soft": "0 24px 48px -12px rgba(131, 24, 67, 0.08)",
+                        "ambient": "0 10px 40px -10px rgba(131, 24, 67, 0.08)"
+                    }
+                }
+            }
         }
-      }
-    }
-  }
-</script>
-<style>
-    html, body {
-        max-width: 100% !important;
-        overflow-x: hidden !important;
-        position: relative;
-        font-family: 'Source Sans 3', sans-serif;
-        background-color: #f8f8f8;
-        color: #2a2a2a;
-    }
-    h1, h2, h3, h4, h5, h6, .font-headline {
-        font-family: 'Montserrat', sans-serif;
-    }
-    .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-    }
-    .fill-icon {
-        font-variation-settings: 'FILL' 1;
-    }
-    .soft-shadow {
-        box-shadow: 0 10px 30px rgba(102, 103, 105, 0.08);
-        transition: box-shadow 0.4s ease, transform 0.4s ease;
-    }
-    .soft-shadow:hover {
-        box-shadow: 0 18px 40px rgba(219, 135, 128, 0.15);
-    }
-    details > summary::-webkit-details-marker {
-        display: none;
-    }
-</style>
-</head>
-<body class="bg-background text-on-surface font-body antialiased selection:bg-oro-rosa selection:text-white pt-[88px]">
+    </script>
 
-<!-- WhatsApp Flotante Directo -->
-<a href="https://wa.me/51922761436?text=Hola%20ÁUREA%20Centro%20Integral%20Vital,%20quisiera%20agendar%20una%20consulta." target="_blank" aria-label="WhatsApp Áurea Vital" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-16 h-16 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center justify-center">
-    <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.183-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.765-5.77zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z"/></svg>
+    <style>
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #FDF2F8;
+            color: #121c2a;
+        }
+        h1, h2, h3, h4, .font-headline {
+            font-family: 'Playfair Display', serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 24px;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 24px;
+        }
+        .shimmer-hover {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-hover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+        }
+        .shimmer-hover:hover::after {
+            animation: shimmer 1.5s infinite;
+        }
+        @keyframes shimmer {
+            100% { left: 200%; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-primary-fixed selection:text-primary overflow-x-hidden">
+
+<!-- Botón Flotante WhatsApp -->
+<a href="https://wa.me/51933778722?text=Hola%20Queen%20Nail,%20deseo%20agendar%20una%20cita." 
+   target="_blank" 
+   aria-label="Contactar por WhatsApp" 
+   class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center justify-center">
+    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.183-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.765-5.77zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z"/>
+    </svg>
 </a>
 
 <!-- TopNavBar -->
-<header class="fixed top-0 left-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-gris-claro shadow-sm h-[88px]">
-    <div class="max-w-[1280px] mx-auto h-full px-6 md:px-12 flex items-center relative">
-        <!-- Logo en Header -->
-        <a class="flex items-center shrink-0 py-2" href="#inicio">
-            <img src="img/logo-removebg-preview.png" alt="Logo Áurea Vital" class="h-20 md:h-20 w-auto object-contain transition-transform group-hover:scale-105" />
+<header class="fixed top-0 left-0 w-full max-w-full z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+    <div class="flex justify-between items-center px-4 sm:px-6 md:px-12 py-3 w-full max-w-7xl mx-auto">
+        <!-- Logo + Nombre -->
+        <a class="flex items-center gap-2.5 shrink min-w-0" href="#inicio">
+            <div class="w-16 h-16 md:w-16 md:h-16 rounded-full overflow-hidden flex items-center justify-center bg-primary-fixed border border-primary/20 shrink-0">
+                <img src="img/logo.jpg" alt="Queen Nail Logo" class="w-full h-full object-cover" />
+            </div>
+            <span class="font-headline font-bold text-lg md:text-2xl text-primary leading-none truncate">Queen Nail</span>
         </a>
 
-        <!-- Menú (Mantiene su posición limpia respecto al logo) -->
-        <nav class="hidden md:flex items-center gap-5 lg:gap-7 font-headline text-xs font-bold uppercase tracking-wider text-gris-principal ml-12 lg:ml-16">
-            <a class="hover:text-oro-rosa transition-colors py-1" href="#inicio">Inicio</a>
-            <a class="hover:text-oro-rosa transition-colors py-1" href="#servicios">Especialidades</a>
-            <a class="hover:text-oro-rosa transition-colors py-1" href="#paquetes">Tarifas y Bloques Terapéuticos</a>
-            <a class="hover:text-oro-rosa transition-colors py-1" href="#equipo">Nuestro Equipo</a>
-            <a class="hover:text-oro-rosa transition-colors py-1" href="#contacto">Contacto</a>
+        <!-- Menú Escritorio -->
+        <nav class="hidden md:flex items-center gap-8 font-body text-sm font-semibold text-on-surface-variant">
+            <a class="hover:text-primary transition-colors" href="#servicios">Servicios</a>
+            <a class="hover:text-primary transition-colors" href="#galeria">Galería</a>
+            <a class="hover:text-primary transition-colors" href="#reserva">Reservas</a>
+            <a class="hover:text-primary transition-colors" href="#ubicacion">Ubicación</a>
         </nav>
 
-        <!-- Botón Acción Escritorio (Solo este elemento se mueve a la derecha con -mr-3) -->
-        <div class="hidden lg:flex items-center gap-4 ml-auto -mr-3">
-            <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20una%20cita%20en%20Áurea%20Centro%20Integral." target="_blank" class="bg-oro-rosa text-white font-headline text-xs uppercase font-bold tracking-widest px-6 py-3 rounded-full hover:bg-oro-rosa/90 transition-all shadow-sm hover:shadow-md">
-                Agenda tu Cita
+        <!-- CTA Escritorio -->
+        <div class="hidden md:flex items-center">
+            <a href="https://wa.me/51933778722?text=Hola%20Queen%20Nail,%20deseo%20agendar%20una%20cita." target="_blank" class="bg-primary text-white font-body text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-full hover:bg-primary-hover transition-all shimmer-hover shadow-md">
+                Agendar Cita
             </a>
         </div>
 
-        <!-- Botón Menú Móvil -->
-        <button id="menu-btn" aria-label="Menú Principal" type="button" class="md:hidden text-gris-principal p-2 focus:outline-none ml-auto">
-            <span class="material-symbols-outlined text-3xl pointer-events-none">menu</span>
+        <!-- Botón Menú Móvil con SVG -->
+        <button id="menu-btn" aria-label="Abrir Menú" class="md:hidden text-primary w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 shrink-0 focus:outline-none ml-2">
+            <svg id="menu-svg" class="w-6 h-6 fill-current text-primary" viewBox="0 0 24 24">
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+            </svg>
         </button>
+    </div>
 
-        <!-- Menú Desplegable Móvil -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-surface shadow-2xl border-b border-gris-claro px-8 py-8 flex-col space-y-4 z-40">
-            <a class="mobile-link font-headline font-bold text-sm uppercase tracking-wider text-oro-rosa" href="#inicio">Inicio</a>
-            <a class="mobile-link font-headline font-bold text-sm uppercase tracking-wider text-oro-rosa" href="#servicios">Especialidades</a>
-            <a class="mobile-link font-headline font-bold text-sm uppercase tracking-wider text-oro-rosa" href="#paquetes">Tarifas y Bloques Terapéuticos</a>
-            <a class="mobile-link font-headline font-bold text-sm uppercase tracking-wider text-oro-rosa" href="#equipo">Equipo de Psicólogos</a>
-            <a class="mobile-link font-headline font-bold text-sm uppercase tracking-wider text-oro-rosa" href="#contacto">Ubicación y Contacto</a>
-            <a class="mobile-link inline-block w-full text-center bg-[#25D366] text-white font-headline text-xs uppercase tracking-widest py-3.5 rounded-full shadow font-bold" href="https://wa.me/51922761436">
-                Agendar por WhatsApp
-            </a>
-        </div>
+    <!-- Dropdown Móvil -->
+    <div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-outline-variant px-6 py-6 flex-col space-y-4 shadow-xl w-full">
+        <a class="font-bold text-primary mobile-link" href="#inicio">Inicio</a>
+        <a class="font-bold text-on-surface-variant hover:text-primary mobile-link" href="#servicios">Servicios</a>
+        <a class="font-bold text-on-surface-variant hover:text-primary mobile-link" href="#galeria">Galería</a>
+        <a class="font-bold text-on-surface-variant hover:text-primary mobile-link" href="#reserva">Reservas</a>
+        <a class="font-bold text-on-surface-variant hover:text-primary mobile-link" href="#ubicacion">Ubicación</a>
+        <a class="inline-block w-full text-center bg-[#25D366] text-white font-bold py-3 rounded-full shadow" href="https://wa.me/51933778722">
+            WhatsApp Directo
+        </a>
     </div>
 </header>
 
-<main class="w-full">
+<!-- MAIN -->
+<main class="w-full max-w-full overflow-x-hidden">
 
-<!-- HERO SECTION (Con la tipografía original Libre Caslon Text) -->
-<section class="relative w-full min-h-[90vh] flex items-center overflow-hidden" id="inicio">
-    <div class="absolute inset-0 w-full h-full">
-        <img alt="Atención psicológica y acompañamiento en Áurea Centro Integral Vital" class="w-full h-full object-cover object-center" src="img/hero.jpg"/>
-        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+<!-- 1. HERO SECTION -->
+<section class="relative w-full max-w-full min-h-screen flex flex-col items-center justify-center text-center overflow-hidden pt-20" id="inicio">
+    <div class="absolute inset-0 z-0 w-full h-full">
+        <picture class="w-full h-full block">
+            <source media="(max-width: 767px)" srcset="img/hero.jpg">
+            <img src="img/hero.jpg" alt="Fondo Queen Nail" class="w-full h-full object-cover object-center" />
+        </picture>
+        <div class="absolute inset-0 bg-background/60"></div>
     </div>
 
-    <div class="max-w-[1280px] w-full mx-auto px-6 md:px-12 py-16 relative z-10">
-        <div class="max-w-xl flex flex-col items-start gap-6 text-white" data-aos="fade-right" data-aos-duration="1000">
-            <span class="inline-block px-4 py-1.5 bg-oro-rosa text-white font-body text-xs font-bold uppercase tracking-widest rounded-full shadow-md">
-                Chorrillos, Lima
-            </span>
+    <div class="w-full max-w-3xl mx-auto px-6 md:px-12 z-10 space-y-6 relative py-12" data-aos="fade-up">
+        <h1 class="font-headline text-3xl sm:text-5xl md:text-6xl text-on-surface font-bold leading-tight">
+            Uñas Majestuosas para Cada Reina
+        </h1>
+        <p class="font-body text-sm sm:text-lg text-on-surface-variant max-w-2xl mx-auto">
+            Vive la experiencia del trato real. Precisión, glamour y cuidado meticuloso para tus manos y pies. Eleva tu día a día con un toque de lujo.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <a class="w-full sm:w-auto bg-primary text-white font-body text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-full shimmer-hover transition-transform hover:scale-95 shadow-lg shadow-primary/20" href="#servicios">
+                Explorar Servicios
+            </a>
+            <a class="w-full sm:w-auto bg-transparent border border-tertiary text-tertiary font-body text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-full hover:bg-tertiary/5 transition-colors" href="https://wa.me/51933778722?text=Hola%20Queen%20Nail,%20deseo%20agendar%20una%20cita." target="_blank">
+                Agendar Cita
+            </a>
+        </div>
+    </div>
+</section>
 
-            <h1 class="font-['Libre_Caslon_Text'] text-4xl sm:text-5xl lg:text-6xl text-white leading-tight drop-shadow-md">
-                Acompañamos tu proceso con <span class="italic font-normal text-dorado">empatía y profesionalismo</span>
-            </h1>
+<!-- 2. SECCIÓN EL TRATO REAL -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20" id="about">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1 relative" data-aos="fade-right">
+            <div class="aspect-[4/5] rounded-3xl overflow-hidden soft-shadow relative z-10 border border-[#FCE7F3]">
+                <img class="w-full h-full object-cover" alt="Interior Salón Queen Nail" src="https://placehold.co/600x750/ffd1dc/b10e6b?text=Imagen"/>
+            </div>
+            <div class="absolute -bottom-6 -right-6 w-2/3 aspect-square rounded-2xl overflow-hidden soft-shadow border border-[#FCE7F3] z-20">
+                <img class="w-full h-full object-cover" alt="Manicura Detallada Queen Nail" src="https://placehold.co/400x400/ffb0cd/b10e6b?text=Imagen"/>
+            </div>
+        </div>
 
-            <p class="font-body text-base md:text-lg text-white/90 leading-relaxed drop-shadow">
-                Estrategias personalizadas basadas en evidencia para el bienestar emocional de niños, adolescentes, adultos y familias.
+        <div class="order-1 md:order-2 space-y-6" data-aos="fade-left">
+            <h2 class="font-headline text-3xl sm:text-4xl font-bold text-primary">El Trato Real</h2>
+            <p class="font-body text-sm sm:text-base text-on-surface-variant leading-relaxed">
+                En Queen Nail creemos que el autocuidado es un ritual majestuoso. Nuestras especialistas combinan el dominio técnico con una estética sofisticada para transformar tu cuidado de uñas en toda una declaración de estilo.
             </p>
-
-            <div class="p-4 bg-black/40 backdrop-blur-md rounded-2xl border border-white/20 shadow-lg flex items-center gap-4 w-full">
-                <span class="material-symbols-outlined text-dorado text-3xl shrink-0 fill-icon">psychology</span>
-                <div>
-                    <p class="font-['Libre_Caslon_Text'] font-bold text-sm text-white">"Respira, estás donde necesitas estar"</p>
-                    <p class="font-body text-xs text-white/80">Un espacio seguro, humano y confidencial para crecer.</p>
-                </div>
-            </div>
-
-            <div class="flex flex-wrap items-center gap-4 w-full pt-2">
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20una%20cita%20de%20evaluaci%C3%B3n." target="_blank" class="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-full font-headline text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-all shadow-lg">
-                    <span>Agenda tu cita</span>
-                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                </a>
-                <a href="#servicios" class="flex-1 sm:flex-none flex items-center justify-center gap-2 border border-white/80 text-white px-8 py-3.5 rounded-full font-headline text-xs font-bold uppercase tracking-widest hover:bg-white/20 transition-all">
-                    Ver Especialidades
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- SERVICIOS Y ESPECIALIDADES (LIQUID GLASS CON FOTOS VERTICALES) -->
-<section class="py-24 px-6 md:px-12 bg-surface" id="servicios">
-<div class="max-w-[1280px] mx-auto space-y-12">
-    
-    <div class="text-center max-w-2xl mx-auto space-y-3" data-aos="fade-up">
-        <span class="font-headline text-xs font-bold uppercase tracking-widest text-oro-rosa">Atención Especializada</span>
-        <h2 class="font-headline text-3xl sm:text-5xl font-extrabold text-on-surface">Nuestras Especialidades</h2>
-        <p class="font-body text-base text-gris-principal">Atención integral diseñada para cada etapa del desarrollo y necesidad emocional.</p>
-    </div>
-
-    <!-- Grilla simétrica 3x2 con alto estándar original -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-[440px]">
-        
-        <!-- 1. NEURODESARROLLO -->
-        <div class="rounded-3xl overflow-hidden relative group soft-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Neurodesarrollo" src="img/neurodesarrollo.webp" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-transparent flex flex-col justify-end p-7 text-white">
-                <div class="w-12 h-12 bg-verde-jade rounded-full flex items-center justify-center mb-3 text-white shrink-0 shadow-md">
-                    <span class="material-symbols-outlined text-2xl">neurology</span>
-                </div>
-                <h3 class="font-headline text-2xl text-white mb-2 font-bold leading-snug">Neurodesarrollo</h3>
-                <p class="font-body text-xs text-white/90 leading-relaxed line-clamp-4">
-                    Acompañamiento clínico e intervenciones personalizadas para potenciar habilidades cognitivas, del lenguaje, sociales y conductuales en niños y adolescentes (TEA, TDAH y aprendizaje), fomentando su autonomía junto a la familia.
-                </p>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20*Neurodesarrollo*." target="_blank" class="mt-4 font-headline text-xs font-bold uppercase tracking-wider text-dorado flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- 2. ACOMPAÑAMIENTO Y ORIENTACIÓN FAMILIAR -->
-        <div class="rounded-3xl overflow-hidden relative group soft-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="200">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Apoyo Familiar" src="img/acompañamiento-familiar.webp" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-transparent flex flex-col justify-end p-7 text-white">
-                <div class="w-12 h-12 bg-oro-rosa rounded-full flex items-center justify-center mb-3 text-white shrink-0 shadow-md">
-                    <span class="material-symbols-outlined text-2xl">family_restroom</span>
-                </div>
-                <h3 class="font-headline text-2xl text-white mb-2 font-bold leading-snug">Acompañamiento y Orientación Familiar</h3>
-                <p class="font-body text-xs text-white/90 leading-relaxed line-clamp-4">
-                    Orientación práctica y estrategias personalizadas para padres y cuidadores. Fortalecemos la comunicación, regulación emocional, conducta y convivencia, convirtiendo a la familia en un aliado activo del proceso.
-                </p>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20*Acompa%C3%B1amiento%20y%20Orientaci%C3%B3n%20Familiar*." target="_blank" class="mt-4 font-headline text-xs font-bold uppercase tracking-wider text-dorado flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- 3. ESCUELA DE PADRES PARA COLEGIOS -->
-        <div class="rounded-3xl overflow-hidden relative group soft-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="300">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Escuela de Padres para Colegios" src="img/escuela-de-padres.webp" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-transparent flex flex-col justify-end p-7 text-white">
-                <div class="w-12 h-12 bg-oro-rosa rounded-full flex items-center justify-center mb-3 text-white shrink-0 shadow-md">
-                    <span class="material-symbols-outlined text-2xl">school</span>
-                </div>
-                <h3 class="font-headline text-2xl text-white mb-1 font-bold leading-snug">Escuela de Padres para Colegios</h3>
-                <p class="font-headline text-[10px] font-semibold text-dorado uppercase tracking-wide mb-2">
-                    "Comprender, actuar y transformar"
-                </p>
-                <p class="font-body text-xs text-white/90 leading-relaxed line-clamp-3">
-                    Espacio de orientación práctica para familias de instituciones educativas. Brindamos herramientas reales sobre regulación emocional, comunicación, límites y crianza más allá de la charla tradicional.
-                </p>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20*Escuela%20de%20Padres%20para%20Colegios*." target="_blank" class="mt-4 font-headline text-xs font-bold uppercase tracking-wider text-dorado flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- 4. PSICOTERAPIA PARA ADOLESCENTES -->
-        <div class="rounded-3xl overflow-hidden relative group soft-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Psicoterapia Adolescentes" src="img/psicologia-adolescentes.webp" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-transparent flex flex-col justify-end p-7 text-white">
-                <div class="w-12 h-12 bg-azul-pizarra rounded-full flex items-center justify-center mb-3 text-white shrink-0 shadow-md">
-                    <span class="material-symbols-outlined text-2xl">face</span>
-                </div>
-                <h3 class="font-headline text-2xl text-white mb-2 font-bold leading-snug">Psicoterapia Adolescentes</h3>
-                <p class="font-body text-xs text-white/90 leading-relaxed line-clamp-4">
-                    Un espacio seguro y confidencial para afrontar cambios emocionales, ansiedad, autoestima y relaciones. Brindamos herramientas prácticas para que el adolescente se comprenda, afronte retos y gane autonomía.
-                </p>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20*Psicoterapia%20para%20Adolescentes*." target="_blank" class="mt-4 font-headline text-xs font-bold uppercase tracking-wider text-dorado flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- 5. EVALUACIONES CLÍNICAS -->
-        <div class="rounded-3xl overflow-hidden relative group soft-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="200">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Evaluaciones Psicológicas" src="img/evaluaciones.webp" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-transparent flex flex-col justify-end p-7 text-white">
-                <div class="w-12 h-12 bg-oro-rosa rounded-full flex items-center justify-center mb-3 text-white shrink-0 shadow-md">
-                    <span class="material-symbols-outlined text-2xl">assignment</span>
-                </div>
-                <h3 class="font-headline text-2xl text-white mb-1 font-bold leading-snug">Evaluaciones Clínicas</h3>
-                <p class="font-headline text-[10px] font-semibold text-dorado uppercase tracking-wide mb-2">
-                    "Evaluamos → Comprendemos → Orientamos → Intervenimos"
-                </p>
-                <p class="font-body text-xs text-white/90 leading-relaxed line-clamp-3">
-                    Evaluaciones integrales objetivas (entrevista, observación e instrumentos) para definir un diagnóstico preciso, informe claro y objetivos terapéuticos.
-                </p>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20*Evaluaciones%20Cl%C3%ADnicas*." target="_blank" class="mt-4 font-headline text-xs font-bold uppercase tracking-wider text-dorado flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- 6. PSICOLOGÍA DEPORTIVA & COACHING -->
-        <div class="rounded-3xl overflow-hidden relative group soft-shadow cursor-pointer" data-aos="fade-up" data-aos-delay="300">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Psicología Deportiva" src="img/psicologia-deportiva.webp" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-transparent flex flex-col justify-end p-7 text-white">
-                <div class="w-12 h-12 bg-verde-jade rounded-full flex items-center justify-center mb-3 text-white shrink-0 shadow-md">
-                    <span class="material-symbols-outlined text-2xl">sports_score</span>
-                </div>
-                <h3 class="font-headline text-2xl text-white mb-1 font-bold leading-snug">Psicología Deportiva & Coaching</h3>
-                <p class="font-headline text-[10px] font-semibold text-dorado uppercase tracking-wide mb-2">
-                    "Entrenamos la mente dentro y fuera de la cancha"
-                </p>
-                <p class="font-body text-xs text-white/90 leading-relaxed line-clamp-3">
-                    Fortalecemos la concentración, confianza y manejo de presión en equipos deportivos (fútbol), e impulsamos el liderazgo, comunicación y desarrollo personal mediante coaching empresarial.
-                </p>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20sobre%20*Psicolog%C3%ADa%20Deportiva%20%26%20Coaching*." target="_blank" class="mt-4 font-headline text-xs font-bold uppercase tracking-wider text-dorado flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
-                </a>
-            </div>
-        </div>
-
-    </div>
-</div>
-</section>
-
-<!-- TARIFAS Y PAQUETES PROMOCIONALES (TEXTOS MÁS GRANDES) -->
-<section class="py-20 px-6 md:px-12 bg-background border-t border-gris-claro/50" id="paquetes">
-<div class="max-w-[1280px] mx-auto space-y-16">
-    
-    <!-- Encabezado de Sección -->
-    <div class="text-center max-w-2xl mx-auto space-y-3" data-aos="fade-up">
-        <span class="font-headline text-sm font-semibold uppercase tracking-widest text-oro-rosa">Inversión en tu Salud</span>
-        <h2 class="font-headline text-3xl sm:text-5xl font-bold text-on-surface tracking-tight">Tarifas y Planes Especiales</h2>
-        <p class="font-body text-base sm:text-lg text-gris-principal font-normal">Transparencia, compromiso y opciones diseñadas para acompañar tu proceso terapéutico.</p>
-    </div>
-
-<!-- 1. EVALUACIONES PSICOLÓGICAS (INTEGRAL Y TAMIZAJE) -->
-        <div class="space-y-6">
-            <div class="border-b border-gris-claro pb-3" data-aos="fade-up">
-                <h3 class="font-headline text-2xl font-bold text-on-surface">Procesos de Evaluación</h3>
-                <p class="font-body text-sm sm:text-base text-gris-principal font-normal">Punto de partida esencial para diagnosticar, comprender y trazar un plan de trabajo adecuado.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- Evaluación Integral -->
-                <div class="bg-surface p-6 sm:p-7 rounded-3xl border border-oro-rosa/40 soft-shadow flex flex-col justify-between space-y-5 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="space-y-4">
-                        <!-- Cabecera ajustada para móvil -->
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                            <span class="inline-block bg-oro-rosa/15 text-oro-rosa px-3 py-1 rounded-full font-headline text-xs font-semibold uppercase tracking-wider self-start sm:self-auto shrink-0">
-                                Incluye Informe Clínico
-                            </span>
-                            <div class="text-left sm:text-right shrink-0">
-                                <span class="font-headline text-2xl sm:text-3xl font-bold text-oro-rosa whitespace-nowrap">S/ 250</span>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-headline text-2xl font-bold text-on-surface">Evaluación Integral</h4>
-                            <p class="font-body text-sm text-gris-principal font-normal pt-1">Proceso completo de diagnóstico y retroalimentación para niños y adolescentes.</p>
-                        </div>
-
-                        <div class="p-4 bg-background rounded-2xl border border-gris-claro/60 space-y-2.5">
-                            <strong class="block font-headline text-sm text-on-surface">Estructura del proceso (4 sesiones):</strong>
-                            <ul class="space-y-2 font-body text-sm text-gris-principal font-normal">
-                                <li class="flex items-start gap-2"><span class="text-oro-rosa font-bold">1.ª</span> Reunión inicial con padres o apoderados.</li>
-                                <li class="flex items-start gap-2"><span class="text-oro-rosa font-bold">2.ª</span> Sesión de evaluación directa con el niño.</li>
-                                <li class="flex items-start gap-2"><span class="text-oro-rosa font-bold">3.ª</span> Segunda sesión de evaluación con el niño.</li>
-                                <li class="flex items-start gap-2"><span class="text-oro-rosa font-bold">4.ª</span> Entrega de informe y devolución con apoderado (20 min).</li>
-                            </ul>
-                        </div>
-
-                        <p class="font-body text-xs text-gris-principal italic">
-                            * Las dos primeras sesiones pueden realizarse el mismo día. Entrega de informe presencial o virtual (Lunes o Viernes de 9:00 a 11:00 a.m.).
-                        </p>
-                    </div>
-
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20una%20*Evaluaci%C3%B3n%20Integral%20(S/%20250)*." target="_blank" class="block text-center py-3.5 rounded-full bg-oro-rosa text-white font-headline text-sm font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                        Solicitar Evaluación Integral
-                    </a>
-                </div>
-
-                <!-- Evaluación de Tamizaje -->
-                <div class="bg-surface p-6 sm:p-7 rounded-3xl border border-gris-claro soft-shadow flex flex-col justify-between space-y-5 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                    <div class="space-y-4">
-                        <!-- Cabecera ajustada para móvil -->
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                            <span class="inline-block bg-verde-jade/15 text-verde-jade px-3 py-1 rounded-full font-headline text-xs font-semibold uppercase tracking-wider self-start sm:self-auto shrink-0">
-                                Evaluación en 1 Día
-                            </span>
-                            <div class="text-left sm:text-right shrink-0">
-                                <span class="font-headline text-2xl sm:text-3xl font-bold text-verde-jade whitespace-nowrap">S/ 100</span>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-headline text-2xl font-bold text-on-surface">Tamizaje Terapéutico</h4>
-                            <p class="font-body text-sm text-gris-principal font-normal pt-1">Ideal para pacientes nuevos, ingresantes o reingresos (pausa mayor a 3 meses).</p>
-                        </div>
-
-                        <div class="p-4 bg-background rounded-2xl border border-gris-claro/60 space-y-2.5 font-body text-sm text-gris-principal font-normal leading-relaxed">
-                            <p>Diseñado para evaluar estado actual, contención emocional o posibles retrocesos en pacientes con diagnóstico previo.</p>
-                            <p class="pt-1 text-xs text-verde-jade font-semibold">✓ Incluye resumen de orientación (No incluye informe psicológico completo).</p>
-                        </div>
-
-                        <p class="font-body text-xs text-gris-principal italic">
-                            Paso fundamental para comprender tu situación emocional actual y diseñar un plan de trabajo a tu medida.
-                        </p>
-                    </div>
-
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20un%20*Tamizaje%20Terap%C3%A9utico%20(S/%20100)*." target="_blank" class="block text-center py-3.5 rounded-full bg-verde-jade text-white font-headline text-sm font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                        Agendar Tamizaje
-                    </a>
-                </div>
-
-            </div>
-        </div>
-
-    <!-- 2. PROGRAMAS ESPECIALES (3 SESIONES X S/ 120) -->
-    <div class="space-y-6">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gris-claro pb-3 gap-2" data-aos="fade-up">
+            <p class="font-body text-sm sm:text-base text-on-surface-variant leading-relaxed">
+                Visita nuestro espacio diseñado para brindarte un momento de pura indulgencia y elegancia. Priorizamos la higiene, la precisión y tu máxima comodidad.
+            </p>
             <div>
-                <h3 class="font-headline text-2xl font-bold text-on-surface">Programas Enfocados de Acompañamiento</h3>
-                <p class="font-body text-sm text-gris-principal font-normal">Sesiones diseñadas para afrontar procesos de transición y sanación profunda.</p>
+                <a class="inline-flex items-center text-tertiary font-body text-xs font-bold uppercase tracking-wider hover:text-primary transition-colors group" href="https://wa.me/51933778722?text=Hola%20Queen%20Nail,%20deseo%20más%20información." target="_blank">
+                    <span>Conoce Más</span>
+                    <span class="material-symbols-outlined ml-2 group-hover:translate-x-1 transition-transform text-sm">arrow_forward</span>
+                </a>
             </div>
-            <span class="inline-block bg-oro-rosa/15 text-oro-rosa font-headline text-xs font-semibold px-4 py-2 rounded-full border border-oro-rosa/30 self-start sm:self-auto">
-                Promoción Especial: S/ 120 (3 Sesiones)
-            </span>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <!-- Promo 1: Reinicio Emocional -->
-            <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="100">
-                <div class="relative overflow-hidden aspect-[3/4] bg-background cursor-pointer" onclick="openModal('img/reinicio.webp')">
-                    <img src="img/reinicio.webp" alt="Bloque Terapéutico Reinicio Emocional" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                        <span class="material-symbols-outlined text-3xl">zoom_in</span>
-                    </div>
-                </div>
-                <div class="p-5 bg-surface border-t border-gris-claro/50">
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20reservar%20el%20*Bloque%20Terapéutico%20Reinicio%20Emocional%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
-                        Reservar Bloque Terapéutico
-                    </a>
-                </div>
-            </div>
-
-            <!-- Promo 2: Pacientes Oncológicos -->
-            <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="200">
-                <div class="relative overflow-hidden aspect-[3/4] bg-background cursor-pointer" onclick="openModal('img/oncologicos.webp')">
-                    <img src="img/oncologicos.webp" alt="Terapia para Pacientes Oncológicos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                        <span class="material-symbols-outlined text-3xl">zoom_in</span>
-                    </div>
-                </div>
-                <div class="p-5 bg-surface border-t border-gris-claro/50">
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20de%20la%20*Terapia%20para%20Pacientes%20Oncol%C3%B3gicos%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
-                        Solicitar Terapia
-                    </a>
-                </div>
-            </div>
-
-            <!-- Promo 3: Procesos de Divorcio -->
-            <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="300">
-                <div class="relative overflow-hidden aspect-[3/4] bg-background cursor-pointer" onclick="openModal('img/divorcios.webp')">
-                    <img src="img/divorcios.webp" alt="Terapia en Procesos de Divorcio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                        <span class="material-symbols-outlined text-3xl">zoom_in</span>
-                    </div>
-                </div>
-                <div class="p-5 bg-surface border-t border-gris-claro/50">
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20de%20la%20*Terapia%20en%20Procesos%20de%20Divorcio%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
-                        Solicitar Terapia
-                    </a>
-                </div>
-            </div>
-
-            <!-- Promo 4: Terapia de Duelo -->
-            <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="400">
-                <div class="relative overflow-hidden aspect-[3/4] bg-background cursor-pointer" onclick="openModal('img/duelo.webp')">
-                    <img src="img/duelo.webp" alt="Terapia de Duelo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                        <span class="material-symbols-outlined text-3xl">zoom_in</span>
-                    </div>
-                </div>
-                <div class="p-5 bg-surface border-t border-gris-claro/50">
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20de%20la%20*Terapia%20de%20Duelo%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="block text-center py-3 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
-                        Solicitar Terapia
-                    </a>
-                </div>
-            </div>
-
         </div>
     </div>
+</section>
 
-    <!-- 3. CONSULTAS INDIVIDUALES & PAQUETES STAFF AUREA -->
-    <div class="space-y-6 pt-4">
-        <div class="border-b border-gris-claro pb-3" data-aos="fade-up">
-            <h3 class="font-headline text-2xl font-bold text-on-surface">Consultas y Bloques Terapéuticos</h3>
-            <p class="font-body text-sm text-gris-principal font-normal">Seguimiento continuo adaptado a tus metas de desarrollo y salud mental.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <!-- Sesión Individual Staff -->
-            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                <div class="space-y-3.5">
-                    <span class="inline-block bg-gris-claro/50 text-gris-principal px-3 py-1 rounded-full font-headline text-xs font-semibold">Sesión Suelta</span>
-                    <h4 class="font-headline text-xl font-bold text-on-surface">Terapia Individual</h4>
-                    <p class="font-body text-sm text-gris-principal font-normal">Atención personalizada con profesionales del Staff de ÁUREA.</p>
-                    <div class="pt-2">
-                        <span class="font-headline text-3xl font-bold text-oro-rosa">S/ 80</span>
-                        <span class="font-body text-sm text-gris-principal font-normal"> / sesión</span>
-                    </div>
-                </div>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20una%20*Terapia%20Individual%20(S/%2080)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Agendar Sesión
-                </a>
-            </div>
-
-            <!-- Bloque 6 Sesiones -->
-            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                <div class="space-y-3.5">
-                    <span class="inline-block bg-verde-jade/10 text-verde-jade px-3 py-1 rounded-full font-headline text-xs font-semibold">Bloque Continuidad</span>
-                    <h4 class="font-headline text-xl font-bold text-on-surface">Bloque Terapéutico de 6 Sesiones</h4>
-                    <p class="font-body text-sm text-gris-principal font-normal">Acompañamiento enfocado para niños, adolescentes o adultos.</p>
-                    <div class="pt-2">
-                        <span class="font-headline text-3xl font-bold text-verde-jade">S/ 360</span>
-                        <span class="font-body text-sm text-gris-principal font-normal"> (S/ 60 x sesión)</span>
-                    </div>
-                </div>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Bloque%20Terapéutico%20de%206%20Sesiones%20(S/%20360)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Solicitar Bloque
-                </a>
-            </div>
-
-            <!-- Bloque 8 Sesiones -->
-            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
-                <div class="space-y-3.5">
-                    <span class="inline-block bg-oro-rosa/15 text-oro-rosa px-3 py-1 rounded-full font-headline text-xs font-semibold">Bloque Recomendado</span>
-                    <h4 class="font-headline text-xl font-bold text-on-surface">Bloque Terapéutico de 8 Sesiones</h4>
-                    <p class="font-body text-sm text-gris-principal font-normal">Acompañamiento completo de mediano plazo.</p>
-                    <div class="pt-2">
-                        <span class="font-headline text-3xl font-bold text-oro-rosa">S/ 420</span>
-                        <span class="font-body text-sm text-gris-principal font-normal"> (S/ 52.50 x sesión)</span>
-                    </div>
-                </div>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Bloque%20Terapéutico%20de%208%20Sesiones%20(S/%20420)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Solicitar Bloque
-                </a>
-            </div>
-
-            <!-- Bloque 12 Sesiones -->
-            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="400">
-                <div class="space-y-3.5">
-                    <span class="inline-block bg-azul-pizarra/10 text-azul-pizarra px-3 py-1 rounded-full font-headline text-xs font-semibold">Máximo Ahorro</span>
-                    <h4 class="font-headline text-xl font-bold text-on-surface">Bloque Terapéutico de 12 Sesiones</h4>
-                    <p class="font-body text-sm text-gris-principal font-normal">Ideal para procesos intensivos de neurodesarrollo o terapia integral.</p>
-                    <div class="pt-2">
-                        <span class="font-headline text-3xl font-bold text-azul-pizarra">S/ 600</span>
-                        <span class="font-body text-sm text-gris-principal font-normal"> (S/ 50 x sesión)</span>
-                    </div>
-                </div>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Bloque%20Terapéutico%20de%2012%20Sesiones%20(S/%20600)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Solicitar Bloque
-                </a>
-            </div>
-
-        </div>
+<!-- 3. SERVICIOS DESTACADOS (BENTO GRID) -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20" id="destacados">
+    <div class="text-center mb-12 space-y-3" data-aos="fade-up">
+        <h2 class="font-headline text-3xl sm:text-4xl font-bold text-on-surface">Servicios Destacados</h2>
+        <p class="font-body text-sm text-on-surface-variant max-w-xl mx-auto">
+            Experiencias diseñadas para tus manos y pies, brindadas con una precisión inigualable.
+        </p>
     </div>
 
-    <!-- 4. TARIFARIO DE SERVICIOS ESPECIALIZADOS -->
-    <div class="space-y-6 pt-4">
-        <div class="border-b border-gris-claro pb-3" data-aos="fade-up">
-            <h3 class="font-headline text-2xl font-bold text-on-surface">Otros Servicios Psicológicos</h3>
-            <p class="font-body text-sm text-gris-principal font-normal">Modalidades de atención especializadas y orientación profesional.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 auto-rows-[300px]">
+        <div class="md:col-span-2 md:row-span-2 rounded-3xl bg-surface soft-shadow border border-[#FCE7F3] overflow-hidden group flex flex-col relative" data-aos="fade-up" data-aos-delay="100">
+            <div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors z-10"></div>
+            <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Uñas Acrílicas Esculpidas" src="https://placehold.co/800x800/ffd1dc/b10e6b?text=Imagen"/>
+            <div class="relative z-20 mt-auto p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent w-full space-y-2">
+                <span class="inline-block px-3 py-1 rounded-full bg-primary-fixed text-primary font-body text-[10px] font-bold uppercase tracking-wider">Insignia</span>
+                <h3 class="font-headline text-2xl md:text-3xl text-white font-bold">Esculpido Acrílico</h3>
+                <p class="font-body text-xs sm:text-sm text-white/90">Extensiones impecables adaptadas al largo y forma que prefieras.</p>
+            </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <!-- Terapia de Pareja y Familiar -->
-            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                <div class="space-y-3.5">
-                    <span class="inline-block bg-oro-rosa/15 text-oro-rosa px-3 py-1 rounded-full font-headline text-xs font-semibold">Vínculos & Familia</span>
-                    <h4 class="font-headline text-xl font-bold text-on-surface">Pareja & Familia</h4>
-                    <ul class="space-y-1.5 font-body text-sm text-gris-principal font-normal pt-2 border-t border-gris-claro/60">
-                        <li>• Atención Individual: <strong>S/ 100</strong></li>
-                        <li>• Terapia de Pareja: <strong>S/ 150</strong></li>
-                        <li>• Terapia Familiar: <strong>S/ 200</strong> <span class="text-xs text-gris-principal">(hasta 5 pers.)</span></li>
+        <div class="rounded-3xl bg-surface soft-shadow border border-[#FCE7F3] overflow-hidden flex flex-col group relative" data-aos="fade-up" data-aos-delay="200">
+            <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80" alt="Soft Gel Overlay" src="https://placehold.co/600x400/ffb0cd/b10e6b?text=Imagen"/>
+            <div class="relative z-20 mt-auto p-6 bg-surface/90 backdrop-blur-md space-y-1">
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-primary-fixed text-primary font-body text-[10px] font-bold uppercase tracking-wider">Tendencia</span>
+                <h3 class="font-headline text-lg font-bold text-primary">Soft Gel Overlay</h3>
+                <p class="font-body text-xs text-on-surface-variant">Protección duradera, flexible y de aspecto natural.</p>
+            </div>
+        </div>
+
+        <div class="rounded-3xl bg-surface soft-shadow border border-[#FCE7F3] overflow-hidden flex flex-col group relative" data-aos="fade-up" data-aos-delay="300">
+            <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80" alt="Pedicure Spa" src="https://placehold.co/600x400/f8e1e7/b10e6b?text=Imagen"/>
+            <div class="relative z-20 mt-auto p-6 bg-surface/90 backdrop-blur-md space-y-1">
+                <span class="inline-block px-2.5 py-0.5 rounded-full bg-primary-fixed text-primary font-body text-[10px] font-bold uppercase tracking-wider">Relajación</span>
+                <h3 class="font-headline text-lg font-bold text-primary">Pedicure Spa</h3>
+                <p class="font-body text-xs text-on-surface-variant">Incluye exfoliación, hidratación y gel semipermanente.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. CATÁLOGO DE SERVICIOS COMPLETO -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20" id="servicios">
+    <div class="text-center mb-16 space-y-3" data-aos="fade-up">
+        <h2 class="font-headline text-3xl sm:text-4xl font-bold text-primary">Nuestros Servicios</h2>
+        <p class="font-body text-sm text-on-surface-variant max-w-2xl mx-auto">
+            Disfruta de nuestros servicios premium de manicura y pedicura con atención al detalle y acabado impecable.
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <article class="bg-surface rounded-3xl overflow-hidden soft-shadow border border-[#FCE7F3] flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+            <div>
+                <div class="h-64 md:h-72 w-full overflow-hidden relative">
+                    <img alt="Uñas Acrílicas" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://placehold.co/600x400/ffd1dc/b10e6b?text=Imagen"/>
+                    <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full font-body text-xs font-bold uppercase tracking-wider shadow">
+                        S/ 49.99
+                    </div>
+                </div>
+                <div class="p-8 space-y-4">
+                    <span class="bg-[#FCE7F3] text-primary px-3 py-1 rounded-full font-body text-[10px] font-bold uppercase tracking-wider inline-block">Acrílicas</span>
+                    <h3 class="font-headline text-2xl font-bold text-on-surface">Uñas Acrílicas</h3>
+                    <p class="font-body text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                        Uñas acrílicas elegantes y duraderas. Incluye diseño personalizado, punta cuadrada o almendra y largo hasta número 4.
+                    </p>
+                    <ul class="font-body text-xs text-on-surface space-y-2 pt-2 border-t border-[#FCE7F3]">
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Cualquier diseño a elegir</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Punta cuadrada o almendra</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Hasta largo N° 4 + Finish Gel</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20consultar%20por%20*Terapia%20de%20Pareja%20o%20Familiar*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Consultar Cita
+            </div>
+            <div class="p-8 pt-0">
+                <a href="https://wa.me/51933778722?text=Hola,%20deseo%20agendar%20U%C3%B1as%20Acr%C3%ADlicas." target="_blank" class="block w-full text-center bg-primary text-white rounded-full py-4 font-body text-xs font-bold uppercase tracking-wider shimmer-hover hover:bg-primary-hover transition-colors shadow-md">
+                    Agendar Cita
                 </a>
             </div>
+        </article>
 
-            <!-- Atención a Domicilio -->
-            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                <div class="space-y-3.5">
-                    <span class="inline-block bg-verde-jade/10 text-verde-jade px-3 py-1 rounded-full font-headline text-xs font-semibold">Servicio Presencial</span>
-                    <h4 class="font-headline text-xl font-bold text-on-surface">Atención a Domicilio</h4>
-                    <p class="font-body text-sm text-gris-principal font-normal">Sesión personalizada en la comodidad de tu hogar.</p>
-                    <div class="pt-2">
-                        <span class="font-headline text-3xl font-bold text-verde-jade">S/ 150</span>
-                        <span class="font-body text-xs text-gris-principal font-normal block pt-1">* Movilidad adicional según ubicación</span>
+        <article class="bg-surface rounded-3xl overflow-hidden soft-shadow border border-[#FCE7F3] flex flex-col justify-between" data-aos="fade-up" data-aos-delay="200">
+            <div>
+                <div class="h-64 md:h-72 w-full overflow-hidden relative">
+                    <img alt="Uñas Soft Gel" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://placehold.co/600x400/ffb0cd/b10e6b?text=Imagen"/>
+                    <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full font-body text-xs font-bold uppercase tracking-wider shadow">
+                        S/ 50.00
                     </div>
                 </div>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20solicitar%20informaci%C3%B3n%20sobre%20*Atenci%C3%B3n%20a%20Domicilio*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Solicitar Visita
-                </a>
-            </div>
-
-            <!-- Orientación Vocacional -->
-            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
-                <div class="space-y-3.5">
-                    <span class="inline-block bg-azul-pizarra/10 text-azul-pizarra px-3 py-1 rounded-full font-headline text-xs font-semibold">Futuro & Profesión</span>
-                    <h4 class="font-headline text-xl font-bold text-on-surface">Orientación Vocacional</h4>
-                    <p class="font-body text-sm text-gris-principal font-normal">Evaluación integral + asesoría personalizada de proyecto de vida.</p>
-                    <div class="pt-2">
-                        <span class="font-headline text-3xl font-bold text-azul-pizarra">S/ 120</span>
-                        <span class="font-body text-sm text-gris-principal font-normal"> / programa completo</span>
-                    </div>
-                </div>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20una%20*Orientaci%C3%B3n%20Vocacional%20Integral%20(S/%20120)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Iniciar Orientación
-                </a>
-            </div>
-
-            <!-- Adicionales y Reprogramaciones -->
-            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="400">
-                <div class="space-y-3.5">
-                    <span class="inline-block bg-gris-claro/50 text-gris-principal px-3 py-1 rounded-full font-headline text-xs font-semibold">Trámites & Políticas</span>
-                    <h4 class="font-headline text-xl font-bold text-on-surface">Informes & Políticas</h4>
-                    <ul class="space-y-1.5 font-body text-xs sm:text-sm text-gris-principal font-normal border-t border-gris-claro/60 pt-2">
-                        <li>• Duplicado de informe: <strong>S/ 50</strong></li>
-                        <li>• 1.ª Reprogramación: <strong>Sin costo</strong></li>
-                        <li>• 2.ª Reprogramación: <strong>Penalidad S/ 25</strong></li>
+                <div class="p-8 space-y-4">
+                    <span class="bg-[#FCE7F3] text-primary px-3 py-1 rounded-full font-body text-[10px] font-bold uppercase tracking-wider inline-block">Soft Gel</span>
+                    <h3 class="font-headline text-2xl font-bold text-on-surface">Uñas Soft Gel</h3>
+                    <p class="font-body text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                        Extensiones livianas y flexibles para un acabado natural. Incluye decoración con pedrería, relieves 3D o flores.
+                    </p>
+                    <ul class="font-body text-xs text-on-surface space-y-2 pt-2 border-t border-[#FCE7F3]">
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Pedrería, relieves y dijes incluidos</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Punta almendra o cuadrada</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Hasta largo N° 5</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20solicitar%20un%20*Duplicado%20de%20Informe%20Psicol%C3%B3gico*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-gris-principal text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Solicitar Trámite
+            </div>
+            <div class="p-8 pt-0">
+                <a href="https://wa.me/51933778722?text=Hola,%20deseo%20agendar%20U%C3%B1as%20Soft%20Gel." target="_blank" class="block w-full text-center bg-primary text-white rounded-full py-4 font-body text-xs font-bold uppercase tracking-wider shimmer-hover hover:bg-primary-hover transition-colors shadow-md">
+                    Agendar Cita
                 </a>
             </div>
+        </article>
 
-        </div>
-    </div>
-
-    <!-- 5. BLOQUE ESPECIAL: CONVENIOS Y TALLERES -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6">
-        
-        <!-- Taller Preadolescentes -->
-        <div class="bg-verde-jade/10 p-7 rounded-3xl border border-verde-jade/30 flex flex-col justify-between space-y-4 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
-            <div class="space-y-3">
-                <span class="bg-verde-jade text-white text-xs font-headline uppercase font-semibold px-3.5 py-1 rounded-full">12 a 16 Años</span>
-                <h4 class="font-headline text-2xl font-bold text-on-surface">Taller Habilidades Sociales</h4>
-                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
-                    Fortalece autoestima, comunicación asertiva, resolución de conflictos y relaciones saludables. Todos los jueves a las 6:00 p.m.
-                </p>
-                <div class="pt-2 flex items-center gap-2">
-                    <span class="font-headline text-2xl font-bold text-verde-jade">S/ 200</span>
-                    <span class="font-body text-xs text-gris-principal font-normal">(Preventa Julio: S/ 170)</span>
-                </div>
-            </div>
-            <a href="https://wa.me/51922761436?text=Hola,%20deseo%20inscribir%20a%20mi%20hijo%20al%20*Taller%20de%20Habilidades%20Sociales*." target="_blank" class="block text-center py-3.5 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                Reservar Vacante
-            </a>
-        </div>
-
-        <!-- Convenio Institucional Colegios -->
-        <div class="bg-azul-pizarra/10 p-7 rounded-3xl border border-azul-pizarra/30 flex flex-col justify-between space-y-4 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
-            <div class="space-y-3">
-                <span class="bg-azul-pizarra text-white text-xs font-headline uppercase font-semibold px-3.5 py-1 rounded-full">Convenio Institucional</span>
-                <div>
-                    <h4 class="font-headline text-2xl font-bold text-on-surface leading-tight">Áurea + Tu Colegio</h4>
-                    <p class="font-headline text-sm font-semibold text-azul-pizarra pt-0.5">Beneficios para la comunidad educativa</p>
-                </div>
-                
-                <ul class="space-y-1.5 font-body text-sm text-gris-principal pt-1 font-normal">
-                    <li class="flex items-start gap-1.5"><span class="text-azul-pizarra font-bold">✓</span> Tarifas preferenciales para familias</li>
-                    <li class="flex items-start gap-1.5"><span class="text-azul-pizarra font-bold">✓</span> Talleres para docentes</li>
-                    <li class="flex items-start gap-1.5"><span class="text-azul-pizarra font-bold">✓</span> Escuela de Padres sin costo</li>
-                </ul>
-            </div>
-            <a href="https://wa.me/51922761436?text=Hola,%20deseo%20solicitar%20informaci%C3%B3n%20sobre%20el%20*Convenio%20Institucional%20para%20Colegios*." target="_blank" class="block text-center py-3.5 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                Solicitar Convenio
-            </a>
-        </div>
-
-        <!-- Convenio Club Lima -->
-        <div class="bg-oro-rosa/10 p-7 rounded-3xl border border-oro-rosa/30 flex flex-col justify-between space-y-4 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
-            <div class="space-y-3">
-                <span class="bg-oro-rosa text-white text-xs font-headline uppercase font-semibold px-3.5 py-1 rounded-full">Convenio Exclusivo</span>
-                <h4 class="font-headline text-2xl font-bold text-on-surface">Club Deportivo Lima</h4>
-                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
-                    Primera entrevista de orientación psicológica inicial <strong class="font-semibold">GRATUITA</strong> (en instalaciones del club).
-                </p>
-                <p class="font-headline text-sm font-semibold text-oro-rosa pt-1">WhatsApp Exclusivo: 907 805 210</p>
-            </div>
-            <a href="https://wa.me/51907805210?text=Hola,%20soy%20socio%20del%20Club%20Deportivo%20Lima%20y%20deseo%20agendar%20mi%20*Entrevista%20Gratuita*." target="_blank" class="block text-center py-3.5 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                Agendar Cita Socio
-            </a>
-        </div>
-
-    </div>
-</div>
-</section>
-
-<!-- CÓMO TRABAJAMOS -->
-<section class="py-20 px-6 md:px-12 bg-surface" id="metodo">
-<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-   
-    <div class="space-y-6" data-aos="fade-right">
-        <span class="font-headline text-xs font-bold uppercase tracking-widest text-oro-rosa">Procesos Claros</span>
-        <h2 class="font-headline text-3xl sm:text-5xl font-extrabold text-on-surface">¿Cómo trabajamos en Áurea?</h2>
-        <p class="font-body text-base text-gris-principal leading-relaxed">
-            Creemos en procesos estructurados e integrales para que cada persona comprenda su evolución paso a paso.
-        </p>
-
-        <div class="space-y-6 pt-2">
-            <div class="flex gap-4 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-oro-rosa/20 text-oro-rosa font-headline font-bold flex items-center justify-center shrink-0">1</div>
-                <div>
-                    <h3 class="font-headline font-bold text-lg text-on-surface">1. Evaluamos</h3>
-                    <p class="font-body text-sm text-gris-principal leading-relaxed">Identificamos fortalezas, necesidades y dificultades mediante entrevistas, observación clínica y pruebas estandarizadas.</p>
-                </div>
-            </div>
-
-            <div class="flex gap-4 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-oro-rosa/20 text-oro-rosa font-headline font-bold flex items-center justify-center shrink-0">2</div>
-                <div>
-                    <h3 class="font-headline font-bold text-lg text-on-surface">2. Intervenimos</h3>
-                    <p class="font-body text-sm text-gris-principal leading-relaxed">Diseñamos estrategias y objetivos adaptados a cada caso para trabajar de forma organizada y enfocada en el bienestar.</p>
-                </div>
-            </div>
-
-            <div class="flex gap-4 items-start">
-                <div class="w-10 h-10 rounded-2xl bg-oro-rosa/20 text-oro-rosa font-headline font-bold flex items-center justify-center shrink-0">3</div>
-                <div>
-                    <h3 class="font-headline font-bold text-lg text-on-surface">3. Acompañamos y Medimos Avances</h3>
-                    <p class="font-body text-sm text-gris-principal leading-relaxed">Realizamos seguimiento constante para identificar progresos, reajustar metas y orientar a la familia.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="relative w-full h-[450px] rounded-3xl overflow-hidden shadow-lg border border-gris-claro" data-aos="flip-left" data-aos-duration="1000">
-        <img alt="Evaluación e intervención clínica en Áurea Centro Integral Vital" class="w-full h-full object-cover" src="img/metodo.jpg"/>
-    </div>
-
-</div>
-</section>
-
-<!-- NUESTRO EQUIPO PROFESIONAL (FOTOS MÁS GRANDES, TEXTO MÁS GRANDE Y 2 TARJETAS CENTRADAS) -->
-<section class="py-20 px-6 md:px-12 bg-background border-t border-gris-claro/50" id="equipo">
-<div class="max-w-[1280px] mx-auto space-y-12">
-    
-    <div class="text-center max-w-2xl mx-auto space-y-3" data-aos="fade-up">
-        <span class="font-headline text-xs font-semibold uppercase tracking-widest text-oro-rosa">Atención Multidisciplinaria</span>
-        <h2 class="font-headline text-3xl sm:text-4xl font-bold text-on-surface tracking-tight">Conoce a Nuestro Equipo</h2>
-        <p class="font-body text-base text-gris-principal font-normal">El trabajo interdisciplinario nos permite brindar una atención más completa, cercana y profesional.</p>
-    </div>
-
-    <!-- Contenedor Flex Wrap para que las últimas 2 tarjetas queden perfectamente centradas abajo -->
-    <div class="flex flex-wrap justify-center gap-8 items-stretch">
-        
-        <!-- 1. Claudia Espinoza -->
-        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-oro-rosa/10 rounded-3xl border border-oro-rosa/20 p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
-            <div class="space-y-5">
-                <div class="flex items-start gap-4">
-                    <!-- Foto más grande (144px x 176px) -->
-                    <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-oro-rosa/40 shadow-md shrink-0">
-                        <img src="img/claudia.webp" alt="Lic. Claudia Espinoza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div class="space-y-1 text-left">
-                        <span class="inline-block bg-oro-rosa text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">Directora</span>
-                        <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">Claudia Espinoza</h3>
-                        <p class="font-headline text-xs sm:text-sm font-semibold text-oro-rosa">Lic. en Psicología</p>
-                    </div>
-                </div>
-
-                <!-- Texto más legible (text-sm) -->
-                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
-                    Directora del Centro de Terapias ÁUREA. Cuenta con amplia experiencia en supervisión clínica directa en cada proceso terapéutico, garantizando un servicio altamente especializado.
-                </p>
-
-                <!-- Badges más legibles (text-xs) -->
-                <div class="flex flex-wrap gap-1.5 pt-1">
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Supervisión Clínica</span>
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Acompañamiento Integral</span>
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Enfoque Humano</span>
-                </div>
-            </div>
-
-            <div class="pt-5 mt-5 border-t border-oro-rosa/20">
-                <p class="font-body text-xs italic text-oro-rosa text-center font-normal">
-                    "Experiencia, vocación y compromiso en cada proceso terapéutico."
-                </p>
-            </div>
-        </div>
-
-        <!-- 2. Andrea G. Vives Solano -->
-        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-[#F9EFEA] rounded-3xl border border-oro-rosa/20 p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
-            <div class="space-y-5">
-                <div class="flex items-start gap-4">
-                    <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-oro-rosa/40 shadow-md shrink-0">
-                        <img src="img/andrea.webp" alt="Lic. Andrea G. Vives Solano" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div class="space-y-1 text-left">
-                        <span class="inline-block bg-oro-rosa text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">Especialista Clínica</span>
-                        <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">Andrea G. Vives Solano</h3>
-                        <p class="font-headline text-xs sm:text-sm font-semibold text-oro-rosa">Lic. en Psicología</p>
-                    </div>
-                </div>
-
-                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
-                    Psicóloga con experiencia en las áreas educativa y clínica para niños, adolescentes, adultos y familias. Formación en Terapia Familiar Sistémica.
-                </p>
-
-                <div class="flex flex-wrap gap-1.5 pt-1">
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Terapia Familiar Sistémica</span>
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Ansiedad y Estrés</span>
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Regulación Emocional</span>
-                </div>
-            </div>
-
-            <div class="pt-5 mt-5 border-t border-oro-rosa/20">
-                <p class="font-body text-xs italic text-oro-rosa text-center font-normal">
-                    "Acompañar con empatía es construir espacios seguros para crecer."
-                </p>
-            </div>
-        </div>
-
-        <!-- 3. Dhapne Astete -->
-        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-verde-jade/10 rounded-3xl border border-verde-jade/20 p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
-            <div class="space-y-5">
-                <div class="flex items-start gap-4">
-                    <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-verde-jade/40 shadow-md shrink-0">
-                        <img src="img/dhapne.webp" alt="Bach. Dhapne Astete" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div class="space-y-1 text-left">
-                        <span class="inline-block bg-verde-jade text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">Intervención Conductual</span>
-                        <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">Dhapne Astete</h3>
-                        <p class="font-headline text-xs sm:text-sm font-semibold text-verde-jade">Bach. de Psicología</p>
-                    </div>
-                </div>
-
-                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
-                    Especialista en Intervención Conductual, ABA y TCC. Cree en el poder del juego, la conexión y la confianza para acompañar el desarrollo infantil de forma cercana.
-                </p>
-
-                <div class="flex flex-wrap gap-1.5 pt-1">
-                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">ABA & TCC</span>
-                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">Enfoque Lúdico</span>
-                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">Presencial y Virtual</span>
-                </div>
-            </div>
-
-            <div class="pt-5 mt-5 border-t border-verde-jade/20">
-                <p class="font-body text-xs italic text-verde-jade text-center font-normal">
-                    "Cada pequeño avance es un gran paso hacia el desarrollo."
-                </p>
-            </div>
-        </div>
-
-        <!-- 4. Paul Llontop (Centrado en la 2da fila) -->
-        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-[#E8F3EE] rounded-3xl border border-verde-jade/20 p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
-            <div class="space-y-5">
-                <div class="flex items-start gap-4">
-                    <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-verde-jade/40 shadow-md shrink-0">
-                        <img src="img/paul.webp" alt="Lic. Paul Llontop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div class="space-y-1 text-left">
-                        <span class="inline-block bg-verde-jade text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">Especialista Clínico</span>
-                        <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">Paul Llontop</h3>
-                        <p class="font-headline text-xs sm:text-sm font-semibold text-verde-jade">Lic. en Psicología Clínica</p>
-                    </div>
-                </div>
-
-                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
-                    Experiencia clínica en niños, adolescentes y adultos. Especializado en abuso sexual infantil. Persona con discapacidad visual (CONADIS) de gran sensibilidad y resiliencia.
-                </p>
-
-                <div class="flex flex-wrap gap-1.5 pt-1">
-                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">Abuso Sexual Infantil</span>
-                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">Orientación Docente</span>
-                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">Acreditado CONADIS</span>
-                </div>
-            </div>
-
-            <div class="pt-5 mt-5 border-t border-verde-jade/20">
-                <p class="font-body text-xs italic text-verde-jade text-center font-normal">
-                    "Acompañar con empatía es construir espacios seguros para crecer."
-                </p>
-            </div>
-        </div>
-
-        <!-- 5. Chiara Ciccia (Centrado en la 2da fila) -->
-        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-azul-pizarra/10 rounded-3xl border border-azul-pizarra/20 p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
-            <div class="space-y-5">
-                <div class="flex items-start gap-4">
-                    <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-azul-pizarra/40 shadow-md shrink-0">
-                        <img src="img/chiara.webp" alt="Chiara Ciccia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div class="space-y-1 text-left">
-                        <span class="inline-block bg-azul-pizarra text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">Clínica Infantil</span>
-                        <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">Chiara Ciccia</h3>
-                        <p class="font-headline text-xs sm:text-sm font-semibold text-azul-pizarra">Practicante de Psicología</p>
-                    </div>
-                </div>
-
-                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
-                    Estudiante del 11.° ciclo de la U. de Lima (Tercio Superior). Formación en Psicoterapia Humanista, trastornos del neurodesarrollo y voluntaria bombera activa.
-                </p>
-
-                <div class="flex flex-wrap gap-1.5 pt-1">
-                    <span class="bg-white/80 text-gris-principal border border-azul-pizarra/20 px-3 py-1 rounded-lg text-xs font-body">Psicoterapia Humanista</span>
-                    <span class="bg-white/80 text-gris-principal border border-azul-pizarra/20 px-3 py-1 rounded-lg text-xs font-body">Neurodesarrollo</span>
-                    <span class="bg-white/80 text-gris-principal border border-azul-pizarra/20 px-3 py-1 rounded-lg text-xs font-body">Trilingüe</span>
-                </div>
-            </div>
-
-            <div class="pt-5 mt-5 border-t border-azul-pizarra/20">
-                <p class="font-body text-xs italic text-azul-pizarra text-center font-normal">
-                    "Regulación emocional, trabajo en equipo y toma de decisiones."
-                </p>
-            </div>
-        </div>
-
-    </div>
-</div>
-</section>
-
-
-
-<!-- UBICACIÓN Y CONTACTO -->
-<section class="py-20 px-6 md:px-12 bg-surface" id="contacto">
-<div class="max-w-[1280px] mx-auto bg-background rounded-3xl shadow-md overflow-hidden flex flex-col lg:flex-row border border-gris-claro" data-aos="fade-up">
-    
-    <div class="w-full lg:w-1/2 p-8 md:p-12 flex flex-col justify-center space-y-6">
-        <div class="inline-flex items-center gap-2 text-oro-rosa font-headline text-xs uppercase font-bold tracking-wider">
-            <span class="material-symbols-outlined text-xl fill-icon">location_on</span>
-            Sede Chorrillos
-        </div>
-        <h2 class="font-headline text-3xl sm:text-5xl font-extrabold text-on-surface leading-tight">Estamos para escucharte</h2>
-        <p class="font-body text-base text-gris-principal leading-relaxed">
-            Visítanos en nuestra sede en Chorrillos o contáctanos directamente para agendar tu consulta. Tu espacio seguro te espera.
-        </p>
-
-        <div class="bg-surface p-4 rounded-2xl flex items-center gap-4 border border-gris-claro">
-            <div class="w-12 h-12 bg-oro-rosa/10 rounded-full flex items-center justify-center text-oro-rosa shrink-0">
-                <span class="material-symbols-outlined fill-icon text-2xl">map</span>
-            </div>
+        <article class="bg-surface rounded-3xl overflow-hidden soft-shadow border border-[#FCE7F3] flex flex-col justify-between" data-aos="fade-up" data-aos-delay="300">
             <div>
-                <strong class="block font-headline text-base text-on-surface">Ubicación Sede Chorrillos:</strong>
-                <p class="font-body text-xs text-gris-principal">Calle Antigua Mz. D9 - Lt. 13 (Urb. Los Cedros de Villa), Chorrillos 15067, Lima, Perú</p>
+                <div class="h-64 md:h-72 w-full overflow-hidden relative">
+                    <img alt="Uñas Rubber" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://placehold.co/600x400/f8e1e7/b10e6b?text=Imagen"/>
+                    <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full font-body text-xs font-bold uppercase tracking-wider shadow">
+                        S/ 50.00
+                    </div>
+                </div>
+                <div class="p-8 space-y-4">
+                    <span class="bg-[#FCE7F3] text-primary px-3 py-1 rounded-full font-body text-[10px] font-bold uppercase tracking-wider inline-block">Base Rubber</span>
+                    <h3 class="font-headline text-2xl font-bold text-on-surface">Base Rubber</h3>
+                    <p class="font-body text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                        Refuerzo nivelador para proteger y nivelar la uña natural, promoviendo el crecimiento y aportando resistencia.
+                    </p>
+                    <ul class="font-body text-xs text-on-surface space-y-2 pt-2 border-t border-[#FCE7F3]">
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Refuerzo de uña natural</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Acabado brillante e impecable</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Alta durabilidad</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="p-8 pt-0">
+                <a href="https://wa.me/51933778722?text=Hola,%20deseo%20agendar%20Base%20Rubber." target="_blank" class="block w-full text-center bg-primary text-white rounded-full py-4 font-body text-xs font-bold uppercase tracking-wider shimmer-hover hover:bg-primary-hover transition-colors shadow-md">
+                    Agendar Cita
+                </a>
+            </div>
+        </article>
+
+        <article class="bg-surface rounded-3xl overflow-hidden soft-shadow border border-[#FCE7F3] flex flex-col justify-between" data-aos="fade-up" data-aos-delay="400">
+            <div>
+                <div class="h-64 md:h-72 w-full overflow-hidden relative">
+                    <img alt="Pedicure Spa" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://placehold.co/600x400/ffd1dc/b10e6b?text=Imagen"/>
+                    <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full font-body text-xs font-bold uppercase tracking-wider shadow">
+                        S/ 40.00
+                    </div>
+                </div>
+                <div class="p-8 space-y-4">
+                    <span class="bg-[#FCE7F3] text-primary px-3 py-1 rounded-full font-body text-[10px] font-bold uppercase tracking-wider inline-block">Spa</span>
+                    <h3 class="font-headline text-2xl font-bold text-on-surface">Spa Pedicure</h3>
+                    <p class="font-body text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+                        Tratamiento renovador y relajante para tus pies. Incluye limpieza, exfoliación e hidratación profunda.
+                    </p>
+                    <ul class="font-body text-xs text-on-surface space-y-2 pt-2 border-t border-[#FCE7F3]">
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Sales efervescentes y exfoliación</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Paleteo, limpieza y gel semipermanente</li>
+                        <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Top Finish e hidratación final</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="p-8 pt-0">
+                <a href="https://wa.me/51933778722?text=Hola,%20deseo%20agendar%20Pedicure%20Spa." target="_blank" class="block w-full text-center bg-primary text-white rounded-full py-4 font-body text-xs font-bold uppercase tracking-wider shimmer-hover hover:bg-primary-hover transition-colors shadow-md">
+                    Agendar Cita
+                </a>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- 5. GALERÍA DE DISEÑOS -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20" id="galeria">
+    <div class="text-center mb-12 space-y-3" data-aos="fade-up">
+        <h2 class="font-headline text-3xl sm:text-4xl font-bold text-primary">Nuestras Obras de Arte</h2>
+        <p class="font-body text-sm text-on-surface-variant max-w-2xl mx-auto">
+            Explora nuestra galería de arte en uñas. Encuentra la inspiración perfecta para tu próxima cita.
+        </p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-3 mb-12" id="gallery-filters" data-aos="fade-up" data-aos-delay="100">
+        <button data-filter="all" class="filter-btn active bg-primary text-white font-body text-xs font-bold uppercase px-6 py-2 rounded-full shadow-sm transition-all">Todos</button>
+        <button data-filter="glamour" class="filter-btn bg-surface text-primary font-body text-xs font-bold uppercase px-6 py-2 rounded-full border border-outline-variant hover:bg-primary hover:text-white transition-all">Glamour</button>
+        <button data-filter="minimalist" class="filter-btn bg-surface text-primary font-body text-xs font-bold uppercase px-6 py-2 rounded-full border border-outline-variant hover:bg-primary hover:text-white transition-all">Minimalista</button>
+        <button data-filter="floral" class="filter-btn bg-surface text-primary font-body text-xs font-bold uppercase px-6 py-2 rounded-full border border-outline-variant hover:bg-primary hover:text-white transition-all">Floral</button>
+        <button data-filter="seasonal" class="filter-btn bg-surface text-primary font-body text-xs font-bold uppercase px-6 py-2 rounded-full border border-outline-variant hover:bg-primary hover:text-white transition-all">Temporada</button>
+    </div>
+
+    <div class="masonry-grid" id="gallery-items">
+        <div class="masonry-item gallery-card glamour relative group rounded-2xl overflow-hidden bg-surface soft-shadow border border-outline-variant cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+            <img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" alt="Regal Heart" src="https://placehold.co/600x750/ffd1dc/b10e6b?text=Imagen"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex items-end">
+                <div>
+                    <h3 class="font-headline text-lg font-bold text-white">Corazón Real</h3>
+                    <p class="font-body text-xs text-primary-fixed uppercase tracking-wider">Glamour</p>
+                </div>
             </div>
         </div>
 
-        <a class="flex items-center justify-center gap-2 bg-oro-rosa text-white px-8 py-4 rounded-full font-headline text-xs font-bold uppercase tracking-widest hover:bg-oro-rosa/90 transition-all shadow-md w-full sm:w-auto self-start" href="https://maps.google.com/?q=Calle+Antigua+Mz+D9+Lt+13+Los+Cedros+de+Villa+Chorrillos" target="_blank">
-            <span class="material-symbols-outlined text-base">directions</span>
-            Cómo llegar con Google Maps
-        </a>
+        <div class="masonry-item gallery-card minimalist relative group rounded-2xl overflow-hidden bg-surface soft-shadow border border-outline-variant cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+            <img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" alt="Micro French" src="https://placehold.co/600x600/ffb0cd/b10e6b?text=Imagen"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex items-end">
+                <div>
+                    <h3 class="font-headline text-lg font-bold text-white">Micro French</h3>
+                    <p class="font-body text-xs text-primary-fixed uppercase tracking-wider">Minimalista</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="masonry-item gallery-card floral relative group rounded-2xl overflow-hidden bg-surface soft-shadow border border-outline-variant cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+            <img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" alt="Spring Daisies" src="https://placehold.co/600x800/f8e1e7/b10e6b?text=Imagen"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex items-end">
+                <div>
+                    <h3 class="font-headline text-lg font-bold text-white">Margaritas de Primavera</h3>
+                    <p class="font-body text-xs text-primary-fixed uppercase tracking-wider">Floral</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="masonry-item gallery-card glamour relative group rounded-2xl overflow-hidden bg-surface soft-shadow border border-outline-variant cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+            <img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" alt="Midnight Ombre" src="https://placehold.co/600x700/ffd1dc/b10e6b?text=Imagen"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex items-end">
+                <div>
+                    <h3 class="font-headline text-lg font-bold text-white">Ombré Nocturno</h3>
+                    <p class="font-body text-xs text-primary-fixed uppercase tracking-wider">Glamour</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="masonry-item gallery-card seasonal relative group rounded-2xl overflow-hidden bg-surface shadow-soft border border-outline-variant cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+            <img class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700" alt="Frost Queen" src="https://placehold.co/600x650/ffb0cd/b10e6b?text=Imagen"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex items-end">
+                <div>
+                    <h3 class="font-headline text-lg font-bold text-white">Reina de Escarcha</h3>
+                    <p class="font-body text-xs text-primary-fixed uppercase tracking-wider">Temporada</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. INSTRUCCIONES DE RESERVA Y MEDIOS DE PAGO -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-20" id="reserva">
+    <div class="text-center mb-16 space-y-3" data-aos="fade-up">
+        <h2 class="font-headline text-3xl sm:text-4xl font-bold text-primary">Reserva Tu Cita</h2>
+        <p class="font-body text-sm text-on-surface-variant max-w-xl mx-auto">
+            Sigue estos pasos para agendar tu cita y disfrutar de una experiencia de lujo en Queen Nail.
+        </p>
     </div>
 
-    <!-- Mapa Google Maps Chorrillos -->
-    <div class="w-full lg:w-1/2 min-h-[380px] bg-gris-claro">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.123456789!2d-77.0200!3d-12.1900!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b9f123456789%3A0x123456789abcdef!2sC.%20Antigua%2C%20Chorrillos%2015067!5e0!3m2!1ses!2spe!4v1650000000000!5m2!1ses!2spe" class="w-full h-full border-0 min-h-[380px]" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start">
+        <div class="lg:col-span-7 bg-surface rounded-3xl p-8 md:p-12 soft-shadow border border-[#FCE7F3] space-y-8" data-aos="fade-right">
+            <h3 class="font-headline text-2xl font-bold text-primary flex items-center gap-3">
+                <span class="material-symbols-outlined text-3xl">calendar_month</span>
+                <span>¿Cómo agendar tu cita?</span>
+            </h3>
 
-</div>
+            <ol class="space-y-6 font-body text-xs sm:text-sm text-on-surface">
+                <li class="flex gap-4 items-start">
+                    <span class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-primary font-bold text-xs flex items-center justify-center">1</span>
+                    <p class="pt-0.5">Indicar el servicio que desea realizarse adjuntando la imagen del diseño deseado.</p>
+                </li>
+                <li class="flex gap-4 items-start">
+                    <span class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-primary font-bold text-xs flex items-center justify-center">2</span>
+                    <p class="pt-0.5">Indicar el día preferido para enviarte los horarios disponibles.</p>
+                </li>
+                <li class="flex gap-4 items-start">
+                    <span class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-primary font-bold text-xs flex items-center justify-center">3</span>
+                    <div>
+                        <p class="mb-1">Para agendar tu cita se necesita un anticipo de <strong>S/20.00 soles</strong> al <strong>994439620</strong> (Yape o Plin).</p>
+                        <p class="text-on-surface-variant text-xs">Este monto se descontará al finalizar el servicio. Luego mandar captura con nombre.</p>
+                    </div>
+                </li>
+                <li class="flex gap-4 items-start">
+                    <span class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-primary font-bold text-xs flex items-center justify-center">4</span>
+                    <p class="pt-0.5">El tiempo de tolerancia es de <strong>15 minutos</strong>. Pasado ese tiempo se cancelará la cita sin reembolso.</p>
+                </li>
+                <li class="flex gap-4 items-start">
+                    <span class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-primary font-bold text-xs flex items-center justify-center">5</span>
+                    <p class="pt-0.5">Es importante venir con las uñas libres (sin acrílico, Rubber o esmalte). En caso contrario se cobrará <strong>S/15.00 soles</strong> por retiro.</p>
+                </li>
+                <li class="flex gap-4 items-start">
+                    <span class="flex-shrink-0 w-7 h-7 rounded-full bg-primary-fixed text-primary font-bold text-xs flex items-center justify-center">6</span>
+                    <p class="pt-0.5">No realizo retoque de trabajos ajenos.</p>
+                </li>
+            </ol>
+
+            <div class="pt-4 text-center">
+                <a href="https://wa.me/51933778722?text=Hola%20Queen%20Nail,%20deseo%20agendar%20una%20cita." target="_blank" class="inline-flex items-center gap-2 bg-[#25D366] text-white font-body text-xs font-bold uppercase tracking-wider px-8 py-4 rounded-full hover:opacity-90 transition-opacity shadow-md">
+                    <span class="material-symbols-outlined text-base">chat</span>
+                    <span>Agendar por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="lg:col-span-5 space-y-8" data-aos="fade-left">
+            <div class="bg-surface rounded-3xl p-8 soft-shadow border border-[#FCE7F3] text-center space-y-6">
+                <h3 class="font-headline text-2xl font-bold text-primary">Medios de Pago</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex flex-col items-center p-4 bg-[#FDF2F8] rounded-2xl border border-outline-variant">
+                        <span class="material-symbols-outlined text-3xl text-primary mb-1">payments</span>
+                        <span class="font-body text-xs font-bold text-on-surface">Efectivo</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-[#FDF2F8] rounded-2xl border border-outline-variant">
+                        <span class="material-symbols-outlined text-3xl text-primary mb-1">qr_code_scanner</span>
+                        <span class="font-body text-xs font-bold text-on-surface">Yape / Plin</span>
+                    </div>
+                    <div class="col-span-2 flex flex-col items-center p-4 bg-[#FDF2F8] rounded-2xl border border-outline-variant">
+                        <span class="material-symbols-outlined text-3xl text-tertiary mb-1">credit_card</span>
+                        <span class="font-body text-xs font-bold text-on-surface">Tarjeta (Crédito/Débito)</span>
+                        <span class="text-[11px] text-on-surface-variant mt-0.5">(Con un 4% de recargo)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-surface rounded-3xl overflow-hidden soft-shadow border border-[#FCE7F3]" id="ubicacion">
+                <div class="p-6">
+                    <h3 class="font-headline text-xl font-bold text-primary mb-1 flex items-center gap-2">
+                        <span class="material-symbols-outlined">location_on</span>
+                        <span>Nuestra Ubicación</span>
+                    </h3>
+                    <p class="font-body text-xs text-on-surface-variant">Jr. Zeus 851, Los Olivos (Al costado de la Municipalidad)</p>
+                </div>
+                <div class="w-full h-56 bg-surface-container-low relative">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.766155660851!2d-77.07345682494537!3d-11.989798488243308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf2cb6e026cd%3A0xa61fa25d30f3a61f!2sJr.%20Zeus%20851%2C%20Los%20Olivos%2015304!5e0!3m2!1ses-419!2spe!4v1700000000000!5m2!1ses-419!2spe" 
+                        class="w-full h-full border-0" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 </main>
 
 <!-- FOOTER -->
-<footer class="w-full bg-[#222222] text-white/80 font-body text-xs py-16 px-6 md:px-12">
-<div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-    
-    <!-- Columna Logo y Descripción -->
-    <div class="lg:col-span-2 space-y-4">
-        <a class="inline-block py-1 group" href="#inicio">
-            <img src="img/logo-removebg-preview.png" alt="Logo Áurea Vital" class="h-16 md:h-20 w-auto object-contain brightness-0 invert transition-transform group-hover:scale-105" />
-        </a>
-        <p class="max-w-sm text-white/70 leading-relaxed text-sm">
-            Psicología clínica basada en evidencia, acompañamiento humano y resultados medibles en Chorrillos, Lima.
-        </p>
-        <p class="text-white/40 text-xs pt-2">
-            © 2026 ÁUREA Centro Integral Vital. Todos los derechos reservados.
-        </p>
-    </div>
-
-    <!-- Columna Contacto -->
-    <div class="space-y-3">
-        <h4 class="font-headline font-bold text-sm text-dorado uppercase tracking-wider">Contacto</h4>
-        <ul class="space-y-2.5 text-white/70">
-            <li>
-                <a class="hover:text-oro-rosa transition-colors flex items-center gap-2" href="https://wa.me/51922761436" target="_blank">
-                    <span class="material-symbols-outlined text-base text-oro-rosa">call</span>
-                    <span>WhatsApp General: 922 761 436</span>
-                </a>
-            </li>
-            <li>
-                <a class="hover:text-oro-rosa transition-colors flex items-center gap-2" href="https://wa.me/51907805210" target="_blank">
-                    <span class="material-symbols-outlined text-base text-oro-rosa">call</span>
-                    <span>WhatsApp Club Lima: 907 805 210</span>
-                </a>
-            </li>
-            <li>
-                <div class="flex items-center gap-2">
-                    <span class="material-symbols-outlined text-base text-oro-rosa shrink-0">mail</span>
-                    <span>admision.calma@gmail.com</span>
+<footer class="bg-surface border-t border-outline-variant/60 py-12 px-6 md:px-12 w-full mt-auto">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left items-start">
+        <div class="space-y-3 md:col-span-1">
+            <div class="flex items-center justify-center md:justify-start gap-3">
+                <div class="w-16 h-16 rounded-full overflow-hidden flex items-center justify-center bg-primary-fixed border border-primary/20 shrink-0">
+                    <img src="img/logo.jpg" alt="Queen Nail Logo" class="w-full h-full object-cover" />
                 </div>
-            </li>
-        </ul>
-    </div>
+                <span class="font-headline font-bold text-2xl text-primary leading-none">Queen Nail</span>
+            </div>
+            <p class="text-xs text-on-surface-variant leading-relaxed">
+                Salón de Uñas en Los Olivos. Especialistas en Acrílicas, Soft Gel, Base Rubber y Pedicure Spa.
+            </p>
+        </div>
 
-    <!-- NUEVA COLUMNA: Horario de Atención -->
-    <div class="space-y-3">
-        <h4 class="font-headline font-bold text-sm text-dorado uppercase tracking-wider">Horario de Atención</h4>
-        <div class="space-y-2 text-white/70 text-xs leading-relaxed">
-            <div class="flex items-start gap-2">
-                <span class="material-symbols-outlined text-base text-oro-rosa shrink-0 pt-0.5">schedule</span>
-                <div class="space-y-1">
-                    <p><strong class="text-white/90">Lunes a Viernes:</strong><br>07:00 a.m. – 07:00 a.m. (24 hrs / Previa Cita)</p>
-                    <p><strong class="text-white/90">Sábado:</strong><br>01:00 a.m. – 01:00 a.m.</p>
-                    <p><strong class="text-white/90">Domingo:</strong><br><span class="text-oro-rosa">Cerrado</span></p>
-                </div>
+        <div class="space-y-2 text-xs text-on-surface-variant">
+            <h4 class="font-bold text-primary text-sm uppercase tracking-wider">Navegación</h4>
+            <ul class="space-y-1.5">
+                <li><a href="#inicio" class="hover:text-primary transition-colors">Inicio</a></li>
+                <li><a href="#servicios" class="hover:text-primary transition-colors">Servicios</a></li>
+                <li><a href="#galeria" class="hover:text-primary transition-colors">Galería</a></li>
+                <li><a href="#reserva" class="hover:text-primary transition-colors">Pasos de Reserva</a></li>
+            </ul>
+        </div>
+
+        <div class="space-y-2 text-xs text-on-surface-variant">
+            <h4 class="font-bold text-primary text-sm uppercase tracking-wider">Contacto & Citas</h4>
+            <p><strong>Ubicación:</strong> Jr. Zeus 851, Los Olivos.</p>
+            <p><strong>Atención:</strong> Con cita previa.</p>
+            <p><strong>Teléfono:</strong> +51 933 778 722</p>
+        </div>
+
+        <div class="space-y-3">
+            <h4 class="font-bold text-primary text-sm uppercase tracking-wider">Síguenos</h4>
+            <div class="flex items-center justify-center md:justify-start gap-3 pt-1">
+                <a href="https://www.instagram.com/queennail2025" target="_blank" aria-label="Instagram" class="w-9 h-9 rounded-full bg-primary-fixed hover:bg-primary hover:text-white transition-all flex items-center justify-center text-primary shadow-sm">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://www.facebook.com/QUEENNAIL26?locale=es_LA" target="_blank" aria-label="Facebook" class="w-9 h-9 rounded-full bg-primary-fixed hover:bg-primary hover:text-white transition-all flex items-center justify-center text-primary shadow-sm">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 3.657 10.93 9 11.82V15.47H6.438v-3.397H9v-2.583c0-2.532 1.492-3.926 3.824-3.926 1.116 0 2.285.2 2.285.2v2.51h-1.288c-1.256 0-1.649.78-1.649 1.58v1.921h2.825l-.45 3.397h-2.375v8.423c5.343-.89 9-5.83 9-11.82z"/></svg>
+                </a>
+                <a href="https://www.tiktok.com/@queennail2025" target="_blank" aria-label="TikTok" class="w-9 h-9 rounded-full bg-primary-fixed hover:bg-primary hover:text-white transition-all flex items-center justify-center text-primary shadow-sm">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.98-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.82.57-1.31 1.54-1.28 2.54.01.81.42 1.59 1.08 2.03.88.58 2.05.62 2.97.12.89-.47 1.43-1.42 1.45-2.43.02-4.28.01-8.56.01-12.84z"/></svg>
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- Columna Redes Sociales -->
-    <div class="space-y-4">
-        <h4 class="font-headline font-bold text-sm text-dorado uppercase tracking-wider">Síguenos en Redes</h4>
-        <div class="flex flex-col space-y-3 font-headline text-xs text-white/70">
-            <a class="hover:text-oro-rosa transition-colors flex items-center gap-3 group" href="https://www.facebook.com/profile.php?id=61574167435435&locale=es_LA" target="_blank">
-                <div class="w-8 h-8 rounded-full bg-white/10 group-hover:bg-oro-rosa flex items-center justify-center transition-colors">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 3.657 10.93 9 11.82V15.47H6.438v-3.397H9v-2.583c0-2.532 1.492-3.926 3.824-3.926 1.116 0 2.285.2 2.285.2v2.51h-1.288c-1.256 0-1.649.78-1.649 1.58v1.921h2.825l-.45 3.397h-2.375v8.423c5.343-.89 9-5.83 9-11.82z"/></svg>
-                </div>
-                <span>Facebook Oficial</span>
-            </a>
-
-            <a class="hover:text-oro-rosa transition-colors flex items-center gap-3 group" href="https://www.instagram.com/aureavitalcentrointegral" target="_blank">
-                <div class="w-8 h-8 rounded-full bg-white/10 group-hover:bg-oro-rosa flex items-center justify-center transition-colors">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 2.156 4.919 5.406.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 5.234-4.919 5.388-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.154-4.771-2.157-4.919-5.388-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-5.234 4.919-5.388 1.265-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                </div>
-                <span>Instagram @aureavitalcentrointegral</span>
-            </a>
-        </div>
+    <div class="max-w-7xl mx-auto pt-8 mt-8 border-t border-outline-variant text-center text-xs text-on-surface-variant">
+        © 2026 Queen Nail. Todos los derechos reservados. Jr. Zeus 851, Los Olivos.
     </div>
-
-</div>
 </footer>
 
 <!-- AOS JS & Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // --- 1. CONFIGURACIÓN INICIAL & MENÚ MÓVIL ---
-    if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-    }
-
-    window.addEventListener('beforeunload', () => {
-        window.scrollTo(0, 0);
-    });
-
     document.addEventListener('DOMContentLoaded', () => {
-        window.scrollTo(0, 0);
-
         if (typeof AOS !== 'undefined') {
             AOS.init({
-                duration: 900,
+                duration: 800,
                 once: true,
-                easing: 'ease-out-back',
-                offset: 120,
-                disable: false
+                easing: 'ease-out-sine'
             });
         }
 
-        // Control Menú Móvil
+        // Lógica de toggle para Menú Móvil con cambio de SVG
         const menuBtn = document.getElementById('menu-btn');
+        const menuSvg = document.getElementById('menu-svg');
         const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        const svgMenu = '<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>';
+        const svgClose = '<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>';
+
+        function toggleMenu() {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.classList.add('flex');
+                menuSvg.innerHTML = svgClose;
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                menuSvg.innerHTML = svgMenu;
+            }
+        }
 
         if (menuBtn && mobileMenu) {
-            const toggleMenu = (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                const isHidden = window.getComputedStyle(mobileMenu).display === 'none';
-                if (isHidden) {
-                    mobileMenu.style.display = 'flex';
-                    mobileMenu.classList.remove('hidden');
-                } else {
-                    mobileMenu.style.display = 'none';
-                    mobileMenu.classList.add('hidden');
-                }
-            };
-
             menuBtn.addEventListener('click', toggleMenu);
-            menuBtn.addEventListener('touchstart', toggleMenu, { passive: false });
+            mobileLinks.forEach(link => link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) toggleMenu();
+            }));
+        }
 
-            const mobileLinks = mobileMenu.querySelectorAll('a');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.style.display = 'none';
-                    mobileMenu.classList.add('hidden');
+        // Lógica de Filtros de la Galería
+        const filterBtns = document.querySelectorAll('#gallery-filters .filter-btn');
+        const galleryCards = document.querySelectorAll('#gallery-items .gallery-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-primary', 'text-white');
+                    b.classList.add('bg-surface', 'text-primary');
+                });
+
+                btn.classList.add('active', 'bg-primary', 'text-white');
+                btn.classList.remove('bg-surface', 'text-primary');
+
+                const filter = btn.getAttribute('data-filter');
+
+                galleryCards.forEach(card => {
+                    if (filter === 'all' || card.classList.contains(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
                 });
             });
-
-            document.addEventListener('click', (e) => {
-                if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-                    mobileMenu.style.display = 'none';
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        }
-    });
-
-    // --- 2. LÓGICA DEL VISOR DE IMÁGENES (ZOOM Y PAN) ---
-    let scale = 1;
-    let translateX = 0;
-    let translateY = 0;
-    let isDragging = false;
-    let startX = 0;
-    let startY = 0;
-    const minScale = 1;
-    const maxScale = 5;
-
-    // Variables Touch
-    let initialTouchDistance = 0;
-
-    function openModal(imageSrc) {
-        const modal = document.getElementById('image-modal');
-        const modalImg = document.getElementById('modal-img');
-        if (modal && modalImg) {
-            modalImg.src = imageSrc;
-            scale = 1;
-            translateX = 0;
-            translateY = 0;
-            updateTransform();
-            
-            modal.classList.remove('hidden');
-            
-            // Bloqueo total de scroll y zoom nativo en móviles
-            document.documentElement.classList.add('overflow-hidden', 'touch-none');
-            document.body.classList.add('overflow-hidden', 'touch-none');
-            
-            let metaViewport = document.querySelector('meta[name=viewport]');
-            if (metaViewport) {
-                metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0');
-            }
-        }
-    }
-
-    function closeModal() {
-        const modal = document.getElementById('image-modal');
-        if (modal) {
-            modal.classList.add('hidden');
-            
-            // Restaurar scroll y zoom nativo
-            document.documentElement.classList.remove('overflow-hidden', 'touch-none');
-            document.body.classList.remove('overflow-hidden', 'touch-none');
-            
-            let metaViewport = document.querySelector('meta[name=viewport]');
-            if (metaViewport) {
-                metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
-            }
-            
-            scale = 1;
-            translateX = 0;
-            translateY = 0;
-            updateTransform();
-        }
-    }
-
-    // --- ESTA ES LA FUNCIÓN CLAVE CORREGIDA ---
-    function updateTransform() {
-        const modalImg = document.getElementById('modal-img');
-        const modal = document.getElementById('image-modal');
-
-        if (modalImg && modal) {
-            // Si la escala llega a su tamaño original (1 o menos), forzar centrado absoluto
-            if (scale <= 1) {
-                scale = 1;
-                translateX = 0;
-                translateY = 0;
-            } else {
-                // Calcular márgenes dinámicos como un resorte para centrar al achicar
-                const containerRect = modal.getBoundingClientRect();
-                const imgWidth = modalImg.offsetWidth * scale;
-                const imgHeight = modalImg.offsetHeight * scale;
-
-                const maxTx = Math.max(0, (imgWidth - containerRect.width) / 2);
-                const maxTy = Math.max(0, (imgHeight - containerRect.height) / 2);
-
-                translateX = Math.max(-maxTx, Math.min(maxTx, translateX));
-                translateY = Math.max(-maxTy, Math.min(maxTy, translateY));
-            }
-
-            modalImg.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-            modalImg.style.cursor = scale > 1 ? (isDragging ? 'grabbing' : 'grab') : 'zoom-in';
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const modal = document.getElementById('image-modal');
-        const modalImg = document.getElementById('modal-img');
-
-        if (modal && modalImg) {
-            modalImg.addEventListener('dragstart', (e) => e.preventDefault());
-
-            // Bloquear rebote nativo del modal en móviles
-            modal.addEventListener('touchmove', (e) => {
-                if(e.target === modal) { e.preventDefault(); }
-            }, { passive: false });
-
-            // --- ESCRITORIO: ZOOM EXACTO DONDE ESTÁ EL MOUSE ---
-            modal.addEventListener('wheel', (e) => {
-                e.preventDefault();
-                
-                const zoomSensitivity = 0.15;
-                const delta = e.deltaY < 0 ? 1 + zoomSensitivity : 1 - zoomSensitivity;
-                const newScale = Math.max(minScale, Math.min(scale * delta, maxScale));
-
-                if (newScale !== scale) {
-                    const ratio = newScale / scale;
-                    const containerRect = modal.getBoundingClientRect();
-                    
-                    const centerX = containerRect.left + containerRect.width / 2;
-                    const centerY = containerRect.top + containerRect.height / 2;
-
-                    const mouseX = e.clientX - centerX;
-                    const mouseY = e.clientY - centerY;
-
-                    translateX = mouseX - (mouseX - translateX) * ratio;
-                    translateY = mouseY - (mouseY - translateY) * ratio;
-
-                    scale = newScale;
-                    updateTransform();
-                }
-            }, { passive: false });
-
-            // --- ESCRITORIO: ARRASTRE (PAN) HACIA TODOS LOS LADOS ---
-            modalImg.addEventListener('mousedown', (e) => {
-                e.preventDefault();
-                if (scale > 1) {
-                    isDragging = true;
-                    startX = e.clientX - translateX;
-                    startY = e.clientY - translateY;
-                    updateTransform();
-                }
-            });
-
-            window.addEventListener('mousemove', (e) => {
-                if (isDragging && scale > 1) {
-                    e.preventDefault();
-                    translateX = e.clientX - startX;
-                    translateY = e.clientY - startY;
-                    updateTransform();
-                }
-            });
-
-            window.addEventListener('mouseup', () => {
-                if (isDragging) {
-                    isDragging = false;
-                    updateTransform();
-                }
-            });
-
-            // --- MÓVIL: TOUCH (ARRASTRE Y PINZA EXACTA) ---
-            modalImg.addEventListener('touchstart', (e) => {
-                if (e.touches.length === 1 && scale > 1) {
-                    isDragging = true;
-                    startX = e.touches[0].clientX - translateX;
-                    startY = e.touches[0].clientY - translateY;
-                } else if (e.touches.length === 2) {
-                    isDragging = false;
-                    initialTouchDistance = Math.hypot(
-                        e.touches[0].clientX - e.touches[1].clientX,
-                        e.touches[0].clientY - e.touches[1].clientY
-                    );
-                }
-            }, { passive: false });
-
-            modalImg.addEventListener('touchmove', (e) => {
-                if (e.touches.length === 1 && isDragging && scale > 1) {
-                    e.preventDefault();
-                    translateX = e.touches[0].clientX - startX;
-                    translateY = e.touches[0].clientY - startY;
-                    updateTransform();
-                } else if (e.touches.length === 2) {
-                    e.preventDefault();
-                    const currentDistance = Math.hypot(
-                        e.touches[0].clientX - e.touches[1].clientX,
-                        e.touches[0].clientY - e.touches[1].clientY
-                    );
-
-                    if (initialTouchDistance > 0) {
-                        const ratio = currentDistance / initialTouchDistance;
-                        const newScale = Math.max(minScale, Math.min(scale * ratio, maxScale));
-
-                        if (newScale !== scale) {
-                            const scaleRatio = newScale / scale;
-                            const containerRect = modal.getBoundingClientRect();
-                            const centerX = containerRect.left + containerRect.width / 2;
-                            const centerY = containerRect.top + containerRect.height / 2;
-
-                            const touchCenterX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
-                            const touchCenterY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
-
-                            const mouseX = touchCenterX - centerX;
-                            const mouseY = touchCenterY - centerY;
-
-                            translateX = mouseX - (mouseX - translateX) * scaleRatio;
-                            translateY = mouseY - (mouseY - translateY) * scaleRatio;
-
-                            scale = newScale;
-                            initialTouchDistance = currentDistance;
-                            updateTransform();
-                        }
-                    }
-                }
-            }, { passive: false });
-
-            modalImg.addEventListener('touchend', (e) => {
-                if (e.touches.length < 2) initialTouchDistance = 0;
-                if (e.touches.length === 0) {
-                    isDragging = false;
-                    updateTransform();
-                }
-            });
-        }
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeModal();
+        });
     });
 </script>
 
-<!-- MODAL LIGHTBOX FLUIDO Y OPTIMIZADO -->
-<div id="image-modal" class="fixed inset-0 bg-black/95 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-md select-none overflow-hidden touch-none" onclick="if(event.target.id !== 'modal-img') closeModal()">
-    
-    <button onclick="closeModal(); event.stopPropagation();" ontouchend="closeModal(); event.stopPropagation();" class="absolute top-4 right-4 p-4 text-white hover:text-oro-rosa text-4xl transition-colors focus:outline-none z-[200]" aria-label="Cerrar modal">
-        &times;
-    </button>
-    
-    <div class="relative w-full h-full flex items-center justify-center overflow-hidden touch-none">
-        <img id="modal-img" src="" alt="Imagen ampliada" 
-             draggable="false" 
-             ondragstart="return false;"
-             class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl cursor-zoom-in select-none will-change-transform touch-none" />
-    </div>
-</div>
 </body>
 </html>
