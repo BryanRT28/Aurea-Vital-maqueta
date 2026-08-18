@@ -746,39 +746,66 @@
             if (resGeneral.ok) {
                 const g = await resGeneral.json();
                 
-                document.getElementById('hero-ciudad-texto').textContent = g.hero_ciudad || "Chorrillos, Lima";
-                document.getElementById('hero-map-link').href = g.link_google_maps || "#";
-                document.getElementById('btn-como-llegar').href = g.link_google_maps || "#";
+                const heroCiudadElem = document.getElementById('hero-ciudad-texto');
+                if (heroCiudadElem) heroCiudadElem.textContent = g.hero_ciudad || "Chorrillos, Lima";
+                
+                const heroMapLink = document.getElementById('hero-map-link');
+                if (heroMapLink) heroMapLink.href = g.link_google_maps || "#";
+                
+                const btnComoLlegar = document.getElementById('btn-como-llegar');
+                if (btnComoLlegar) btnComoLlegar.href = g.link_google_maps || "#";
                 
                 const wLink = `https://wa.me/51${g.whatsapp_general}?text=Hola%20ÁUREA%20Centro%20Integral%20Vital,%20quisiera%20agendar%20una%20consulta.`;
-                document.getElementById('btn-whatsapp-flotante').href = wLink;
-                document.getElementById('btn-header-cita').href = wLink;
-                document.getElementById('btn-mobile-whatsapp').href = `https://wa.me/51${g.whatsapp_general}`;
-                document.getElementById('hero-btn-cita').href = `https://wa.me/51${g.whatsapp_general}?text=Hola,%20deseo%20agendar%20una%20cita%20de%20evaluaci%C3%B3n.`;
+                const btnWpFlotante = document.getElementById('btn-whatsapp-flotante');
+                if (btnWpFlotante) btnWpFlotante.href = wLink;
                 
-                document.getElementById('contacto-direccion-texto').textContent = g.direccion_texto || "";
-                if (g.mapa_iframe_src) document.getElementById('contacto-mapa-iframe').src = g.mapa_iframe_src;
+                const btnHeaderCita = document.getElementById('btn-header-cita');
+                if (btnHeaderCita) btnHeaderCita.href = wLink;
+                
+                const btnMobWp = document.getElementById('btn-mobile-whatsapp');
+                if (btnMobWp) btnMobWp.href = `https://wa.me/51${g.whatsapp_general}`;
+                
+                const heroBtnCita = document.getElementById('hero-btn-cita');
+                if (heroBtnCita) heroBtnCita.href = `https://wa.me/51${g.whatsapp_general}?text=Hola,%20deseo%20agendar%20una%20cita%20de%20evaluaci%C3%B3n.`;
+                
+                const contactoDir = document.getElementById('contacto-direccion-texto');
+                if (contactoDir) contactoDir.textContent = g.direccion_texto || "";
+                
+                const contactoIframe = document.getElementById('contacto-mapa-iframe');
+                if (contactoIframe && g.mapa_iframe_src) contactoIframe.src = g.mapa_iframe_src;
 
                 // Footer
                 const fWGeneral = document.getElementById('footer-whatsapp-general');
-                fWGeneral.href = `https://wa.me/51${g.whatsapp_general}`;
-                document.getElementById('footer-whatsapp-general-txt').textContent = `WhatsApp General: ${g.whatsapp_general}`;
+                if (fWGeneral) fWGeneral.href = `https://wa.me/51${g.whatsapp_general}`;
+                const fWGeneralTxt = document.getElementById('footer-whatsapp-general-txt');
+                if (fWGeneralTxt) fWGeneralTxt.textContent = `WhatsApp General: ${g.whatsapp_general}`;
 
                 const fWClub = document.getElementById('footer-whatsapp-club');
-                fWClub.href = `https://wa.me/51${g.whatsapp_club_lima}`;
-                document.getElementById('footer-whatsapp-club-txt').textContent = `WhatsApp Club Lima: ${g.whatsapp_club_lima}`;
+                if (fWClub) fWClub.href = `https://wa.me/51${g.whatsapp_club_lima}`;
+                const fWClubTxt = document.getElementById('footer-whatsapp-club-txt');
+                if (fWClubTxt) fWClubTxt.textContent = `WhatsApp Club Lima: ${g.whatsapp_club_lima}`;
 
-                document.getElementById('footer-correo').href = `mailto:${g.correo}`;
-                document.getElementById('footer-correo-txt').textContent = g.correo;
+                const fCorreo = document.getElementById('footer-correo');
+                if (fCorreo) fCorreo.href = `mailto:${g.correo}`;
+                const fCorreoTxt = document.getElementById('footer-correo-txt');
+                if (fCorreoTxt) fCorreoTxt.textContent = g.correo;
 
-                document.getElementById('footer-horario-lv').textContent = g.horario_lv;
-                document.getElementById('footer-horario-sab').textContent = g.horario_sab;
-                document.getElementById('footer-horario-dom').textContent = g.horario_dom;
+                const fHorarioLV = document.getElementById('footer-horario-lv');
+                if (fHorarioLV) fHorarioLV.textContent = g.horario_lv;
+                const fHorarioSab = document.getElementById('footer-horario-sab');
+                if (fHorarioSab) fHorarioSab.textContent = g.horario_sab;
+                const fHorarioDom = document.getElementById('footer-horario-dom');
+                if (fHorarioDom) fHorarioDom.textContent = g.horario_dom;
 
-                document.getElementById('footer-facebook-link').href = g.facebook_url;
-                document.getElementById('footer-facebook-txt').textContent = g.facebook_label;
-                document.getElementById('footer-instagram-link').href = g.instagram_url;
-                document.getElementById('footer-instagram-txt').textContent = g.instagram_label;
+                const fFbLink = document.getElementById('footer-facebook-link');
+                if (fFbLink) fFbLink.href = g.facebook_url;
+                const fFbTxt = document.getElementById('footer-facebook-txt');
+                if (fFbTxt) fFbTxt.textContent = g.facebook_label;
+
+                const fIgLink = document.getElementById('footer-instagram-link');
+                if (fIgLink) fIgLink.href = g.instagram_url;
+                const fIgTxt = document.getElementById('footer-instagram-txt');
+                if (fIgTxt) fIgTxt.textContent = g.instagram_label;
             }
 
             // 2. Cargar Tarifas y Bloques
@@ -791,11 +818,25 @@
                 if (cEval && t.evaluaciones) {
                     cEval.innerHTML = t.evaluaciones.map((item, idx) => {
                         const theme = getTheme(item.color);
-                        const itemsHtml = item.caja_items && item.caja_items.length ? item.caja_items.map((it, i) => `
-                            <li class="flex items-start gap-2">
-                                <span class="${theme.bullet} font-bold">${i + 1}.ª</span> ${it}
-                            </li>
-                        `).join('') : '';
+                        const hasStructureTitle = item.caja_titulo && item.caja_titulo.trim() !== "";
+                        
+                        let itemsHtml = '';
+                        if (item.caja_items && item.caja_items.length) {
+                            itemsHtml = item.caja_items.map((it, i) => {
+                                const cleanText = it.trim();
+                                if (cleanText.startsWith('✓') || !hasStructureTitle) {
+                                    if (cleanText.startsWith('✓')) {
+                                        return `<p class="pt-1 text-xs text-verde-jade font-semibold">${cleanText}</p>`;
+                                    }
+                                    return `<p class="text-sm text-gris-principal leading-relaxed">${cleanText}</p>`;
+                                }
+                                return `
+                                    <li class="flex items-start gap-2">
+                                        <span class="${theme.bullet} font-bold">${i + 1}.ª</span> <span>${cleanText}</span>
+                                    </li>
+                                `;
+                            }).join('');
+                        }
 
                         return `
                             <div class="bg-surface p-6 sm:p-7 rounded-3xl border ${theme.border} soft-shadow flex flex-col justify-between space-y-5 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="${(idx + 1) * 100}">
@@ -817,9 +858,7 @@
                                     ${itemsHtml ? `
                                         <div class="p-4 bg-background rounded-2xl border border-gris-claro/60 space-y-2.5">
                                             ${item.caja_titulo ? `<strong class="block font-headline text-sm text-on-surface">${item.caja_titulo}</strong>` : ''}
-                                            <ul class="space-y-2 font-body text-sm text-gris-principal font-normal">
-                                                ${itemsHtml}
-                                            </ul>
+                                            ${hasStructureTitle ? `<ul class="space-y-2 font-body text-sm text-gris-principal font-normal">${itemsHtml}</ul>` : itemsHtml}
                                         </div>
                                     ` : ''}
 
@@ -980,7 +1019,7 @@
                 }
             }
 
-            // 3. Cargar Equipo Profesional
+            // 3. Cargar Equipo Profesional (Colores exactos inline y animación fluida)
             const resEquipo = await fetch('data/equipo.json');
             if (resEquipo.ok) {
                 const eq = await resEquipo.json();
@@ -988,15 +1027,18 @@
                 if (cEq && eq.especialistas) {
                     cEq.innerHTML = eq.especialistas.map((item, idx) => {
                         const theme = getTheme(item.color);
+                        const bgStyle = item.bg_hex ? `background-color: ${item.bg_hex};` : '';
+                        const borderStyle = item.border_hex ? `border-color: ${item.border_hex};` : '';
+
                         const tagsHtml = item.tags ? item.tags.map(t => `
-                            <span class="bg-white/80 text-gris-principal border ${theme.borderSoft} px-3 py-1 rounded-lg text-xs font-body">${t}</span>
+                            <span class="bg-white/80 text-gris-principal border px-3 py-1 rounded-lg text-xs font-body" style="${borderStyle}">${t}</span>
                         `).join('') : '';
 
                         return `
-                            <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] ${theme.bgCard} rounded-3xl border ${theme.borderSoft} p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="${(idx + 1) * 100}">
+                            <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] rounded-3xl border p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" style="${bgStyle} ${borderStyle}" data-aos="fade-up" data-aos-delay="${(idx % 3) * 100}">
                                 <div class="space-y-5">
                                     <div class="flex items-start gap-4">
-                                        <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 ${theme.border} shadow-md shrink-0">
+                                        <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 shadow-md shrink-0" style="${borderStyle}">
                                             <img src="${item.foto}" alt="${item.nombre}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                         </div>
                                         <div class="space-y-1 text-left">
@@ -1016,7 +1058,7 @@
                                     </div>
                                 </div>
 
-                                <div class="pt-5 mt-5 border-t ${theme.borderSoft}">
+                                <div class="pt-5 mt-5 border-t" style="${borderStyle}">
                                     <p class="font-body text-xs italic ${theme.txt} text-center font-normal">
                                         "${item.frase}"
                                     </p>
@@ -1027,9 +1069,16 @@
                 }
             }
 
-            // Reinicializar animaciones AOS tras renderizar el contenido dinámico
+            // Inicialización de AOS exactamente después de que el DOM ya existe
             if (typeof AOS !== 'undefined') {
-                AOS.refreshHard();
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    easing: 'ease-out-cubic',
+                    offset: 60,
+                    disable: false
+                });
+                AOS.refresh();
             }
 
         } catch (err) {
@@ -1048,16 +1097,6 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0, 0);
-
-        if (typeof AOS !== 'undefined') {
-            AOS.init({
-                duration: 900,
-                once: true,
-                easing: 'ease-out-back',
-                offset: 120,
-                disable: false
-            });
-        }
 
         // Control Menú Móvil
         const menuBtn = document.getElementById('menu-btn');
@@ -1096,7 +1135,7 @@
             });
         }
 
-        // Ejecutar Carga Dinámica
+        // Ejecutar Carga de Datos
         loadCMSData();
     });
 
