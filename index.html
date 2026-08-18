@@ -1020,18 +1020,34 @@
                 }
             }
 
-            // 3. Cargar Equipo Profesional
+            // 3. Cargar Equipo Profesional (Sin retraso de scroll y con paleta de colores amigable)
             const resEquipo = await fetch('data/equipo.json');
             if (resEquipo.ok) {
                 const eq = await resEquipo.json();
                 const cEq = document.getElementById('contenedor-equipo');
+                
+                // Diccionario interno de temas para las tarjetas de equipo
+                const teamThemes = {
+                    "rosa-pastel": { baseTheme: "oro-rosa", bg: "rgba(219, 135, 128, 0.10)", border: "rgba(219, 135, 128, 0.25)" },
+                    "crema-rosado": { baseTheme: "oro-rosa", bg: "#F9EFEA", border: "rgba(219, 135, 128, 0.25)" },
+                    "jade-claro": { baseTheme: "verde-jade", bg: "rgba(63, 125, 115, 0.10)", border: "rgba(63, 125, 115, 0.25)" },
+                    "verde-menta": { baseTheme: "verde-jade", bg: "#E8F3EE", border: "rgba(63, 125, 115, 0.25)" },
+                    "azul-cielo": { baseTheme: "azul-pizarra", bg: "rgba(0, 78, 122, 0.10)", border: "rgba(0, 78, 122, 0.25)" },
+                    "naranja-pastel": { baseTheme: "oro-rosa", bg: "#FDF6F0", border: "rgba(219, 135, 128, 0.25)" },
+                    "rosa-palido": { baseTheme: "oro-rosa", bg: "#FAF1ED", border: "rgba(219, 135, 128, 0.25)" }
+                };
+
                 if (cEq && eq.especialistas) {
+                    // Se asigna la animación al contenedor completo para que no dependa de tarjetas individuales
                     cEq.setAttribute('data-aos', 'fade-up');
                     
                     cEq.innerHTML = eq.especialistas.map((item) => {
-                        const theme = getTheme(item.color);
-                        const bgStyle = item.bg_hex ? `background-color: ${item.bg_hex};` : '';
-                        const borderStyle = item.border_hex ? `border-color: ${item.border_hex};` : '';
+                        // Obtener el tema seleccionado por la clienta o el por defecto
+                        const selectedTheme = teamThemes[item.estilo_tarjeta] || teamThemes["rosa-pastel"];
+                        const theme = getTheme(selectedTheme.baseTheme);
+                        
+                        const bgStyle = `background-color: ${selectedTheme.bg};`;
+                        const borderStyle = `border-color: ${selectedTheme.border};`;
 
                         const tagsHtml = item.tags ? item.tags.map(t => `
                             <span class="bg-white/80 text-gris-principal border px-3 py-1 rounded-lg text-xs font-body" style="${borderStyle}">${t}</span>
