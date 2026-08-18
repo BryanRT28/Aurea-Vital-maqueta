@@ -192,13 +192,22 @@ collections:
             widget: "list"
             fields:
               - { label: "Nombre Completo", name: "nombre", widget: "string" }
-              - { label: "Badge Superior (Ej: Directora, Psicoeducativa)", name: "badge", widget: "string" }
+              - { label: "Badge Superior (Ej: Directora)", name: "badge", widget: "string" }
               - { label: "Grado / Título (Ej: Lic. en Psicología)", name: "grado", widget: "string" }
               - { label: "Subtítulo / Mención Secundaria (opcional)", name: "subtitulo", widget: "string", required: false }
               - { label: "Foto", name: "foto", widget: "image" }
-              - { label: "Color del Tema", name: "color", widget: "select", options: ["oro-rosa", "verde-jade", "azul-pizarra"] }
-              - { label: "Fondo Hexadecimal (Ej: rgba(219, 135, 128, 0.10))", name: "bg_hex", widget: "string", required: false }
-              - { label: "Borde Hexadecimal (Ej: rgba(219, 135, 128, 0.25))", name: "border_hex", widget: "string", required: false }
+              - label: "Color de la Tarjeta"
+                name: "estilo_tarjeta"
+                widget: "select"
+                options:
+                  - { label: "Rosa Pastel", value: "rosa-pastel" }
+                  - { label: "Crema Rosado", value: "crema-rosado" }
+                  - { label: "Jade Claro", value: "jade-claro" }
+                  - { label: "Verde Menta", value: "verde-menta" }
+                  - { label: "Azul Cielo", value: "azul-cielo" }
+                  - { label: "Melocotón Suave", value: "naranja-pastel" }
+                  - { label: "Rosa Pálido", value: "rosa-palido" }
+                default: "rosa-pastel"
               - { label: "Descripción Profesional", name: "descripcion", widget: "text" }
               - { label: "Etiquetas / Áreas de Enfoque", name: "tags", widget: "list" }
               - { label: "Frase Destacada", name: "frase", widget: "string" }
