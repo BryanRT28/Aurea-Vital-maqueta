@@ -89,6 +89,7 @@ collections:
               - { label: "Color del Tema", name: "color", widget: "select", options: ["oro-rosa", "verde-jade", "azul-pizarra", "gris-principal"] }
               - { label: "Descripción Corta", name: "descripcion", widget: "text" }
               - { label: "Título de la Caja de Estructura", name: "caja_titulo", widget: "string", required: false }
+              - { label: "Estilo de la Lista", name: "tipo_lista", widget: "select", options: ["Numerada (1.ª, 2.ª)", "Viñetas (•)", "Checks (✓)", "Solo Texto"], default: "Numerada (1.ª, 2.ª)" }
               - { label: "Detalles / Pasos de la Caja (uno por línea)", name: "caja_items", widget: "list", required: false }
               - { label: "Texto Aclaratorio Inferior (Itálica)", name: "aclaracion", widget: "text", required: false }
               - { label: "Texto del Botón", name: "boton_texto", widget: "string", default: "Solicitar Evaluación" }
@@ -142,7 +143,7 @@ collections:
               - { label: "Texto del Botón", name: "boton_texto", widget: "string", default: "Solicitar Terapia Online" }
               - { label: "Mensaje Predefinido de WhatsApp", name: "whatsapp_msg", widget: "string" }
 
-          # 2.5 Otros Servicios Especializados
+          # 2.5 Otros Servicios Especializados (Limpio de HTML)
           - label: "4. Otros Servicios Especializados"
             name: "servicios_especializados"
             widget: "list"
@@ -153,7 +154,14 @@ collections:
               - { label: "Subtexto de Precio (opcional)", name: "precio_subtexto", widget: "string", required: false }
               - { label: "Color del Tema", name: "color", widget: "select", options: ["oro-rosa", "verde-jade", "azul-pizarra", "gris-principal"] }
               - { label: "Descripción / Nota", name: "descripcion", widget: "text", required: false }
-              - { label: "Lista de Ítems / Viñetas (opcional)", name: "items", widget: "list", required: false }
+              - label: "Lista de Precios o Detalles"
+                name: "lista_precios"
+                widget: "list"
+                required: false
+                fields:
+                  - { label: "Servicio (Ej: Terapia Familiar:)", name: "servicio", widget: "string" }
+                  - { label: "Precio / Valor (Ej: S/ 200)", name: "valor", widget: "string" }
+                  - { label: "Nota extra (Ej: hasta 5 pers.)", name: "nota", widget: "string", required: false }
               - { label: "Texto del Botón", name: "boton_texto", widget: "string", default: "Consultar Cita" }
               - { label: "Mensaje Predefinido de WhatsApp", name: "whatsapp_msg", widget: "string" }
 
@@ -189,6 +197,8 @@ collections:
               - { label: "Subtítulo / Mención Secundaria (opcional)", name: "subtitulo", widget: "string", required: false }
               - { label: "Foto", name: "foto", widget: "image" }
               - { label: "Color del Tema", name: "color", widget: "select", options: ["oro-rosa", "verde-jade", "azul-pizarra"] }
+              - { label: "Fondo Hexadecimal (Ej: rgba(219, 135, 128, 0.10))", name: "bg_hex", widget: "string", required: false }
+              - { label: "Borde Hexadecimal (Ej: rgba(219, 135, 128, 0.25))", name: "border_hex", widget: "string", required: false }
               - { label: "Descripción Profesional", name: "descripcion", widget: "text" }
               - { label: "Etiquetas / Áreas de Enfoque", name: "tags", widget: "list" }
               - { label: "Frase Destacada", name: "frase", widget: "string" }
