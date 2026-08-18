@@ -81,6 +81,12 @@
     details > summary::-webkit-details-marker {
         display: none;
     }
+    .markdown-content ul { list-style-type: disc; padding-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
+    .markdown-content ol { list-style-type: decimal; padding-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
+    .markdown-content li { margin-bottom: 0.25rem; }
+    .markdown-content p { margin-bottom: 0.5rem; }
+    .markdown-content p:last-child { margin-bottom: 0; }
+    .markdown-content strong { font-weight: 700; color: #2A2A2A; }
 </style>
 </head>
 <body class="bg-background text-on-surface font-body antialiased selection:bg-oro-rosa selection:text-white pt-[88px]">
@@ -380,10 +386,6 @@
                 <!-- Se inyecta desde tarifas.json -->
             </div>
 
-            <!-- Fila Inferior: Tarjeta de Terapias Virtuales Centrada -->
-            <div id="contenedor-virtuales" class="flex justify-center pt-2">
-                <!-- Se inyecta desde tarifas.json -->
-            </div>
         </div>
 
         <!-- 4. OTROS SERVICIOS ESPECIALIZADOS DINÁMICOS -->
@@ -551,7 +553,7 @@
 
 <!-- UBICACIÓN Y CONTACTO -->
 <section class="py-20 px-6 md:px-12 bg-surface" id="contacto">
-<div class="max-w-[1280px] mx-auto bg-background rounded-3xl shadow-md overflow-hidden flex flex-col lg:flex-row border border-gris-claro" data-aos="fade-up">
+<div class="max-w-[1280px] mx-auto bg-background rounded-3xl shadow-md overflow-hidden flex flex-col lg:flex-row border border-gris-claro">
     
     <div class="w-full lg:w-1/2 p-8 md:p-12 flex flex-col justify-center space-y-6">
         <div class="inline-flex items-center gap-2 text-oro-rosa font-headline text-xs uppercase font-bold tracking-wider">
@@ -681,6 +683,8 @@
     </div>
 </div>
 
+<!-- Librería para el editor de texto (Markdown) -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <!-- AOS JS & MOTOR DE RENDERIZADO DINÁMICO -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
@@ -774,7 +778,6 @@
                 const contactoIframe = document.getElementById('contacto-mapa-iframe');
                 if (contactoIframe && g.mapa_iframe_src) contactoIframe.src = g.mapa_iframe_src;
 
-                // Footer
                 const fWGeneral = document.getElementById('footer-whatsapp-general');
                 if (fWGeneral) fWGeneral.href = `https://wa.me/51${g.whatsapp_general}`;
                 const fWGeneralTxt = document.getElementById('footer-whatsapp-general-txt');
@@ -813,27 +816,19 @@
             if (resTarifas.ok) {
                 const t = await resTarifas.json();
 
-                // 2.1 Evaluaciones (Renderizado Dinámico de Listas según selección del CMS)
+                // 2.1 Evaluaciones (Renderizado usando la librería Marked para el texto enriquecido)
                 const cEval = document.getElementById('contenedor-evaluaciones');
                 if (cEval && t.evaluaciones) {
                     cEval.innerHTML = t.evaluaciones.map((item, idx) => {
                         const theme = getTheme(item.color);
                         
-                        let itemsHtml = '';
-                        if (item.caja_items && item.caja_items.length) {
-                            itemsHtml = item.caja_items.map((it, i) => {
-                                const cleanText = it.trim();
-                                if (item.tipo_lista === "Numerada (1.ª, 2.ª)") {
-                                    return `<li class="flex items-start gap-2"><span class="${theme.bullet} font-bold">${i + 1}.ª</span> <span>${cleanText}</span></li>`;
-                                } else if (item.tipo_lista === "Checks (✓)") {
-                                    return `<li class="flex items-start gap-2"><span class="text-verde-jade font-bold">✓</span> <span>${cleanText}</span></li>`;
-                                } else if (item.tipo_lista === "Viñetas (•)") {
-                                    return `<li class="flex items-start gap-2"><span class="${theme.bullet} font-bold">•</span> <span>${cleanText}</span></li>`;
-                                } else {
-                                    return `<p class="text-sm text-gris-principal leading-relaxed pt-1">${cleanText}</p>`;
-                                }
-                            }).join('');
-                        }
+                        const detallesHtml = item.detalles ? `
+                            <div class="p-4 bg-background rounded-2xl border border-gris-claro/60 space-y-2.5">
+                                <div class="markdown-content text-sm text-gris-principal font-normal">
+                                    ${marked.parse(item.detalles)}
+                                </div>
+                            </div>
+                        ` : '';
 
                         return `
                             <div class="bg-surface p-6 sm:p-7 rounded-3xl border ${theme.border} soft-shadow flex flex-col justify-between space-y-5 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up">
@@ -852,12 +847,7 @@
                                         <p class="font-body text-sm text-gris-principal font-normal pt-1">${item.descripcion}</p>
                                     </div>
 
-                                    ${itemsHtml ? `
-                                        <div class="p-4 bg-background rounded-2xl border border-gris-claro/60 space-y-2.5">
-                                            ${item.caja_titulo ? `<strong class="block font-headline text-sm text-on-surface">${item.caja_titulo}</strong>` : ''}
-                                            <ul class="space-y-2 font-body text-sm text-gris-principal font-normal">${itemsHtml}</ul>
-                                        </div>
-                                    ` : ''}
+                                    ${detallesHtml}
 
                                     ${item.aclaracion ? `<p class="font-body text-xs text-gris-principal italic">${item.aclaracion}</p>` : ''}
                                 </div>
@@ -899,76 +889,75 @@
                     }
                 }
 
-                // 2.3 Consultas Individuales
+                // 2.3 Consultas Individuales y 2.4 Terapias Virtuales (Unidos en un solo Grid para armonía)
                 const cCons = document.getElementById('contenedor-consultas');
-                if (cCons && t.consultas_individuales) {
-                    cCons.innerHTML = t.consultas_individuales.map((item) => {
-                        const theme = getTheme(item.color);
-                        return `
+                if (cCons) {
+                    let htmlCards = '';
+                    
+                    if (t.consultas_individuales) {
+                        htmlCards += t.consultas_individuales.map((item) => {
+                            const theme = getTheme(item.color);
+                            return `
+                                <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up">
+                                    <div class="space-y-3.5">
+                                        <span class="inline-block ${theme.badgeBg} ${theme.badgeTxt} px-3 py-1 rounded-full font-headline text-xs font-semibold">
+                                            ${item.badge}
+                                        </span>
+                                        <h4 class="font-headline text-xl font-bold text-on-surface">${item.titulo}</h4>
+                                        <p class="font-body text-sm text-gris-principal font-normal">${item.descripcion}</p>
+                                        <div class="pt-2">
+                                            <span class="font-headline text-3xl font-bold ${theme.txt}">${item.precio}</span>
+                                            <span class="font-body text-sm text-gris-principal font-normal">${item.precio_subtexto || ''}</span>
+                                        </div>
+                                    </div>
+                                    <a href="${formatWhatsAppLink('922761436', item.whatsapp_msg)}" target="_blank" class="mt-6 block text-center py-3 rounded-full ${theme.btnBg} text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                                        ${item.boton_texto || 'Solicitar Bloque'}
+                                    </a>
+                                </div>
+                            `;
+                        }).join('');
+                    }
+
+                    if (t.terapias_virtuales && t.terapias_virtuales.activo !== false) {
+                        const tv = t.terapias_virtuales;
+                        const itemsHtml = tv.precios_lista ? tv.precios_lista.map(p => `
+                            <li class="flex justify-between items-center">
+                                <span>${p.concepto}</span>
+                                <strong class="text-verde-jade font-headline text-base">${p.monto}</strong>
+                            </li>
+                        `).join('') : '';
+
+                        htmlCards += `
                             <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up">
                                 <div class="space-y-3.5">
-                                    <span class="inline-block ${theme.badgeBg} ${theme.badgeTxt} px-3 py-1 rounded-full font-headline text-xs font-semibold">
-                                        ${item.badge}
+                                    <span class="inline-block bg-verde-jade/15 text-verde-jade px-3 py-1 rounded-full font-headline text-xs font-semibold uppercase tracking-wider">
+                                        ${tv.badge}
                                     </span>
-                                    <h4 class="font-headline text-xl font-bold text-on-surface">${item.titulo}</h4>
-                                    <p class="font-body text-sm text-gris-principal font-normal">${item.descripcion}</p>
-                                    <div class="pt-2">
-                                        <span class="font-headline text-3xl font-bold ${theme.txt}">${item.precio}</span>
-                                        <span class="font-body text-sm text-gris-principal font-normal">${item.precio_subtexto || ''}</span>
-                                    </div>
+                                    <h4 class="font-headline text-xl font-bold text-on-surface">${tv.titulo}</h4>
+                                    <p class="font-body text-xs text-gris-principal font-normal">${tv.descripcion}</p>
+                                    
+                                    <ul class="space-y-1.5 font-body text-sm text-gris-principal pt-1 border-t border-gris-claro/60">
+                                        ${itemsHtml}
+                                    </ul>
                                 </div>
-                                <a href="${formatWhatsAppLink('922761436', item.whatsapp_msg)}" target="_blank" class="mt-6 block text-center py-3 rounded-full ${theme.btnBg} text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                                    ${item.boton_texto || 'Solicitar Bloque'}
+                                
+                                <a href="${formatWhatsAppLink('922761436', tv.whatsapp_msg)}" target="_blank" class="mt-6 block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                                    ${tv.boton_texto || 'Solicitar Terapia Online'}
                                 </a>
                             </div>
                         `;
-                    }).join('');
+                    }
+                    cCons.innerHTML = htmlCards;
                 }
 
-                // 2.4 Terapias Virtuales
-                const cVirt = document.getElementById('contenedor-virtuales');
-                if (cVirt && t.terapias_virtuales && t.terapias_virtuales.activo !== false) {
-                    const tv = t.terapias_virtuales;
-                    const itemsHtml = tv.precios_lista ? tv.precios_lista.map(p => `
-                        <li class="flex justify-between items-center">
-                            <span>${p.concepto}</span>
-                            <strong class="text-verde-jade font-headline text-base">${p.monto}</strong>
-                        </li>
-                    `).join('') : '';
-
-                    cVirt.innerHTML = `
-                        <div class="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up">
-                            <div class="space-y-3.5">
-                                <span class="inline-block bg-verde-jade/15 text-verde-jade px-3 py-1 rounded-full font-headline text-xs font-semibold uppercase tracking-wider">
-                                    ${tv.badge}
-                                </span>
-                                <h4 class="font-headline text-xl font-bold text-on-surface">${tv.titulo}</h4>
-                                <p class="font-body text-xs text-gris-principal font-normal">${tv.descripcion}</p>
-                                
-                                <ul class="space-y-1.5 font-body text-sm text-gris-principal pt-1 border-t border-gris-claro/60">
-                                    ${itemsHtml}
-                                </ul>
-                            </div>
-                            
-                            <a href="${formatWhatsAppLink('922761436', tv.whatsapp_msg)}" target="_blank" class="mt-6 block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                                ${tv.boton_texto || 'Solicitar Terapia Online'}
-                            </a>
-                        </div>
-                    `;
-                }
-
-                // 2.5 Servicios Especializados (Lógica sin HTML manual para la clienta)
+                // 2.5 Servicios Especializados
                 const cServ = document.getElementById('contenedor-servicios-especializados');
                 if (cServ && t.servicios_especializados) {
                     cServ.innerHTML = t.servicios_especializados.map((item) => {
                         const theme = getTheme(item.color);
-                        
-                        // Renderizado automático de la lista de precios si existe
                         const itemsHtml = item.lista_precios && item.lista_precios.length ? `
                             <ul class="space-y-1.5 font-body text-sm text-gris-principal font-normal pt-2 border-t border-gris-claro/60">
-                                ${item.lista_precios.map(li => `
-                                    <li>• ${li.servicio} <strong>${li.valor}</strong> ${li.nota ? `<span class="text-xs text-gris-principal">${li.nota}</span>` : ''}</li>
-                                `).join('')}
+                                ${item.lista_precios.map(li => `<li>• ${li.servicio} <strong>${li.valor}</strong> ${li.nota ? `<span class="text-xs text-gris-principal">${li.nota}</span>` : ''}</li>`).join('')}
                             </ul>
                         ` : '';
 
@@ -1026,7 +1015,6 @@
                 const eq = await resEquipo.json();
                 const cEq = document.getElementById('contenedor-equipo');
                 
-                // Diccionario interno de temas para las tarjetas de equipo
                 const teamThemes = {
                     "rosa-pastel": { baseTheme: "oro-rosa", bg: "rgba(219, 135, 128, 0.10)", border: "rgba(219, 135, 128, 0.25)" },
                     "crema-rosado": { baseTheme: "oro-rosa", bg: "#F9EFEA", border: "rgba(219, 135, 128, 0.25)" },
@@ -1038,11 +1026,9 @@
                 };
 
                 if (cEq && eq.especialistas) {
-                    // Se asigna la animación al contenedor completo para que no dependa de tarjetas individuales
                     cEq.setAttribute('data-aos', 'fade-up');
                     
                     cEq.innerHTML = eq.especialistas.map((item) => {
-                        // Obtener el tema seleccionado por la clienta o el por defecto
                         const selectedTheme = teamThemes[item.estilo_tarjeta] || teamThemes["rosa-pastel"];
                         const theme = getTheme(selectedTheme.baseTheme);
                         
