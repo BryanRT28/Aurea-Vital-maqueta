@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
 
-<!-- AOS CSS (Animaciones al Scroll) -->
+<!-- AOS CSS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
 
 <!-- Tailwind CSS -->
@@ -23,7 +23,6 @@
     theme: {
       extend: {
         "colors": {
-            // Paleta Oficial
             "oro-rosa": "#DB8780",
             "dorado": "#D4AF87",
             "gris-principal": "#666769",
@@ -31,7 +30,6 @@
             "verde-jade": "#3F7D73",
             "azul-pizarra": "#004E7A",
             
-            // Estructura Tailwind
             "primary": "#DB8780",
             "secondary": "#3F7D73",
             "tertiary": "#004E7A",
@@ -87,20 +85,18 @@
 </head>
 <body class="bg-background text-on-surface font-body antialiased selection:bg-oro-rosa selection:text-white pt-[88px]">
 
-<!-- WhatsApp Flotante Directo -->
-<a href="https://wa.me/51922761436?text=Hola%20ÁUREA%20Centro%20Integral%20Vital,%20quisiera%20agendar%20una%20consulta." target="_blank" aria-label="WhatsApp Áurea Vital" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-16 h-16 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center justify-center">
+<!-- WhatsApp Flotante -->
+<a id="btn-whatsapp-flotante" href="https://wa.me/51922761436?text=Hola%20ÁUREA%20Centro%20Integral%20Vital,%20quisiera%20agendar%20una%20consulta." target="_blank" aria-label="WhatsApp Áurea Vital" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-16 h-16 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center justify-center">
     <svg class="w-9 h-9" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.183-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.765-5.77zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z"/></svg>
 </a>
 
 <!-- TopNavBar -->
 <header class="fixed top-0 left-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-gris-claro shadow-sm h-[88px]">
     <div class="max-w-[1280px] mx-auto h-full px-6 md:px-12 flex items-center relative">
-        <!-- Logo en Header -->
         <a class="flex items-center shrink-0 py-2" href="#inicio">
             <img src="img/logo-removebg-preview.png" alt="Logo Áurea Vital" class="h-20 md:h-20 w-auto object-contain transition-transform group-hover:scale-105" />
         </a>
 
-        <!-- Menú (Mantiene su posición limpia respecto al logo) -->
         <nav class="hidden md:flex items-center gap-5 lg:gap-7 font-headline text-xs font-bold uppercase tracking-wider text-gris-principal ml-12 lg:ml-16">
             <a class="hover:text-oro-rosa transition-colors py-1" href="#inicio">Inicio</a>
             <a class="hover:text-oro-rosa transition-colors py-1" href="#servicios">Especialidades</a>
@@ -109,26 +105,23 @@
             <a class="hover:text-oro-rosa transition-colors py-1" href="#contacto">Contacto</a>
         </nav>
 
-        <!-- Botón Acción Escritorio (Solo este elemento se mueve a la derecha con -mr-3) -->
         <div class="hidden lg:flex items-center gap-4 ml-auto -mr-3">
-            <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20una%20cita%20en%20Áurea%20Centro%20Integral." target="_blank" class="bg-oro-rosa text-white font-headline text-xs uppercase font-bold tracking-widest px-6 py-3 rounded-full hover:bg-oro-rosa/90 transition-all shadow-sm hover:shadow-md">
+            <a id="btn-header-cita" href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20una%20cita%20en%20Áurea%20Centro%20Integral." target="_blank" class="bg-oro-rosa text-white font-headline text-xs uppercase font-bold tracking-widest px-6 py-3 rounded-full hover:bg-oro-rosa/90 transition-all shadow-sm hover:shadow-md">
                 Agenda tu Cita
             </a>
         </div>
 
-        <!-- Botón Menú Móvil -->
         <button id="menu-btn" aria-label="Menú Principal" type="button" class="md:hidden text-gris-principal p-2 focus:outline-none ml-auto">
             <span class="material-symbols-outlined text-3xl pointer-events-none">menu</span>
         </button>
 
-        <!-- Menú Desplegable Móvil -->
         <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-surface shadow-2xl border-b border-gris-claro px-8 py-8 flex-col space-y-4 z-40">
             <a class="mobile-link font-headline font-bold text-sm uppercase tracking-wider text-oro-rosa" href="#inicio">Inicio</a>
             <a class="mobile-link font-headline font-bold text-sm uppercase tracking-wider text-oro-rosa" href="#servicios">Especialidades</a>
             <a class="mobile-link font-headline font-bold text-sm uppercase tracking-wider text-oro-rosa" href="#paquetes">Tarifas y Bloques Terapéuticos</a>
             <a class="mobile-link font-headline font-bold text-sm uppercase tracking-wider text-oro-rosa" href="#equipo">Equipo de Psicólogos</a>
             <a class="mobile-link font-headline font-bold text-sm uppercase tracking-wider text-oro-rosa" href="#contacto">Ubicación y Contacto</a>
-            <a class="mobile-link inline-block w-full text-center bg-[#25D366] text-white font-headline text-xs uppercase tracking-widest py-3.5 rounded-full shadow font-bold" href="https://wa.me/51922761436">
+            <a id="btn-mobile-whatsapp" class="mobile-link inline-block w-full text-center bg-[#25D366] text-white font-headline text-xs uppercase tracking-widest py-3.5 rounded-full shadow font-bold" href="https://wa.me/51922761436">
                 Agendar por WhatsApp
             </a>
         </div>
@@ -137,7 +130,7 @@
 
 <main class="w-full">
 
-<!-- HERO SECTION (Con la tipografía original Libre Caslon Text) -->
+<!-- HERO SECTION -->
 <section class="relative w-full min-h-[90vh] flex items-center overflow-hidden" id="inicio">
     <div class="absolute inset-0 w-full h-full">
         <img alt="Atención psicológica y acompañamiento en Áurea Centro Integral Vital" class="w-full h-full object-cover object-center" src="img/hero.jpg"/>
@@ -147,10 +140,10 @@
     <div class="max-w-[1280px] w-full mx-auto px-6 md:px-12 py-16 relative z-10">
         <div class="max-w-xl flex flex-col items-start gap-6 text-white" data-aos="fade-right" data-aos-duration="1000">
             
-            <!-- Ubicación exacta en Google Maps -->
-            <a href="https://www.google.com/maps/search/?api=1&query=%C3%81urea+Centro+Integral+Vital,+Calle+Isla+Antigua+Mz+D9+Lt+14,+Los+Cedros+de+Villa,+Chorrillos" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-1.5 bg-oro-rosa text-white font-body text-xs font-bold uppercase tracking-widest rounded-full shadow-md hover:bg-oro-rosa/90 hover:scale-105 transition-all cursor-pointer group" title="Ver ubicación en Google Maps (Áurea - Los Cedros de Villa)">
+            <!-- Ubicación Dinámica Hero -->
+            <a id="hero-map-link" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-1.5 bg-oro-rosa text-white font-body text-xs font-bold uppercase tracking-widest rounded-full shadow-md hover:bg-oro-rosa/90 hover:scale-105 transition-all cursor-pointer group" title="Ver ubicación en Google Maps">
                 <span class="material-symbols-outlined text-sm group-hover:animate-bounce">location_on</span>
-                <span>Chorrillos, Lima</span>
+                <span id="hero-ciudad-texto">Chorrillos, Lima</span>
             </a>
 
             <h1 class="font-['Libre_Caslon_Text'] text-4xl sm:text-5xl lg:text-6xl text-white leading-tight drop-shadow-md">
@@ -170,7 +163,7 @@
             </div>
 
             <div class="flex flex-wrap items-center gap-4 w-full pt-2">
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20una%20cita%20de%20evaluaci%C3%B3n." target="_blank" class="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-full font-headline text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-all shadow-lg">
+                <a id="hero-btn-cita" href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20una%20cita%20de%20evaluaci%C3%B3n." target="_blank" class="flex-1 sm:flex-none flex items-center justify-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-full font-headline text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-all shadow-lg">
                     <span>Agenda tu cita</span>
                     <span class="material-symbols-outlined text-sm">arrow_forward</span>
                 </a>
@@ -182,7 +175,7 @@
     </div>
 </section>
 
-<!-- SERVICIOS Y ESPECIALIDADES (LIQUID GLASS CON FOTOS VERTICALES) -->
+<!-- SERVICIOS Y ESPECIALIDADES -->
 <section class="py-24 px-6 md:px-12 bg-surface" id="servicios">
 <div class="max-w-[1280px] mx-auto space-y-12">
     
@@ -192,7 +185,6 @@
         <p class="font-body text-base text-gris-principal">Atención integral diseñada para cada etapa del desarrollo y necesidad emocional.</p>
     </div>
 
-    <!-- Grilla de Especialidades -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-[440px]">
         
         <!-- 1. NEURODESARROLLO -->
@@ -306,7 +298,7 @@
             </div>
         </div>
 
-        <!-- 7. COACHING MOTIVACIONAL LABORAL (CENTRADO EN ÚLTIMA FILA) -->
+        <!-- 7. COACHING MOTIVACIONAL LABORAL -->
         <div class="rounded-3xl overflow-hidden relative group soft-shadow cursor-pointer md:col-span-2 lg:col-span-1 lg:col-start-2 max-w-md md:max-w-none mx-auto w-full" data-aos="fade-up" data-aos-delay="400">
             <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Coaching Motivacional Laboral para Empresas" src="img/coaching-laboral.webp" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-transparent flex flex-col justify-end p-7 text-white">
@@ -330,18 +322,16 @@
 </div>
 </section>
 
-<!-- 1. FRANJA SUPERIOR: ENCABEZADO Y PROCESOS DE EVALUACIÓN (EDGE-TO-EDGE) -->
+<!-- TARIFAS Y PLANES ESPECIALES -->
 <section class="pt-8 pb-2 px-6 md:px-12" id="paquetes">
     <div class="max-w-[1280px] mx-auto bg-oro-rosa/15 border border-oro-rosa/30 rounded-3xl pt-8 px-8 pb-6 sm:pt-12 sm:px-12 sm:pb-8 space-y-6" data-aos="fade-up">
         
-        <!-- Encabezado de Sección -->
         <div class="text-center max-w-2xl mx-auto space-y-3">
             <span class="font-headline text-sm font-semibold uppercase tracking-widest text-oro-rosa">Inversión en tu Salud</span>
             <h2 class="font-headline text-3xl sm:text-5xl font-bold uppercase text-on-surface tracking-tight">Tarifas y Planes Especiales</h2>
             <p class="font-body text-lg sm:text-xl text-gris-principal font-normal">Transparencia, compromiso y opciones diseñadas para acompañar tu proceso terapéutico.</p>
         </div>
 
-        <!-- Procesos de Evaluación dentro de la franja -->
         <div class="border-t border-oro-rosa/20 pt-6">
             <h3 class="font-headline text-2xl font-bold uppercase text-on-surface">Procesos de Evaluación</h3>
             <p class="font-body text-base sm:text-lg text-gris-principal font-normal">Punto de partida esencial para diagnosticar, comprender y trazar un plan de trabajo adecuado.</p>
@@ -350,419 +340,83 @@
     </div>
 </section>
 
-<!-- 2. CONTENIDO PRINCIPAL: TARJETAS Y BLOQUES (CLASES ORIGINALES COMPLETAS) -->
+<!-- CONTENIDO DINÁMICO DE TARIFAS Y BLOQUES -->
 <section class="pt-6 pb-16 px-6 md:px-12 bg-background border-b border-gris-claro/50">
     <div class="max-w-[1280px] mx-auto space-y-16">
 
-        <!-- 1. EVALUACIONES PSICOLÓGICAS (INTEGRAL Y TAMIZAJE) -->
+        <!-- 1. EVALUACIONES PSICOLÓGICAS DINÁMICAS -->
         <div class="space-y-6">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- Evaluación Integral -->
-                <div class="bg-surface p-6 sm:p-7 rounded-3xl border border-oro-rosa/40 soft-shadow flex flex-col justify-between space-y-5 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="space-y-4">
-                        <!-- Cabecera ajustada para móvil -->
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                            <span class="inline-block bg-oro-rosa/15 text-oro-rosa px-3 py-1 rounded-full font-headline text-xs font-semibold uppercase tracking-wider self-start sm:self-auto shrink-0">
-                                Incluye Informe Clínico
-                            </span>
-                            <div class="text-left sm:text-right shrink-0">
-                                <span class="font-headline text-2xl sm:text-3xl font-bold text-oro-rosa whitespace-nowrap">S/ 250</span>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-headline text-2xl font-bold text-on-surface">Evaluación Integral</h4>
-                            <p class="font-body text-sm text-gris-principal font-normal pt-1">Proceso completo de diagnóstico y retroalimentación para niños y adolescentes.</p>
-                        </div>
-
-                        <div class="p-4 bg-background rounded-2xl border border-gris-claro/60 space-y-2.5">
-                            <strong class="block font-headline text-sm text-on-surface">Estructura del proceso (4 sesiones):</strong>
-                            <ul class="space-y-2 font-body text-sm text-gris-principal font-normal">
-                                <li class="flex items-start gap-2"><span class="text-oro-rosa font-bold">1.ª</span> Reunión inicial con padres o apoderados.</li>
-                                <li class="flex items-start gap-2"><span class="text-oro-rosa font-bold">2.ª</span> Sesión de evaluación directa con el niño.</li>
-                                <li class="flex items-start gap-2"><span class="text-oro-rosa font-bold">3.ª</span> Segunda sesión de evaluación con el niño.</li>
-                                <li class="flex items-start gap-2"><span class="text-oro-rosa font-bold">4.ª</span> Entrega de informe y devolución con apoderado (20 min).</li>
-                            </ul>
-                        </div>
-
-                        <p class="font-body text-xs text-gris-principal italic">
-                            * Las dos primeras sesiones pueden realizarse el mismo día. Entrega de informe presencial o virtual (Lunes o Viernes de 9:00 a 11:00 a.m.).
-                        </p>
-                    </div>
-
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20una%20*Evaluaci%C3%B3n%20Integral%20(S/%20250)*." target="_blank" class="block text-center py-3.5 rounded-full bg-oro-rosa text-white font-headline text-sm font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                        Solicitar Evaluación Integral
-                    </a>
-                </div>
-
-                <!-- Evaluación de Tamizaje -->
-                <div class="bg-surface p-6 sm:p-7 rounded-3xl border border-gris-claro soft-shadow flex flex-col justify-between space-y-5 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                    <div class="space-y-4">
-                        <!-- Cabecera ajustada para móvil -->
-                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                            <span class="inline-block bg-verde-jade/15 text-verde-jade px-3 py-1 rounded-full font-headline text-xs font-semibold uppercase tracking-wider self-start sm:self-auto shrink-0">
-                                Evaluación en 1 Día
-                            </span>
-                            <div class="text-left sm:text-right shrink-0">
-                                <span class="font-headline text-2xl sm:text-3xl font-bold text-verde-jade whitespace-nowrap">S/ 100</span>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-headline text-2xl font-bold text-on-surface">Tamizaje Terapéutico</h4>
-                            <p class="font-body text-sm text-gris-principal font-normal pt-1">Ideal para pacientes nuevos, ingresantes o reingresos (pausa mayor a 3 meses).</p>
-                        </div>
-
-                        <div class="p-4 bg-background rounded-2xl border border-gris-claro/60 space-y-2.5 font-body text-sm text-gris-principal font-normal leading-relaxed">
-                            <p>Diseñado para evaluar estado actual, contención emocional o posibles retrocesos en pacientes con diagnóstico previo.</p>
-                            <p class="pt-1 text-xs text-verde-jade font-semibold">✓ Incluye resumen de orientación (No incluye informe psicológico completo).</p>
-                        </div>
-
-                        <p class="font-body text-xs text-gris-principal italic">
-                            Paso fundamental para comprender tu situación emocional actual y diseñar un plan de trabajo a tu medida.
-                        </p>
-                    </div>
-
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20un%20*Tamizaje%20Terap%C3%A9utico%20(S/%20100)*." target="_blank" class="block text-center py-3.5 rounded-full bg-verde-jade text-white font-headline text-sm font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                        Agendar Tamizaje
-                    </a>
-                </div>
-
+            <div id="contenedor-evaluaciones" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Se inyecta desde tarifas.json -->
             </div>
         </div>
 
-        <!-- 2. PROGRAMAS ESPECIALES (3 SESIONES X S/ 120) -->
+        <!-- 2. PROGRAMAS ESPECIALES DINÁMICOS -->
         <div class="space-y-6">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-gris-claro pb-3 gap-2" data-aos="fade-up">
                 <div>
                     <h3 class="font-headline text-2xl uppercase font-bold text-on-surface">Programas Enfocados de Acompañamiento</h3>
                     <p class="font-body text-sm text-gris-principal font-normal">Sesiones diseñadas para afrontar procesos de transición y sanación profunda.</p>
                 </div>
-                <span class="inline-block bg-oro-rosa/15 text-oro-rosa font-headline text-xs font-semibold px-4 py-2 rounded-full border border-oro-rosa/30 self-start sm:self-auto">
+                <span id="programas-promo-badge" class="inline-block bg-oro-rosa/15 text-oro-rosa font-headline text-xs font-semibold px-4 py-2 rounded-full border border-oro-rosa/30 self-start sm:self-auto">
                     Promoción Especial: S/ 120 (3 Sesiones)
                 </span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- Promo 1: Reinicio Emocional -->
-                <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="100">
-                    <div class="relative overflow-hidden aspect-[3/4] bg-background cursor-pointer" onclick="openModal('img/reinicio.webp')">
-                        <img src="img/reinicio.webp" alt="Bloque Terapéutico Reinicio Emocional" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                            <span class="material-symbols-outlined text-3xl">zoom_in</span>
-                        </div>
-                    </div>
-                    <div class="p-5 bg-surface border-t border-gris-claro/50">
-                        <a href="https://wa.me/51922761436?text=Hola,%20deseo%20reservar%20el%20*Bloque%20Terapéutico%20Reinicio%20Emocional%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
-                            Reservar Bloque Terapéutico
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Promo 2: Pacientes Oncológicos -->
-                <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="200">
-                    <div class="relative overflow-hidden aspect-[3/4] bg-background cursor-pointer" onclick="openModal('img/oncologicos.webp')">
-                        <img src="img/oncologicos.webp" alt="Terapia para Pacientes Oncológicos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                            <span class="material-symbols-outlined text-3xl">zoom_in</span>
-                        </div>
-                    </div>
-                    <div class="p-5 bg-surface border-t border-gris-claro/50">
-                        <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20de%20la%20*Terapia%20para%20Pacientes%20Oncol%C3%B3gicos%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
-                            Solicitar Terapia
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Promo 3: Procesos de Divorcio -->
-                <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="300">
-                    <div class="relative overflow-hidden aspect-[3/4] bg-background cursor-pointer" onclick="openModal('img/divorcios.webp')">
-                        <img src="img/divorcios.webp" alt="Terapia en Procesos de Divorcio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                            <span class="material-symbols-outlined text-3xl">zoom_in</span>
-                        </div>
-                    </div>
-                    <div class="p-5 bg-surface border-t border-gris-claro/50">
-                        <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20de%20la%20*Terapia%20en%20Procesos%20de%20Divorcio%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
-                            Solicitar Terapia
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Promo 4: Terapia de Duelo -->
-                <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="400">
-                    <div class="relative overflow-hidden aspect-[3/4] bg-background cursor-pointer" onclick="openModal('img/duelo.webp')">
-                        <img src="img/duelo.webp" alt="Terapia de Duelo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                            <span class="material-symbols-outlined text-3xl">zoom_in</span>
-                        </div>
-                    </div>
-                    <div class="p-5 bg-surface border-t border-gris-claro/50">
-                        <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20de%20la%20*Terapia%20de%20Duelo%20(3%20sesiones%20x%20S/%20120)*." target="_blank" class="block text-center py-3 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
-                            Solicitar Terapia
-                        </a>
-                    </div>
-                </div>
-
+            <div id="contenedor-programas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Se inyecta desde tarifas.json -->
             </div>
         </div>
 
-        <!-- 3. CONSULTAS INDIVIDUALES & PAQUETES STAFF AUREA -->
+        <!-- 3. CONSULTAS INDIVIDUALES & TERAPIAS VIRTUALES DINÁMICAS -->
         <div class="space-y-6 pt-4">
             <div class="border-b border-gris-claro pb-3" data-aos="fade-up">
                 <h3 class="font-headline text-2xl uppercase font-bold text-on-surface">Consultas y Bloques Terapéuticos</h3>
                 <p class="font-body text-sm text-gris-principal font-normal">Seguimiento continuo adaptado a tus metas de desarrollo y salud mental.</p>
             </div>
 
-            <!-- Fila Superior: 4 Tarjetas Presenciales -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- Sesión Individual Staff -->
-                <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="space-y-3.5">
-                        <span class="inline-block bg-gris-claro/50 text-gris-principal px-3 py-1 rounded-full font-headline text-xs font-semibold">Sesión Suelta</span>
-                        <h4 class="font-headline text-xl font-bold text-on-surface">Terapia Individual</h4>
-                        <p class="font-body text-sm text-gris-principal font-normal">Atención personalizada con profesionales del Staff de ÁUREA.</p>
-                        <div class="pt-2">
-                            <span class="font-headline text-3xl font-bold text-oro-rosa">S/ 80</span>
-                            <span class="font-body text-sm text-gris-principal font-normal"> / sesión</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20una%20*Terapia%20Individual%20(S/%2080)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                        Agendar Sesión
-                    </a>
-                </div>
-
-                <!-- Bloque 6 Sesiones -->
-                <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                    <div class="space-y-3.5">
-                        <span class="inline-block bg-verde-jade/10 text-verde-jade px-3 py-1 rounded-full font-headline text-xs font-semibold">Bloque Continuidad</span>
-                        <h4 class="font-headline text-xl font-bold text-on-surface">Bloque Terapéutico de 6 Sesiones</h4>
-                        <p class="font-body text-sm text-gris-principal font-normal">Acompañamiento enfocado para niños, adolescentes o adultos.</p>
-                        <div class="pt-2">
-                            <span class="font-headline text-3xl font-bold text-verde-jade">S/ 360</span>
-                            <span class="font-body text-sm text-gris-principal font-normal"> (S/ 60 x sesión)</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Bloque%20Terapéutico%20de%206%20Sesiones%20(S/%20360)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                        Solicitar Bloque
-                    </a>
-                </div>
-
-                <!-- Bloque 8 Sesiones -->
-                <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
-                    <div class="space-y-3.5">
-                        <span class="inline-block bg-oro-rosa/15 text-oro-rosa px-3 py-1 rounded-full font-headline text-xs font-semibold">Bloque Recomendado</span>
-                        <h4 class="font-headline text-xl font-bold text-on-surface">Bloque Terapéutico de 8 Sesiones</h4>
-                        <p class="font-body text-sm text-gris-principal font-normal">Acompañamiento completo de mediano plazo.</p>
-                        <div class="pt-2">
-                            <span class="font-headline text-3xl font-bold text-oro-rosa">S/ 420</span>
-                            <span class="font-body text-sm text-gris-principal font-normal"> (S/ 52.50 x sesión)</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Bloque%20Terapéutico%20de%208%20Sesiones%20(S/%20420)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                        Solicitar Bloque
-                    </a>
-                </div>
-
-                <!-- Bloque 12 Sesiones -->
-                <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="400">
-                    <div class="space-y-3.5">
-                        <span class="inline-block bg-azul-pizarra/10 text-azul-pizarra px-3 py-1 rounded-full font-headline text-xs font-semibold">Máximo Ahorro</span>
-                        <h4 class="font-headline text-xl font-bold text-on-surface">Bloque Terapéutico de 12 Sesiones</h4>
-                        <p class="font-body text-sm text-gris-principal font-normal">Ideal para procesos intensivos de neurodesarrollo o terapia integral.</p>
-                        <div class="pt-2">
-                            <span class="font-headline text-3xl font-bold text-azul-pizarra">S/ 600</span>
-                            <span class="font-body text-sm text-gris-principal font-normal"> (S/ 50 x sesión)</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20informaci%C3%B3n%20del%20*Bloque%20Terapéutico%20de%2012%20Sesiones%20(S/%20600)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                        Solicitar Bloque
-                    </a>
-                </div>
-
+            <!-- Fila Superior: Tarjetas de Bloques -->
+            <div id="contenedor-consultas" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Se inyecta desde tarifas.json -->
             </div>
 
             <!-- Fila Inferior: Tarjeta de Terapias Virtuales Centrada -->
-            <div class="flex justify-center pt-2">
-                <div class="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up">
-                    <div class="space-y-3.5">
-                        <span class="inline-block bg-verde-jade/15 text-verde-jade px-3 py-1 rounded-full font-headline text-xs font-semibold uppercase tracking-wider">
-                            Modalidad Online
-                        </span>
-                        <h4 class="font-headline text-xl font-bold text-on-surface">Terapias Virtuales</h4>
-                        <p class="font-body text-xs text-gris-principal font-normal">Precios promocionales por sesión y paquetes online:</p>
-                        
-                        <ul class="space-y-1.5 font-body text-sm text-gris-principal pt-1 border-t border-gris-claro/60">
-                            <li class="flex justify-between items-center">
-                                <span>1 Sesión:</span>
-                                <strong class="text-verde-jade font-headline text-base">S/ 60</strong>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span>Bloque 6 Sesiones:</span>
-                                <strong class="text-verde-jade font-headline text-base">S/ 300</strong>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span>Bloque 8 Sesiones:</span>
-                                <strong class="text-verde-jade font-headline text-base">S/ 380</strong>
-                            </li>
-                            <li class="flex justify-between items-center">
-                                <span>Bloque 12 Sesiones:</span>
-                                <strong class="text-verde-jade font-headline text-base">S/ 500</strong>
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20solicitar%20informaci%C3%B3n%20sobre%20las%20*Terapias%20Virtuales%20Promocionales*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                        Solicitar Terapia Online
-                    </a>
-                </div>
+            <div id="contenedor-virtuales" class="flex justify-center pt-2">
+                <!-- Se inyecta desde tarifas.json -->
             </div>
-
         </div>
 
-        <!-- 4. TARIFARIO DE SERVICIOS ESPECIALIZADOS -->
+        <!-- 4. OTROS SERVICIOS ESPECIALIZADOS DINÁMICOS -->
         <div class="space-y-6 pt-4">
             <div class="border-b border-gris-claro pb-3" data-aos="fade-up">
                 <h3 class="font-headline text-2xl uppercase font-bold text-on-surface">Otros Servicios Psicológicos</h3>
                 <p class="font-body text-sm text-gris-principal font-normal">Modalidades de atención especializadas y orientación profesional.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                <!-- Terapia de Pareja y Familiar -->
-                <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="space-y-3.5">
-                        <span class="inline-block bg-oro-rosa/15 text-oro-rosa px-3 py-1 rounded-full font-headline text-xs font-semibold">Vínculos & Familia</span>
-                        <h4 class="font-headline text-xl font-bold text-on-surface">Pareja & Familia</h4>
-                        <ul class="space-y-1.5 font-body text-sm text-gris-principal font-normal pt-2 border-t border-gris-claro/60">
-                            <li>• Atención Individual: <strong>S/ 100</strong></li>
-                            <li>• Terapia de Pareja: <strong>S/ 150</strong></li>
-                            <li>• Terapia Familiar: <strong>S/ 200</strong> <span class="text-xs text-gris-principal">(hasta 5 pers.)</span></li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20consultar%20por%20*Terapia%20de%20Pareja%20o%20Familiar*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                        Consultar Cita
-                    </a>
-                </div>
-
-                <!-- Atención a Domicilio -->
-                <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                    <div class="space-y-3.5">
-                        <span class="inline-block bg-verde-jade/10 text-verde-jade px-3 py-1 rounded-full font-headline text-xs font-semibold">Servicio Presencial</span>
-                        <h4 class="font-headline text-xl font-bold text-on-surface">Atención a Domicilio</h4>
-                        <p class="font-body text-sm text-gris-principal font-normal">Sesión personalizada en la comodidad de tu hogar.</p>
-                        <div class="pt-2">
-                            <span class="font-headline text-3xl font-bold text-verde-jade">S/ 150</span>
-                            <span class="font-body text-xs text-gris-principal font-normal block pt-1">* Movilidad adicional según ubicación</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20solicitar%20informaci%C3%B3n%20sobre%20*Atenci%C3%B3n%20a%20Domicilio*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                        Solicitar Visita
-                    </a>
-                </div>
-
-                <!-- Orientación Vocacional -->
-                <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
-                    <div class="space-y-3.5">
-                        <span class="inline-block bg-azul-pizarra/10 text-azul-pizarra px-3 py-1 rounded-full font-headline text-xs font-semibold">Futuro & Profesión</span>
-                        <h4 class="font-headline text-xl font-bold text-on-surface">Orientación Vocacional</h4>
-                        <p class="font-body text-sm text-gris-principal font-normal">Evaluación integral + asesoría personalizada de proyecto de vida.</p>
-                        <div class="pt-2">
-                            <span class="font-headline text-3xl font-bold text-azul-pizarra">S/ 120</span>
-                            <span class="font-body text-sm text-gris-principal font-normal"> / programa completo</span>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20agendar%20una%20*Orientaci%C3%B3n%20Vocacional%20Integral%20(S/%20120)*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                        Iniciar Orientación
-                    </a>
-                </div>
-
-                <!-- Adicionales y Reprogramaciones -->
-                <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="400">
-                    <div class="space-y-3.5">
-                        <span class="inline-block bg-gris-claro/50 text-gris-principal px-3 py-1 rounded-full font-headline text-xs font-semibold">Trámites & Políticas</span>
-                        <h4 class="font-headline text-xl font-bold text-on-surface">Informes & Políticas</h4>
-                        <ul class="space-y-1.5 font-body text-xs sm:text-sm text-gris-principal font-normal border-t border-gris-claro/60 pt-2">
-                            <li>• Duplicado de informe: <strong>S/ 50</strong></li>
-                            <li>• 1.ª Reprogramación: <strong>Sin costo</strong></li>
-                            <li>• 2.ª Reprogramación: <strong>Penalidad S/ 25</strong></li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20solicitar%20un%20*Duplicado%20de%20Informe%20Psicol%C3%B3gico*." target="_blank" class="mt-6 block text-center py-3 rounded-full bg-gris-principal text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                        Solicitar Trámite
-                    </a>
-                </div>
-
+            <div id="contenedor-servicios-especializados" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Se inyecta desde tarifas.json -->
             </div>
         </div>
 
-<!-- 5. BLOQUE ESPECIAL: CONVENIOS Y TALLERES (AFICHES VISUALES) -->
-    <div class="space-y-6 pt-6">
-        <div class="border-b border-gris-claro pb-3" data-aos="fade-up">
-            <h3 class="font-headline text-2xl font-bold text-on-surface">Convenios y Talleres Especiales</h3>
-            <p class="font-body text-sm text-gris-principal font-normal">Programas grupales e iniciativas institucionales con beneficios exclusivos.</p>
+        <!-- 5. CONVENIOS Y TALLERES DINÁMICOS -->
+        <div class="space-y-6 pt-6">
+            <div class="border-b border-gris-claro pb-3" data-aos="fade-up">
+                <h3 class="font-headline text-2xl font-bold text-on-surface">Convenios y Talleres Especiales</h3>
+                <p class="font-body text-sm text-gris-principal font-normal">Programas grupales e iniciativas institucionales con beneficios exclusivos.</p>
+            </div>
+
+            <div id="contenedor-convenios" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Se inyecta desde tarifas.json -->
+            </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <!-- 1. Taller de Habilidades Sociales -->
-            <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl h-full" data-aos="fade-up" data-aos-delay="100">
-                <div class="relative w-full aspect-[16/10] bg-background cursor-pointer overflow-hidden" onclick="openModal('img/taller-habilidades.webp')">
-                    <img src="img/taller-habilidades.webp" alt="Taller Habilidades Sociales 12 a 16 Años" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                        <span class="material-symbols-outlined text-3xl drop-shadow">zoom_in</span>
-                    </div>
-                </div>
-                <div class="p-5 bg-surface border-t border-gris-claro/50">
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20inscribir%20a%20mi%20hijo%20al%20*Taller%20de%20Habilidades%20Sociales%20(S/%20200)*." target="_blank" class="block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
-                        Reservar Vacante
-                    </a>
-                </div>
-            </div>
-
-            <!-- 2. Convenio Tu Colegio -->
-            <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl h-full" data-aos="fade-up" data-aos-delay="200">
-                <div class="relative w-full aspect-[16/10] bg-background cursor-pointer overflow-hidden" onclick="openModal('img/convenio-colegio.webp')">
-                    <img src="img/convenio-colegio.webp" alt="Convenio Institucional Áurea + Tu Colegio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                        <span class="material-symbols-outlined text-3xl drop-shadow">zoom_in</span>
-                    </div>
-                </div>
-                <div class="p-5 bg-surface border-t border-gris-claro/50">
-                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20solicitar%20informaci%C3%B3n%20sobre%20el%20*Convenio%20Institucional%20para%20Colegios*." target="_blank" class="block text-center py-3 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
-                        Solicitar Convenio
-                    </a>
-                </div>
-            </div>
-
-            <!-- 3. Convenio Club Lima -->
-            <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl h-full" data-aos="fade-up" data-aos-delay="300">
-                <div class="relative w-full aspect-[16/10] bg-background cursor-pointer overflow-hidden" onclick="openModal('img/convenio-club-lima.webp')">
-                    <img src="img/convenio-club-lima.webp" alt="Convenio Club Cultural Deportivo Lima" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
-                        <span class="material-symbols-outlined text-3xl drop-shadow">zoom_in</span>
-                    </div>
-                </div>
-                <div class="p-5 bg-surface border-t border-gris-claro/50">
-                    <a href="https://wa.me/51907805210?text=Hola,%20soy%20socio%20del%20Club%20Deportivo%20Lima%20y%20deseo%20agendar%20mi%20*Entrevista%20Gratuita*." target="_blank" class="block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
-                        Agendar Cita Socio
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </div>
     </div>
 </section>
 
-<!-- CÓMO TRABAJAMOS (VISIÓN 3 PASOS SECUENCIALES) -->
+<!-- CÓMO TRABAJAMOS -->
 <section class="py-20 px-6 md:px-12 bg-surface" id="metodo">
     <div class="max-w-[1280px] mx-auto space-y-14">
 
-        <!-- Encabezado de Sección -->
         <div class="text-center max-w-2xl mx-auto space-y-3" data-aos="fade-up">
             <span class="font-headline text-sm font-semibold uppercase tracking-widest text-oro-rosa">Procesos Claros</span>
             <h2 class="font-headline text-3xl sm:text-5xl font-bold text-on-surface tracking-tight">¿Cómo trabajamos en Áurea?</h2>
@@ -771,27 +425,20 @@
             </p>
         </div>
 
-        <!-- Grilla de 3 Pasos con Imágenes Más Altas y Línea Conectora -->
         <div class="space-y-10">
-            
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
                 
-                <!-- PASO 1: EVALUAMOS -->
+                <!-- PASO 1 -->
                 <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md flex flex-col justify-between group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative" data-aos="fade-up" data-aos-delay="100">
                     <div>
-                        <!-- Foto Vertical Más Alta -->
                         <div class="relative h-80 sm:h-96 md:h-[420px] w-full rounded-t-3xl overflow-hidden bg-gris-claro/20">
                             <img src="img/proceso1.webp" alt="Evaluación clínica en Áurea" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         </div>
-
-                        <!-- Círculo Numérico Flotante -->
                         <div class="relative -mt-6 flex justify-center z-10">
                             <div class="w-12 h-12 rounded-full bg-verde-jade text-white font-headline text-lg font-bold flex items-center justify-center shadow-md border-4 border-surface">
                                 1
                             </div>
                         </div>
-
-                        <!-- Contenido + Ícono -->
                         <div class="pt-4 p-6 sm:p-7 space-y-4">
                             <div class="flex items-start gap-4">
                                 <span class="material-symbols-outlined text-verde-jade text-4xl shrink-0">assignment</span>
@@ -806,22 +453,17 @@
                     </div>
                 </div>
 
-                <!-- PASO 2: INTERVENIMOS -->
+                <!-- PASO 2 -->
                 <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md flex flex-col justify-between group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative" data-aos="fade-up" data-aos-delay="200">
                     <div>
-                        <!-- Foto Vertical Más Alta -->
                         <div class="relative h-80 sm:h-96 md:h-[420px] w-full rounded-t-3xl overflow-hidden bg-gris-claro/20">
                             <img src="img/proceso2.webp" alt="Intervención terapéutica en Áurea" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         </div>
-
-                        <!-- Círculo Numérico Flotante -->
                         <div class="relative -mt-6 flex justify-center z-10">
                             <div class="w-12 h-12 rounded-full bg-oro-rosa text-white font-headline text-lg font-bold flex items-center justify-center shadow-md border-4 border-surface">
                                 2
                             </div>
                         </div>
-
-                        <!-- Contenido + Ícono -->
                         <div class="pt-4 p-6 sm:p-7 space-y-4">
                             <div class="flex items-start gap-4">
                                 <span class="material-symbols-outlined text-oro-rosa text-4xl shrink-0">ads_click</span>
@@ -836,22 +478,17 @@
                     </div>
                 </div>
 
-                <!-- PASO 3: ACOMPAÑAMOS Y MEDIMOS AVANCES -->
+                <!-- PASO 3 -->
                 <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md flex flex-col justify-between group transition-all duration-300 hover:-translate-y-2 hover:shadow-xl relative" data-aos="fade-up" data-aos-delay="300">
                     <div>
-                        <!-- Foto Vertical Más Alta -->
                         <div class="relative h-80 sm:h-96 md:h-[420px] w-full rounded-t-3xl overflow-hidden bg-gris-claro/20">
                             <img src="img/proceso3.webp" alt="Seguimiento y avances en Áurea" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                         </div>
-
-                        <!-- Círculo Numérico Flotante -->
                         <div class="relative -mt-6 flex justify-center z-10">
                             <div class="w-12 h-12 rounded-full bg-verde-jade text-white font-headline text-lg font-bold flex items-center justify-center shadow-md border-4 border-surface">
                                 3
                             </div>
                         </div>
-
-                        <!-- Contenido + Ícono -->
                         <div class="pt-4 p-6 sm:p-7 space-y-4">
                             <div class="flex items-start gap-4">
                                 <span class="material-symbols-outlined text-verde-jade text-4xl shrink-0">trending_up</span>
@@ -868,12 +505,9 @@
 
             </div>
 
-            <!-- LÍNEA CONECTORA CONTINUA INFERIOR -->
+            <!-- LÍNEA CONECTORA -->
             <div class="hidden md:block relative py-6" data-aos="fade-up">
-                <!-- Línea continua verde -->
                 <div class="absolute top-1/2 left-[16.66%] right-[16.66%] -translate-y-1/2 h-[3px] bg-verde-jade/40 z-0"></div>
-                
-                <!-- Los 3 Puntos sólidos rellenos (Verde - Rosa - Verde) -->
                 <div class="grid grid-cols-3 relative z-10">
                     <div class="flex justify-center">
                         <span class="w-5 h-5 rounded-full bg-verde-jade border-2 border-surface shadow-sm"></span>
@@ -887,14 +521,10 @@
                 </div>
             </div>
 
-            <!-- IMAGEN DESTACADA / COLLAGE DE INSTALACIONES -->
+            <!-- COLLAGE INSTALACIONES -->
             <div class="pt-6" data-aos="fade-up">
                 <div class="w-full rounded-3xl overflow-hidden border border-gris-claro/80 shadow-lg group">
-                    <img 
-                        src="img/instalaciones.webp" 
-                        alt="Instalaciones de Áurea Centro Integral Vital" 
-                        class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500"
-                    />
+                    <img src="img/instalaciones.webp" alt="Instalaciones de Áurea Centro Integral Vital" class="w-full h-auto object-cover group-hover:scale-[1.01] transition-transform duration-500" />
                 </div>
             </div>
 
@@ -903,7 +533,7 @@
     </div>
 </section>
 
-<!-- NUESTRO EQUIPO PROFESIONAL (6 ESPECIALISTAS - BALANCEADO 3x2) -->
+<!-- NUESTRO EQUIPO DINÁMICO -->
 <section class="py-20 px-6 md:px-12 bg-background border-t border-gris-claro/50" id="equipo">
 <div class="max-w-[1280px] mx-auto space-y-12">
     
@@ -913,238 +543,11 @@
         <p class="font-body text-base text-gris-principal font-normal">El trabajo interdisciplinario nos permite brindar una atención más completa, cercana y profesional.</p>
     </div>
 
-    <!-- Contenedor Flex Wrap para 6 tarjetas perfectamente distribuidas -->
-    <div class="flex flex-wrap justify-center gap-8 items-stretch">
-        
-        <!-- 1. Claudia Espinoza -->
-        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-oro-rosa/10 rounded-3xl border border-oro-rosa/20 p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
-            <div class="space-y-5">
-                <div class="flex items-start gap-4">
-                    <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-oro-rosa/40 shadow-md shrink-0">
-                        <img src="img/claudia.webp" alt="Lic. Claudia Espinoza" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div class="space-y-1 text-left">
-                        <span class="inline-block bg-oro-rosa text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">Directora</span>
-                        <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">Claudia Espinoza</h3>
-                        <p class="font-headline text-xs sm:text-sm font-semibold text-oro-rosa">Lic. en Psicología</p>
-                    </div>
-                </div>
-
-                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
-                    Directora del Centro de Terapias ÁUREA. Cuenta con amplia experiencia en supervisión clínica directa en cada proceso terapéutico, garantizando un servicio altamente especializado.
-                </p>
-
-                <div class="flex flex-wrap gap-1.5 pt-1">
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Supervisión Clínica</span>
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Acompañamiento Integral</span>
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Enfoque Humano</span>
-                </div>
-            </div>
-
-            <div class="pt-5 mt-5 border-t border-oro-rosa/20">
-                <p class="font-body text-xs italic text-oro-rosa text-center font-normal">
-                    "Experiencia, vocación y compromiso en cada proceso terapéutico."
-                </p>
-            </div>
-        </div>
-
-        <!-- 2. Andrea G. Vives Solano -->
-        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-[#F9EFEA] rounded-3xl border border-oro-rosa/20 p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
-            <div class="space-y-5">
-                <div class="flex items-start gap-4">
-                    <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-oro-rosa/40 shadow-md shrink-0">
-                        <img src="img/andrea.webp" alt="Lic. Andrea G. Vives Solano" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div class="space-y-1 text-left">
-                        <span class="inline-block bg-oro-rosa text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">Especialista Clínica</span>
-                        <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">Andrea G. Vives Solano</h3>
-                        <p class="font-headline text-xs sm:text-sm font-semibold text-oro-rosa">Lic. en Psicología</p>
-                    </div>
-                </div>
-
-                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
-                    Psicóloga con experiencia en las áreas educativa y clínica para niños, adolescentes, adultos y familias. Formación en Terapia Familiar Sistémica.
-                </p>
-
-                <div class="flex flex-wrap gap-1.5 pt-1">
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Terapia Familiar Sistémica</span>
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Ansiedad y Estrés</span>
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Regulación Emocional</span>
-                </div>
-            </div>
-
-            <div class="pt-5 mt-5 border-t border-oro-rosa/20">
-                <p class="font-body text-xs italic text-oro-rosa text-center font-normal">
-                    "Acompañar con empatía es construir espacios seguros para crecer."
-                </p>
-            </div>
-        </div>
-
-        <!-- 3. Dhapne Astete -->
-        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-verde-jade/10 rounded-3xl border border-verde-jade/20 p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
-            <div class="space-y-5">
-                <div class="flex items-start gap-4">
-                    <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-verde-jade/40 shadow-md shrink-0">
-                        <img src="img/dhapne.webp" alt="Bach. Dhapne Astete" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div class="space-y-1 text-left">
-                        <span class="inline-block bg-verde-jade text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">Intervención Conductual</span>
-                        <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">Dhapne Astete</h3>
-                        <p class="font-headline text-xs sm:text-sm font-semibold text-verde-jade">Bach. de Psicología</p>
-                    </div>
-                </div>
-
-                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
-                    Especialista en Intervención Conductual, ABA y TCC. Cree en el poder del juego, la conexión y la confianza para acompañar el desarrollo infantil de forma cercana.
-                </p>
-
-                <div class="flex flex-wrap gap-1.5 pt-1">
-                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">ABA & TCC</span>
-                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">Enfoque Lúdico</span>
-                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">Presencial y Virtual</span>
-                </div>
-            </div>
-
-            <div class="pt-5 mt-5 border-t border-verde-jade/20">
-                <p class="font-body text-xs italic text-verde-jade text-center font-normal">
-                    "Cada pequeño avance es un gran paso hacia el desarrollo."
-                </p>
-            </div>
-        </div>
-
-        <!-- 4. Paul Llontop -->
-        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-[#E8F3EE] rounded-3xl border border-verde-jade/20 p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
-            <div class="space-y-5">
-                <div class="flex items-start gap-4">
-                    <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-verde-jade/40 shadow-md shrink-0">
-                        <img src="img/paul.webp" alt="Lic. Paul Llontop" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div class="space-y-1 text-left">
-                        <span class="inline-block bg-verde-jade text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">Especialista Clínico</span>
-                        <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">Paul Llontop</h3>
-                        <p class="font-headline text-xs sm:text-sm font-semibold text-verde-jade">Lic. en Psicología Clínica</p>
-                    </div>
-                </div>
-
-                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
-                    Experiencia clínica en niños, adolescentes y adultos. Especializado en abuso sexual infantil. Persona con discapacidad visual (CONADIS) de gran sensibilidad y resiliencia.
-                </p>
-
-                <div class="flex flex-wrap gap-1.5 pt-1">
-                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">Abuso Sexual Infantil</span>
-                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">Orientación Docente</span>
-                    <span class="bg-white/80 text-gris-principal border border-verde-jade/20 px-3 py-1 rounded-lg text-xs font-body">Acreditado CONADIS</span>
-                </div>
-            </div>
-
-            <div class="pt-5 mt-5 border-t border-verde-jade/20">
-                <p class="font-body text-xs italic text-verde-jade text-center font-normal">
-                    "Acompañar con empatía es construir espacios seguros para crecer."
-                </p>
-            </div>
-        </div>
-
-        <!-- 5. Chiara Ciccia -->
-        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-azul-pizarra/10 rounded-3xl border border-azul-pizarra/20 p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
-            <div class="space-y-5">
-                <div class="flex items-start gap-4">
-                    <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-azul-pizarra/40 shadow-md shrink-0">
-                        <img src="img/chiara.webp" alt="Chiara Ciccia" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div class="space-y-1 text-left">
-                        <span class="inline-block bg-azul-pizarra text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">Clínica Infantil</span>
-                        <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">Chiara Ciccia</h3>
-                        <p class="font-headline text-xs sm:text-sm font-semibold text-azul-pizarra">Practicante de Psicología</p>
-                    </div>
-                </div>
-
-                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
-                    Estudiante del 11.° ciclo de la U. de Lima (Tercio Superior). Formación en Psicoterapia Humanista, trastornos del neurodesarrollo y voluntaria bombera activa.
-                </p>
-
-                <div class="flex flex-wrap gap-1.5 pt-1">
-                    <span class="bg-white/80 text-gris-principal border border-azul-pizarra/20 px-3 py-1 rounded-lg text-xs font-body">Psicoterapia Humanista</span>
-                    <span class="bg-white/80 text-gris-principal border border-azul-pizarra/20 px-3 py-1 rounded-lg text-xs font-body">Neurodesarrollo</span>
-                    <span class="bg-white/80 text-gris-principal border border-azul-pizarra/20 px-3 py-1 rounded-lg text-xs font-body">Trilingüe</span>
-                </div>
-            </div>
-
-            <div class="pt-5 mt-5 border-t border-azul-pizarra/20">
-                <p class="font-body text-xs italic text-azul-pizarra text-center font-normal">
-                    "Regulación emocional, trabajo en equipo y toma de decisiones."
-                </p>
-            </div>
-        </div>
-
-        <!-- 6. Virginia Zumaeta Zurita (CORREGIDO) -->
-        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-[#FDF6F0] rounded-3xl border border-oro-rosa/20 p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
-            <div class="space-y-5">
-                <div class="flex items-start gap-4">
-                    <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-oro-rosa/40 shadow-md shrink-0">
-                        <img src="img/virginia.webp" alt="Virginia Zumaeta Zurita" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div class="space-y-1 text-left">
-                        <span class="inline-block bg-oro-rosa text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">Estimulación del Habla</span>
-                        <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">Virginia Zumaeta Zurita</h3>
-                        <p class="font-headline text-xs sm:text-sm font-semibold text-oro-rosa">Especialista en Psicología & Habla</p>
-                    </div>
-                </div>
-
-                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
-                    Formación en Psicología con especialización complementaria en Estimulación del Habla. Cuenta con amplia experiencia en acompañamiento terapéutico y desarrollo de habilidades en niños y adolescentes con enfoque integral y humano.
-                </p>
-
-                <div class="flex flex-wrap gap-1.5 pt-1">
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Estimulación del Habla</span>
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Infanto-Juvenil</span>
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Enfoque Humano</span>
-                </div>
-            </div>
-
-            <div class="pt-5 mt-5 border-t border-oro-rosa/20">
-                <p class="font-body text-xs italic text-oro-rosa text-center font-normal">
-                    "Fortalecer la comunicación para conectar con el mundo."
-                </p>
-            </div>
-        </div>
-
-        <!-- 7. Rocío del Cielo Ayquipa Gamarra -->
-        <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] bg-[#FAF1ED] rounded-3xl border border-oro-rosa/25 p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
-            <div class="space-y-5">
-                <div class="flex items-start gap-4">
-                    <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 border-oro-rosa/40 shadow-md shrink-0">
-                        <img src="img/rocio.webp" alt="Rocío del Cielo Ayquipa Gamarra" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                    </div>
-                    <div class="space-y-1 text-left">
-                        <span class="inline-block bg-oro-rosa text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">Psicoeducativa</span>
-                        <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">Rocío del Cielo Ayquipa</h3>
-                        <p class="font-headline text-xs sm:text-sm font-semibold text-oro-rosa">Practicante de Psicología</p>
-                        <p class="font-headline text-[11px] text-gris-principal font-medium">Lic. en Educación Secundaria</p>
-                    </div>
-                </div>
-
-                <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
-                    Licenciada en Educación Secundaria (esp. Comunicación) y formación en Psicología. Experiencia en talleres psicoeducativos, entrevistas, evaluación y acompañamiento cercano con niños y adolescentes.
-                </p>
-
-                <div class="flex flex-wrap gap-1.5 pt-1">
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Talleres Psicoeducativos</span>
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Ámbito Educativo</span>
-                    <span class="bg-white/80 text-gris-principal border border-oro-rosa/20 px-3 py-1 rounded-lg text-xs font-body">Acompañamiento</span>
-                </div>
-            </div>
-
-            <div class="pt-5 mt-5 border-t border-oro-rosa/20">
-                <p class="font-body text-xs italic text-oro-rosa text-center font-normal">
-                    "Acompañando mentes, fortaleciendo futuros."
-                </p>
-            </div>
-        </div>
-
+    <div id="contenedor-equipo" class="flex flex-wrap justify-center gap-8 items-stretch">
+        <!-- Se inyecta desde equipo.json -->
     </div>
 </div>
 </section>
-
 
 <!-- UBICACIÓN Y CONTACTO -->
 <section class="py-20 px-6 md:px-12 bg-surface" id="contacto">
@@ -1166,19 +569,18 @@
             </div>
             <div>
                 <strong class="block font-headline text-base text-on-surface">Ubicación Sede Chorrillos:</strong>
-                <p class="font-body text-xs text-gris-principal">Calle Antigua Mz. D9 - Lt. 13 (Urb. Los Cedros de Villa), Chorrillos 15067, Lima, Perú</p>
+                <p id="contacto-direccion-texto" class="font-body text-xs text-gris-principal">Calle Antigua Mz. D9 - Lt. 13 (Urb. Los Cedros de Villa), Chorrillos 15067, Lima, Perú</p>
             </div>
         </div>
 
-        <a class="flex items-center justify-center gap-2 bg-oro-rosa text-white px-8 py-4 rounded-full font-headline text-xs font-bold uppercase tracking-widest hover:bg-oro-rosa/90 transition-all shadow-md w-full sm:w-auto self-start" href="https://www.google.com/maps/search/?api=1&query=%C3%81urea+Centro+Integral+Vital,+Calle+Isla+Antigua+Mz+D9+Lt+14,+Los+Cedros+de+Villa,+Chorrillos" target="_blank">
+        <a id="btn-como-llegar" class="flex items-center justify-center gap-2 bg-oro-rosa text-white px-8 py-4 rounded-full font-headline text-xs font-bold uppercase tracking-widest hover:bg-oro-rosa/90 transition-all shadow-md w-full sm:w-auto self-start" href="#" target="_blank">
             <span class="material-symbols-outlined text-base">directions</span>
             Cómo llegar con Google Maps
         </a>
     </div>
 
-    <!-- Mapa Google Maps Chorrillos -->
     <div class="w-full lg:w-1/2 min-h-[380px] bg-gris-claro">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.123456789!2d-77.0200!3d-12.1900!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b9f123456789%3A0x123456789abcdef!2sC.%20Antigua%2C%20Chorrillos%2015067!5e0!3m2!1ses!2spe!4v1650000000000!5m2!1ses!2spe" class="w-full h-full border-0 min-h-[380px]" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe id="contacto-mapa-iframe" src="" class="w-full h-full border-0 min-h-[380px]" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
 </div>
@@ -1190,7 +592,6 @@
 <footer class="w-full bg-[#222222] text-white/80 font-body text-xs py-16 px-6 md:px-12">
 <div class="max-w-[1280px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
     
-    <!-- Columna Logo y Descripción -->
     <div class="lg:col-span-2 space-y-4">
         <a class="inline-block py-1 group" href="#inicio">
             <img src="img/logo-removebg-preview.png" alt="Logo Áurea Vital" class="h-16 md:h-20 w-auto object-contain brightness-0 invert transition-transform group-hover:scale-105" />
@@ -1203,66 +604,66 @@
         </p>
     </div>
 
-    <!-- Columna Contacto -->
+    <!-- Columna Contacto Dinámica -->
     <div class="space-y-3">
         <h4 class="font-headline font-bold text-sm text-dorado uppercase tracking-wider">Contacto</h4>
         <ul class="space-y-2.5 text-white/70">
             <li>
-                <a class="hover:text-oro-rosa transition-colors flex items-center gap-2" href="https://wa.me/51922761436" target="_blank">
+                <a id="footer-whatsapp-general" class="hover:text-oro-rosa transition-colors flex items-center gap-2" href="#" target="_blank">
                     <span class="material-symbols-outlined text-base text-oro-rosa">call</span>
-                    <span>WhatsApp General: 922 761 436</span>
+                    <span id="footer-whatsapp-general-txt">WhatsApp General: 922 761 436</span>
                 </a>
             </li>
             <li>
-                <a class="hover:text-oro-rosa transition-colors flex items-center gap-2" href="https://wa.me/51907805210" target="_blank">
+                <a id="footer-whatsapp-club" class="hover:text-oro-rosa transition-colors flex items-center gap-2" href="#" target="_blank">
                     <span class="material-symbols-outlined text-base text-oro-rosa">call</span>
-                    <span>WhatsApp Club Lima: 907 805 210</span>
+                    <span id="footer-whatsapp-club-txt">WhatsApp Club Lima: 907 805 210</span>
                 </a>
             </li>
             <li>
-                <div class="flex items-center gap-2">
+                <a id="footer-correo" class="hover:text-oro-rosa transition-colors flex items-center gap-2" href="#">
                     <span class="material-symbols-outlined text-base text-oro-rosa shrink-0">mail</span>
-                    <span>admision.calma@gmail.com</span>
-                </div>
+                    <span id="footer-correo-txt">admision.calma@gmail.com</span>
+                </a>
             </li>
         </ul>
     </div>
 
-    <!-- NUEVA COLUMNA: Horario de Atención -->
+    <!-- Columna Horario de Atención Dinámica -->
     <div class="space-y-3">
         <h4 class="font-headline font-bold text-sm text-dorado uppercase tracking-wider">Horario de Atención</h4>
         <div class="space-y-2 text-white/70 text-xs leading-relaxed">
             <div class="flex items-start gap-2">
                 <span class="material-symbols-outlined text-base text-oro-rosa shrink-0 pt-0.5">schedule</span>
                 <div class="space-y-1">
-                    <p><strong class="text-white/90">Lunes a Viernes:</strong><br>09:00 a.m. – 07:00 p.m.</p>
-                    <p><strong class="text-white/90">Sábado:</strong><br>0:00 a.m. – 01:00 p.m.</p>
-                    <p><strong class="text-white/90">Domingo:</strong><br><span class="text-oro-rosa">Cerrado</span></p>
+                    <p><strong class="text-white/90">Lunes a Viernes:</strong><br><span id="footer-horario-lv">09:00 a.m. – 07:00 p.m.</span></p>
+                    <p><strong class="text-white/90">Sábado:</strong><br><span id="footer-horario-sab">09:00 a.m. – 01:00 p.m.</span></p>
+                    <p><strong class="text-white/90">Domingo:</strong><br><span id="footer-horario-dom" class="text-oro-rosa">Cerrado</span></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Columna Redes Sociales -->
+    <!-- Columna Redes Sociales Dinámica -->
     <div class="space-y-4">
         <h4 class="font-headline font-bold text-sm text-dorado uppercase tracking-wider">Síguenos en Redes</h4>
         <div class="flex flex-col space-y-3 font-headline text-xs text-white/70">
-            <a class="hover:text-oro-rosa transition-colors flex items-center gap-3 group" href="https://www.facebook.com/profile.php?id=61574167435435&locale=es_LA" target="_blank">
+            <a id="footer-facebook-link" class="hover:text-oro-rosa transition-colors flex items-center gap-3 group" href="#" target="_blank">
                 <div class="w-8 h-8 rounded-full bg-white/10 group-hover:bg-oro-rosa flex items-center justify-center transition-colors">
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                         <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.82 0-1.665.17-2.105.572-.465.424-.59 1.109-.59 2.115v1.293h4.316l-.584 3.667h-3.732v7.98H9.101z"/>
                     </svg>
                 </div>
-                <span>Facebook: Áurea Vital - Centro Integral</span>
+                <span id="footer-facebook-txt">Facebook: Áurea Vital - Centro Integral</span>
             </a>
 
-            <a class="hover:text-oro-rosa transition-colors flex items-center gap-3 group" href="https://www.instagram.com/aureavitalcentrointegral" target="_blank">
+            <a id="footer-instagram-link" class="hover:text-oro-rosa transition-colors flex items-center gap-3 group" href="#" target="_blank">
                 <div class="w-8 h-8 rounded-full bg-white/10 group-hover:bg-oro-rosa flex items-center justify-center transition-colors">
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 2.156 4.919 5.406.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 5.234-4.919 5.388-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.154-4.771-2.157-4.919-5.388-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-5.234 4.919-5.388 1.265-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                     </svg>
                 </div>
-                <span>Instagram @aureavitalcentrointegral</span>
+                <span id="footer-instagram-txt">Instagram @aureavitalcentrointegral</span>
             </a>
         </div>
     </div>
@@ -1270,10 +671,373 @@
 </div>
 </footer>
 
-<!-- AOS JS & Scripts -->
+<!-- LIGHTBOX MODAL -->
+<div id="image-modal" class="fixed inset-0 bg-black/95 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-md select-none overflow-hidden touch-none" onclick="if(event.target.id !== 'modal-img') closeModal()">
+    <button onclick="closeModal(); event.stopPropagation();" ontouchend="closeModal(); event.stopPropagation();" class="absolute top-4 right-4 p-4 text-white hover:text-oro-rosa text-4xl transition-colors focus:outline-none z-[200]" aria-label="Cerrar modal">
+        &times;
+    </button>
+    <div class="relative w-full h-full flex items-center justify-center overflow-hidden touch-none">
+        <img id="modal-img" src="" alt="Imagen ampliada" draggable="false" ondragstart="return false;" class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl cursor-zoom-in select-none will-change-transform touch-none" />
+    </div>
+</div>
+
+<!-- AOS JS & MOTOR DE RENDERIZADO DINÁMICO -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // --- 1. CONFIGURACIÓN INICIAL & MENÚ MÓVIL ---
+    // --- MAPA DE CLASES POR COLOR ---
+    const themeClasses = {
+        "oro-rosa": {
+            border: "border-oro-rosa/40",
+            borderSoft: "border-oro-rosa/20",
+            bgCard: "bg-oro-rosa/10",
+            badgeBg: "bg-oro-rosa/15",
+            badgeTxt: "text-oro-rosa",
+            btnBg: "bg-oro-rosa",
+            txt: "text-oro-rosa",
+            bullet: "text-oro-rosa"
+        },
+        "verde-jade": {
+            border: "border-verde-jade/40",
+            borderSoft: "border-verde-jade/20",
+            bgCard: "bg-verde-jade/10",
+            badgeBg: "bg-verde-jade/15",
+            badgeTxt: "text-verde-jade",
+            btnBg: "bg-verde-jade",
+            txt: "text-verde-jade",
+            bullet: "text-verde-jade"
+        },
+        "azul-pizarra": {
+            border: "border-azul-pizarra/40",
+            borderSoft: "border-azul-pizarra/20",
+            bgCard: "bg-azul-pizarra/10",
+            badgeBg: "bg-azul-pizarra/15",
+            badgeTxt: "text-azul-pizarra",
+            btnBg: "bg-azul-pizarra",
+            txt: "text-azul-pizarra",
+            bullet: "text-azul-pizarra"
+        },
+        "gris-principal": {
+            border: "border-gris-claro",
+            borderSoft: "border-gris-claro/50",
+            bgCard: "bg-surface",
+            badgeBg: "bg-gris-claro/50",
+            badgeTxt: "text-gris-principal",
+            btnBg: "bg-gris-principal",
+            txt: "text-gris-principal",
+            bullet: "text-gris-principal"
+        }
+    };
+
+    function getTheme(color) {
+        return themeClasses[color] || themeClasses["oro-rosa"];
+    }
+
+    function formatWhatsAppLink(phone, message) {
+        const cleanPhone = (phone || "922761436").replace(/\D/g, "");
+        const formattedMsg = encodeURIComponent(message || "");
+        return `https://wa.me/51${cleanPhone}?text=${formattedMsg}`;
+    }
+
+    // --- CARGA DINÁMICA DE DATOS ---
+    async function loadCMSData() {
+        try {
+            // 1. Cargar Datos Generales
+            const resGeneral = await fetch('data/general.json');
+            if (resGeneral.ok) {
+                const g = await resGeneral.json();
+                
+                document.getElementById('hero-ciudad-texto').textContent = g.hero_ciudad || "Chorrillos, Lima";
+                document.getElementById('hero-map-link').href = g.link_google_maps || "#";
+                document.getElementById('btn-como-llegar').href = g.link_google_maps || "#";
+                
+                const wLink = `https://wa.me/51${g.whatsapp_general}?text=Hola%20ÁUREA%20Centro%20Integral%20Vital,%20quisiera%20agendar%20una%20consulta.`;
+                document.getElementById('btn-whatsapp-flotante').href = wLink;
+                document.getElementById('btn-header-cita').href = wLink;
+                document.getElementById('btn-mobile-whatsapp').href = `https://wa.me/51${g.whatsapp_general}`;
+                document.getElementById('hero-btn-cita').href = `https://wa.me/51${g.whatsapp_general}?text=Hola,%20deseo%20agendar%20una%20cita%20de%20evaluaci%C3%B3n.`;
+                
+                document.getElementById('contacto-direccion-texto').textContent = g.direccion_texto || "";
+                if (g.mapa_iframe_src) document.getElementById('contacto-mapa-iframe').src = g.mapa_iframe_src;
+
+                // Footer
+                const fWGeneral = document.getElementById('footer-whatsapp-general');
+                fWGeneral.href = `https://wa.me/51${g.whatsapp_general}`;
+                document.getElementById('footer-whatsapp-general-txt').textContent = `WhatsApp General: ${g.whatsapp_general}`;
+
+                const fWClub = document.getElementById('footer-whatsapp-club');
+                fWClub.href = `https://wa.me/51${g.whatsapp_club_lima}`;
+                document.getElementById('footer-whatsapp-club-txt').textContent = `WhatsApp Club Lima: ${g.whatsapp_club_lima}`;
+
+                document.getElementById('footer-correo').href = `mailto:${g.correo}`;
+                document.getElementById('footer-correo-txt').textContent = g.correo;
+
+                document.getElementById('footer-horario-lv').textContent = g.horario_lv;
+                document.getElementById('footer-horario-sab').textContent = g.horario_sab;
+                document.getElementById('footer-horario-dom').textContent = g.horario_dom;
+
+                document.getElementById('footer-facebook-link').href = g.facebook_url;
+                document.getElementById('footer-facebook-txt').textContent = g.facebook_label;
+                document.getElementById('footer-instagram-link').href = g.instagram_url;
+                document.getElementById('footer-instagram-txt').textContent = g.instagram_label;
+            }
+
+            // 2. Cargar Tarifas y Bloques
+            const resTarifas = await fetch('data/tarifas.json');
+            if (resTarifas.ok) {
+                const t = await resTarifas.json();
+
+                // 2.1 Evaluaciones
+                const cEval = document.getElementById('contenedor-evaluaciones');
+                if (cEval && t.evaluaciones) {
+                    cEval.innerHTML = t.evaluaciones.map((item, idx) => {
+                        const theme = getTheme(item.color);
+                        const itemsHtml = item.caja_items && item.caja_items.length ? item.caja_items.map((it, i) => `
+                            <li class="flex items-start gap-2">
+                                <span class="${theme.bullet} font-bold">${i + 1}.ª</span> ${it}
+                            </li>
+                        `).join('') : '';
+
+                        return `
+                            <div class="bg-surface p-6 sm:p-7 rounded-3xl border ${theme.border} soft-shadow flex flex-col justify-between space-y-5 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="${(idx + 1) * 100}">
+                                <div class="space-y-4">
+                                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                                        <span class="inline-block ${theme.badgeBg} ${theme.badgeTxt} px-3 py-1 rounded-full font-headline text-xs font-semibold uppercase tracking-wider self-start sm:self-auto shrink-0">
+                                            ${item.badge}
+                                        </span>
+                                        <div class="text-left sm:text-right shrink-0">
+                                            <span class="font-headline text-2xl sm:text-3xl font-bold ${theme.txt} whitespace-nowrap">${item.precio}</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <h4 class="font-headline text-2xl font-bold text-on-surface">${item.titulo}</h4>
+                                        <p class="font-body text-sm text-gris-principal font-normal pt-1">${item.descripcion}</p>
+                                    </div>
+
+                                    ${itemsHtml ? `
+                                        <div class="p-4 bg-background rounded-2xl border border-gris-claro/60 space-y-2.5">
+                                            ${item.caja_titulo ? `<strong class="block font-headline text-sm text-on-surface">${item.caja_titulo}</strong>` : ''}
+                                            <ul class="space-y-2 font-body text-sm text-gris-principal font-normal">
+                                                ${itemsHtml}
+                                            </ul>
+                                        </div>
+                                    ` : ''}
+
+                                    ${item.aclaracion ? `<p class="font-body text-xs text-gris-principal italic">${item.aclaracion}</p>` : ''}
+                                </div>
+
+                                <a href="${formatWhatsAppLink('922761436', item.whatsapp_msg)}" target="_blank" class="block text-center py-3.5 rounded-full ${theme.btnBg} text-white font-headline text-sm font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                                    ${item.boton_texto || 'Solicitar Evaluación'}
+                                </a>
+                            </div>
+                        `;
+                    }).join('');
+                }
+
+                // 2.2 Programas Especiales
+                if (t.programas_especiales) {
+                    const badgeElem = document.getElementById('programas-promo-badge');
+                    if (badgeElem && t.programas_especiales.promo_badge) {
+                        badgeElem.textContent = t.programas_especiales.promo_badge;
+                    }
+                    const cProg = document.getElementById('contenedor-programas');
+                    if (cProg && t.programas_especiales.tarjetas) {
+                        cProg.innerHTML = t.programas_especiales.tarjetas.map((item, idx) => {
+                            const theme = getTheme(item.color);
+                            return `
+                                <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up" data-aos-delay="${(idx + 1) * 100}">
+                                    <div class="relative overflow-hidden aspect-[3/4] bg-background cursor-pointer" onclick="openModal('${item.imagen}')">
+                                        <img src="${item.imagen}" alt="${item.titulo}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                                            <span class="material-symbols-outlined text-3xl drop-shadow">zoom_in</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-5 bg-surface border-t border-gris-claro/50">
+                                        <a href="${formatWhatsAppLink('922761436', item.whatsapp_msg)}" target="_blank" class="block text-center py-3 rounded-full ${theme.btnBg} text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
+                                            ${item.boton_texto || 'Solicitar Terapia'}
+                                        </a>
+                                    </div>
+                                </div>
+                            `;
+                        }).join('');
+                    }
+                }
+
+                // 2.3 Consultas Individuales
+                const cCons = document.getElementById('contenedor-consultas');
+                if (cCons && t.consultas_individuales) {
+                    cCons.innerHTML = t.consultas_individuales.map((item, idx) => {
+                        const theme = getTheme(item.color);
+                        return `
+                            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="${(idx + 1) * 100}">
+                                <div class="space-y-3.5">
+                                    <span class="inline-block ${theme.badgeBg} ${theme.badgeTxt} px-3 py-1 rounded-full font-headline text-xs font-semibold">
+                                        ${item.badge}
+                                    </span>
+                                    <h4 class="font-headline text-xl font-bold text-on-surface">${item.titulo}</h4>
+                                    <p class="font-body text-sm text-gris-principal font-normal">${item.descripcion}</p>
+                                    <div class="pt-2">
+                                        <span class="font-headline text-3xl font-bold ${theme.txt}">${item.precio}</span>
+                                        <span class="font-body text-sm text-gris-principal font-normal">${item.precio_subtexto || ''}</span>
+                                    </div>
+                                </div>
+                                <a href="${formatWhatsAppLink('922761436', item.whatsapp_msg)}" target="_blank" class="mt-6 block text-center py-3 rounded-full ${theme.btnBg} text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                                    ${item.boton_texto || 'Solicitar Bloque'}
+                                </a>
+                            </div>
+                        `;
+                    }).join('');
+                }
+
+                // 2.4 Terapias Virtuales Centradas
+                const cVirt = document.getElementById('contenedor-virtuales');
+                if (cVirt && t.terapias_virtuales && t.terapias_virtuales.activo !== false) {
+                    const tv = t.terapias_virtuales;
+                    const itemsHtml = tv.precios_lista ? tv.precios_lista.map(p => `
+                        <li class="flex justify-between items-center">
+                            <span>${p.concepto}</span>
+                            <strong class="text-verde-jade font-headline text-base">${p.monto}</strong>
+                        </li>
+                    `).join('') : '';
+
+                    cVirt.innerHTML = `
+                        <div class="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up">
+                            <div class="space-y-3.5">
+                                <span class="inline-block bg-verde-jade/15 text-verde-jade px-3 py-1 rounded-full font-headline text-xs font-semibold uppercase tracking-wider">
+                                    ${tv.badge}
+                                </span>
+                                <h4 class="font-headline text-xl font-bold text-on-surface">${tv.titulo}</h4>
+                                <p class="font-body text-xs text-gris-principal font-normal">${tv.descripcion}</p>
+                                
+                                <ul class="space-y-1.5 font-body text-sm text-gris-principal pt-1 border-t border-gris-claro/60">
+                                    ${itemsHtml}
+                                </ul>
+                            </div>
+                            
+                            <a href="${formatWhatsAppLink('922761436', tv.whatsapp_msg)}" target="_blank" class="mt-6 block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                                ${tv.boton_texto || 'Solicitar Terapia Online'}
+                            </a>
+                        </div>
+                    `;
+                }
+
+                // 2.5 Servicios Especializados
+                const cServ = document.getElementById('contenedor-servicios-especializados');
+                if (cServ && t.servicios_especializados) {
+                    cServ.innerHTML = t.servicios_especializados.map((item, idx) => {
+                        const theme = getTheme(item.color);
+                        const itemsHtml = item.items && item.items.length ? `
+                            <ul class="space-y-1.5 font-body text-sm text-gris-principal font-normal pt-2 border-t border-gris-claro/60">
+                                ${item.items.map(li => `<li>${li}</li>`).join('')}
+                            </ul>
+                        ` : '';
+
+                        return `
+                            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="${(idx + 1) * 100}">
+                                <div class="space-y-3.5">
+                                    <span class="inline-block ${theme.badgeBg} ${theme.badgeTxt} px-3 py-1 rounded-full font-headline text-xs font-semibold">
+                                        ${item.badge}
+                                    </span>
+                                    <h4 class="font-headline text-xl font-bold text-on-surface">${item.titulo}</h4>
+                                    ${item.descripcion ? `<p class="font-body text-sm text-gris-principal font-normal">${item.descripcion}</p>` : ''}
+                                    ${item.precio ? `
+                                        <div class="pt-2">
+                                            <span class="font-headline text-3xl font-bold ${theme.txt}">${item.precio}</span>
+                                            <span class="font-body text-xs text-gris-principal font-normal block pt-1">${item.precio_subtexto || ''}</span>
+                                        </div>
+                                    ` : ''}
+                                    ${itemsHtml}
+                                </div>
+                                <a href="${formatWhatsAppLink('922761436', item.whatsapp_msg)}" target="_blank" class="mt-6 block text-center py-3 rounded-full ${theme.btnBg} text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
+                                    ${item.boton_texto || 'Consultar Cita'}
+                                </a>
+                            </div>
+                        `;
+                    }).join('');
+                }
+
+                // 2.6 Convenios y Talleres
+                const cConv = document.getElementById('contenedor-convenios');
+                if (cConv && t.convenios_talleres) {
+                    cConv.innerHTML = t.convenios_talleres.map((item, idx) => {
+                        const theme = getTheme(item.color);
+                        return `
+                            <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl h-full" data-aos="fade-up" data-aos-delay="${(idx + 1) * 100}">
+                                <div class="relative w-full aspect-[16/10] bg-background cursor-pointer overflow-hidden" onclick="openModal('${item.imagen}')">
+                                    <img src="${item.imagen}" alt="${item.titulo}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                                        <span class="material-symbols-outlined text-3xl drop-shadow">zoom_in</span>
+                                    </div>
+                                </div>
+                                <div class="p-5 bg-surface border-t border-gris-claro/50">
+                                    <a href="${formatWhatsAppLink(item.whatsapp_destino || '922761436', item.whatsapp_msg)}" target="_blank" class="block text-center py-3 rounded-full ${theme.btnBg} text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
+                                        ${item.boton_texto || 'Solicitar Convenio'}
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                }
+            }
+
+            // 3. Cargar Equipo Profesional
+            const resEquipo = await fetch('data/equipo.json');
+            if (resEquipo.ok) {
+                const eq = await resEquipo.json();
+                const cEq = document.getElementById('contenedor-equipo');
+                if (cEq && eq.especialistas) {
+                    cEq.innerHTML = eq.especialistas.map((item, idx) => {
+                        const theme = getTheme(item.color);
+                        const tagsHtml = item.tags ? item.tags.map(t => `
+                            <span class="bg-white/80 text-gris-principal border ${theme.borderSoft} px-3 py-1 rounded-lg text-xs font-body">${t}</span>
+                        `).join('') : '';
+
+                        return `
+                            <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] ${theme.bgCard} rounded-3xl border ${theme.borderSoft} p-7 flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl relative overflow-hidden group" data-aos="fade-up" data-aos-delay="${(idx + 1) * 100}">
+                                <div class="space-y-5">
+                                    <div class="flex items-start gap-4">
+                                        <div class="w-32 h-40 sm:w-36 sm:h-44 rounded-2xl overflow-hidden border-2 ${theme.border} shadow-md shrink-0">
+                                            <img src="${item.foto}" alt="${item.nombre}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                        </div>
+                                        <div class="space-y-1 text-left">
+                                            <span class="inline-block ${theme.btnBg} text-white font-headline text-[10px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded-full whitespace-nowrap">${item.badge}</span>
+                                            <h3 class="font-headline font-bold text-xl sm:text-2xl text-on-surface leading-tight pt-1">${item.nombre}</h3>
+                                            <p class="font-headline text-xs sm:text-sm font-semibold ${theme.txt}">${item.grado}</p>
+                                            ${item.subtitulo ? `<p class="font-headline text-[11px] text-gris-principal font-medium">${item.subtitulo}</p>` : ''}
+                                        </div>
+                                    </div>
+
+                                    <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
+                                        ${item.descripcion}
+                                    </p>
+
+                                    <div class="flex flex-wrap gap-1.5 pt-1">
+                                        ${tagsHtml}
+                                    </div>
+                                </div>
+
+                                <div class="pt-5 mt-5 border-t ${theme.borderSoft}">
+                                    <p class="font-body text-xs italic ${theme.txt} text-center font-normal">
+                                        "${item.frase}"
+                                    </p>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+                }
+            }
+
+            // Reinicializar animaciones AOS tras renderizar el contenido dinámico
+            if (typeof AOS !== 'undefined') {
+                AOS.refreshHard();
+            }
+
+        } catch (err) {
+            console.error("Error al cargar los datos del CMS:", err);
+        }
+    }
+
+    // --- CONFIGURACIONES DE NAVEGACIÓN Y LIGHTBOX ---
     if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
     }
@@ -1331,9 +1095,12 @@
                 }
             });
         }
+
+        // Ejecutar Carga Dinámica
+        loadCMSData();
     });
 
-    // --- 2. LÓGICA DEL VISOR DE IMÁGENES (ZOOM Y PAN) ---
+    // --- VISOR DE IMÁGENES (LIGHTBOX) ---
     let scale = 1;
     let translateX = 0;
     let translateY = 0;
@@ -1342,8 +1109,6 @@
     let startY = 0;
     const minScale = 1;
     const maxScale = 5;
-
-    // Variables Touch
     let initialTouchDistance = 0;
 
     function openModal(imageSrc) {
@@ -1355,17 +1120,9 @@
             translateX = 0;
             translateY = 0;
             updateTransform();
-            
             modal.classList.remove('hidden');
-            
-            // Bloqueo total de scroll y zoom nativo en móviles
             document.documentElement.classList.add('overflow-hidden', 'touch-none');
             document.body.classList.add('overflow-hidden', 'touch-none');
-            
-            let metaViewport = document.querySelector('meta[name=viewport]');
-            if (metaViewport) {
-                metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0');
-            }
         }
     }
 
@@ -1373,16 +1130,8 @@
         const modal = document.getElementById('image-modal');
         if (modal) {
             modal.classList.add('hidden');
-            
-            // Restaurar scroll y zoom nativo
             document.documentElement.classList.remove('overflow-hidden', 'touch-none');
             document.body.classList.remove('overflow-hidden', 'touch-none');
-            
-            let metaViewport = document.querySelector('meta[name=viewport]');
-            if (metaViewport) {
-                metaViewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
-            }
-            
             scale = 1;
             translateX = 0;
             translateY = 0;
@@ -1390,19 +1139,16 @@
         }
     }
 
-    // --- ESTA ES LA FUNCIÓN CLAVE CORREGIDA ---
     function updateTransform() {
         const modalImg = document.getElementById('modal-img');
         const modal = document.getElementById('image-modal');
 
         if (modalImg && modal) {
-            // Si la escala llega a su tamaño original (1 o menos), forzar centrado absoluto
             if (scale <= 1) {
                 scale = 1;
                 translateX = 0;
                 translateY = 0;
             } else {
-                // Calcular márgenes dinámicos como un resorte para centrar al achicar
                 const containerRect = modal.getBoundingClientRect();
                 const imgWidth = modalImg.offsetWidth * scale;
                 const imgHeight = modalImg.offsetHeight * scale;
@@ -1426,15 +1172,12 @@
         if (modal && modalImg) {
             modalImg.addEventListener('dragstart', (e) => e.preventDefault());
 
-            // Bloquear rebote nativo del modal en móviles
             modal.addEventListener('touchmove', (e) => {
                 if(e.target === modal) { e.preventDefault(); }
             }, { passive: false });
 
-            // --- ESCRITORIO: ZOOM EXACTO DONDE ESTÁ EL MOUSE ---
             modal.addEventListener('wheel', (e) => {
                 e.preventDefault();
-                
                 const zoomSensitivity = 0.15;
                 const delta = e.deltaY < 0 ? 1 + zoomSensitivity : 1 - zoomSensitivity;
                 const newScale = Math.max(minScale, Math.min(scale * delta, maxScale));
@@ -1442,10 +1185,8 @@
                 if (newScale !== scale) {
                     const ratio = newScale / scale;
                     const containerRect = modal.getBoundingClientRect();
-                    
                     const centerX = containerRect.left + containerRect.width / 2;
                     const centerY = containerRect.top + containerRect.height / 2;
-
                     const mouseX = e.clientX - centerX;
                     const mouseY = e.clientY - centerY;
 
@@ -1457,7 +1198,6 @@
                 }
             }, { passive: false });
 
-            // --- ESCRITORIO: ARRASTRE (PAN) HACIA TODOS LOS LADOS ---
             modalImg.addEventListener('mousedown', (e) => {
                 e.preventDefault();
                 if (scale > 1) {
@@ -1484,7 +1224,6 @@
                 }
             });
 
-            // --- MÓVIL: TOUCH (ARRASTRE Y PINZA EXACTA) ---
             modalImg.addEventListener('touchstart', (e) => {
                 if (e.touches.length === 1 && scale > 1) {
                     isDragging = true;
@@ -1521,7 +1260,6 @@
                             const containerRect = modal.getBoundingClientRect();
                             const centerX = containerRect.left + containerRect.width / 2;
                             const centerY = containerRect.top + containerRect.height / 2;
-
                             const touchCenterX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
                             const touchCenterY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
 
@@ -1553,20 +1291,5 @@
         if (e.key === 'Escape') closeModal();
     });
 </script>
-
-<!-- MODAL LIGHTBOX FLUIDO Y OPTIMIZADO -->
-<div id="image-modal" class="fixed inset-0 bg-black/95 z-[100] hidden flex items-center justify-center p-4 backdrop-blur-md select-none overflow-hidden touch-none" onclick="if(event.target.id !== 'modal-img') closeModal()">
-    
-    <button onclick="closeModal(); event.stopPropagation();" ontouchend="closeModal(); event.stopPropagation();" class="absolute top-4 right-4 p-4 text-white hover:text-oro-rosa text-4xl transition-colors focus:outline-none z-[200]" aria-label="Cerrar modal">
-        &times;
-    </button>
-    
-    <div class="relative w-full h-full flex items-center justify-center overflow-hidden touch-none">
-        <img id="modal-img" src="" alt="Imagen ampliada" 
-             draggable="false" 
-             ondragstart="return false;"
-             class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl cursor-zoom-in select-none will-change-transform touch-none" />
-    </div>
-</div>
 </body>
 </html>
