@@ -816,10 +816,11 @@
             if (resTarifas.ok) {
                 const t = await resTarifas.json();
 
-                // 2.1 Evaluaciones (Renderizado usando la librería Marked para el texto enriquecido)
+                // 2.1 Evaluaciones (Flex Centrado Automático + Markdown)
                 const cEval = document.getElementById('contenedor-evaluaciones');
                 if (cEval && t.evaluaciones) {
-                    cEval.innerHTML = t.evaluaciones.map((item, idx) => {
+                    cEval.className = "flex flex-wrap justify-center gap-8 items-stretch"; // Convertido a Flex
+                    cEval.innerHTML = t.evaluaciones.map((item) => {
                         const theme = getTheme(item.color);
                         
                         const detallesHtml = item.detalles ? `
@@ -831,7 +832,7 @@
                         ` : '';
 
                         return `
-                            <div class="bg-surface p-6 sm:p-7 rounded-3xl border ${theme.border} soft-shadow flex flex-col justify-between space-y-5 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up">
+                            <div class="w-full md:w-[calc(50%-1rem)] bg-surface p-6 sm:p-7 rounded-3xl border ${theme.border} soft-shadow flex flex-col justify-between space-y-5 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up">
                                 <div class="space-y-4">
                                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                                         <span class="inline-block ${theme.badgeBg} ${theme.badgeTxt} px-3 py-1 rounded-full font-headline text-xs font-semibold uppercase tracking-wider self-start sm:self-auto shrink-0">
@@ -860,7 +861,7 @@
                     }).join('');
                 }
 
-                // 2.2 Programas Especiales
+                // 2.2 Programas Especiales (Flex Centrado Automático)
                 if (t.programas_especiales) {
                     const badgeElem = document.getElementById('programas-promo-badge');
                     if (badgeElem && t.programas_especiales.promo_badge) {
@@ -868,10 +869,11 @@
                     }
                     const cProg = document.getElementById('contenedor-programas');
                     if (cProg && t.programas_especiales.tarjetas) {
+                        cProg.className = "flex flex-wrap justify-center gap-6 items-stretch"; // Convertido a Flex
                         cProg.innerHTML = t.programas_especiales.tarjetas.map((item) => {
                             const theme = getTheme(item.color);
                             return `
-                                <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up">
+                                <div class="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="zoom-in-up">
                                     <div class="relative overflow-hidden aspect-[3/4] bg-background cursor-pointer" onclick="openModal('${item.imagen}')">
                                         <img src="${item.imagen}" alt="${item.titulo}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                         <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
@@ -889,16 +891,17 @@
                     }
                 }
 
-                // 2.3 Consultas Individuales y 2.4 Terapias Virtuales (Unidos en un solo Grid para armonía)
+                // 2.3 Consultas Individuales y 2.4 Terapias Virtuales (Unidos y Centrados Automáticamente)
                 const cCons = document.getElementById('contenedor-consultas');
                 if (cCons) {
+                    cCons.className = "flex flex-wrap justify-center gap-6 items-stretch"; // Convertido a Flex
                     let htmlCards = '';
                     
                     if (t.consultas_individuales) {
                         htmlCards += t.consultas_individuales.map((item) => {
                             const theme = getTheme(item.color);
                             return `
-                                <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up">
+                                <div class="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up">
                                     <div class="space-y-3.5">
                                         <span class="inline-block ${theme.badgeBg} ${theme.badgeTxt} px-3 py-1 rounded-full font-headline text-xs font-semibold">
                                             ${item.badge}
@@ -928,7 +931,7 @@
                         `).join('') : '';
 
                         htmlCards += `
-                            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up">
+                            <div class="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up">
                                 <div class="space-y-3.5">
                                     <span class="inline-block bg-verde-jade/15 text-verde-jade px-3 py-1 rounded-full font-headline text-xs font-semibold uppercase tracking-wider">
                                         ${tv.badge}
@@ -950,9 +953,10 @@
                     cCons.innerHTML = htmlCards;
                 }
 
-                // 2.5 Servicios Especializados
+                // 2.5 Servicios Especializados (Flex Centrado Automático)
                 const cServ = document.getElementById('contenedor-servicios-especializados');
                 if (cServ && t.servicios_especializados) {
+                    cServ.className = "flex flex-wrap justify-center gap-6 items-stretch"; // Convertido a Flex
                     cServ.innerHTML = t.servicios_especializados.map((item) => {
                         const theme = getTheme(item.color);
                         const itemsHtml = item.lista_precios && item.lista_precios.length ? `
@@ -962,7 +966,7 @@
                         ` : '';
 
                         return `
-                            <div class="bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up">
+                            <div class="w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] bg-surface p-6 rounded-3xl border border-gris-claro flex flex-col justify-between soft-shadow transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up">
                                 <div class="space-y-3.5">
                                     <span class="inline-block ${theme.badgeBg} ${theme.badgeTxt} px-3 py-1 rounded-full font-headline text-xs font-semibold">
                                         ${item.badge}
@@ -985,13 +989,14 @@
                     }).join('');
                 }
 
-                // 2.6 Convenios y Talleres
+                // 2.6 Convenios y Talleres (Flex Centrado Automático)
                 const cConv = document.getElementById('contenedor-convenios');
                 if (cConv && t.convenios_talleres) {
+                    cConv.className = "flex flex-wrap justify-center gap-8 items-stretch"; // Convertido a Flex
                     cConv.innerHTML = t.convenios_talleres.map((item) => {
                         const theme = getTheme(item.color);
                         return `
-                            <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl h-full" data-aos="fade-up">
+                            <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.333rem)] bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up">
                                 <div class="relative w-full aspect-[16/10] bg-background cursor-pointer overflow-hidden" onclick="openModal('${item.imagen}')">
                                     <img src="${item.imagen}" alt="${item.titulo}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                     <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
@@ -1009,7 +1014,7 @@
                 }
             }
 
-            // 3. Cargar Equipo Profesional (Sin retraso de scroll y con paleta de colores amigable)
+            // 3. Cargar Equipo Profesional
             const resEquipo = await fetch('data/equipo.json');
             if (resEquipo.ok) {
                 const eq = await resEquipo.json();
