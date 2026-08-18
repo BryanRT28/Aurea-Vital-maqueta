@@ -78,7 +78,7 @@ collections:
         label: "Gestor de Precios y Secciones"
         name: "bloques"
         fields:
-          # 2.1 Evaluaciones Psicológicas
+          # 2.1 Evaluaciones Psicológicas (AHORA CON EDITOR TIPO WORD)
           - label: "1. Evaluaciones Psicológicas"
             name: "evaluaciones"
             widget: "list"
@@ -88,9 +88,7 @@ collections:
               - { label: "Precio (Ej: S/ 250)", name: "precio", widget: "string" }
               - { label: "Color del Tema", name: "color", widget: "select", options: ["oro-rosa", "verde-jade", "azul-pizarra", "gris-principal"] }
               - { label: "Descripción Corta", name: "descripcion", widget: "text" }
-              - { label: "Título de la Caja de Estructura", name: "caja_titulo", widget: "string", required: false }
-              - { label: "Estilo de la Lista", name: "tipo_lista", widget: "select", options: ["Numerada (1.ª, 2.ª)", "Viñetas (•)", "Checks (✓)", "Solo Texto"], default: "Numerada (1.ª, 2.ª)" }
-              - { label: "Detalles / Pasos de la Caja (uno por línea)", name: "caja_items", widget: "list", required: false }
+              - { label: "Detalles del Proceso (Editor de Texto)", name: "detalles", widget: "markdown", required: false, hint: "Usa este espacio para escribir los detalles libremente (puedes usar negritas, listas o números)." }
               - { label: "Texto Aclaratorio Inferior (Itálica)", name: "aclaracion", widget: "text", required: false }
               - { label: "Texto del Botón", name: "boton_texto", widget: "string", default: "Solicitar Evaluación" }
               - { label: "Mensaje Predefinido de WhatsApp", name: "whatsapp_msg", widget: "string" }
@@ -125,8 +123,8 @@ collections:
               - { label: "Texto del Botón", name: "boton_texto", widget: "string", default: "Solicitar Bloque" }
               - { label: "Mensaje Predefinido de WhatsApp", name: "whatsapp_msg", widget: "string" }
 
-          # 2.4 Terapias Virtuales (Tarjeta Promocional)
-          - label: "3.1 Tarjeta Terapias Virtuales (Centrada)"
+          # 2.4 Terapias Virtuales
+          - label: "3.1 Tarjeta Terapias Virtuales"
             name: "terapias_virtuales"
             widget: "object"
             fields:
@@ -143,7 +141,7 @@ collections:
               - { label: "Texto del Botón", name: "boton_texto", widget: "string", default: "Solicitar Terapia Online" }
               - { label: "Mensaje Predefinido de WhatsApp", name: "whatsapp_msg", widget: "string" }
 
-          # 2.5 Otros Servicios Especializados (Limpio de HTML)
+          # 2.5 Otros Servicios Especializados
           - label: "4. Otros Servicios Especializados"
             name: "servicios_especializados"
             widget: "list"
