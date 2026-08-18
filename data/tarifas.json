@@ -1,5 +1,5 @@
 {
-    "evaluaciones": [
+  "evaluaciones": [
     {
       "titulo": "Evaluación Integral",
       "badge": "Incluye Informe Clínico",
@@ -7,6 +7,7 @@
       "color": "oro-rosa",
       "descripcion": "Proceso completo de diagnóstico y retroalimentación para niños y adolescentes.",
       "caja_titulo": "Estructura del proceso (4 sesiones):",
+      "tipo_lista": "Numerada (1.ª, 2.ª)",
       "caja_items": [
         "Reunión inicial con padres o apoderados.",
         "Sesión de evaluación directa con el niño.",
@@ -24,9 +25,10 @@
       "color": "verde-jade",
       "descripcion": "Ideal para pacientes nuevos, ingresantes o reingresos (pausa mayor a 3 meses).",
       "caja_titulo": "",
+      "tipo_lista": "Checks (✓)",
       "caja_items": [
         "Diseñado para evaluar estado actual, contención emocional o posibles retrocesos en pacientes con diagnóstico previo.",
-        "✓ Incluye resumen de orientación (No incluye informe psicológico completo)."
+        "Incluye resumen de orientación (No incluye informe psicológico completo)."
       ],
       "aclaracion": "Paso fundamental para comprender tu situación emocional actual y diseñar un plan de trabajo a tu medida.",
       "boton_texto": "Agendar Tamizaje",
@@ -130,10 +132,10 @@
       "precio_subtexto": "",
       "color": "oro-rosa",
       "descripcion": "",
-      "items": [
-        "• Atención Individual: <strong>S/ 100</strong>",
-        "• Terapia de Pareja: <strong>S/ 150</strong>",
-        "• Terapia Familiar: <strong>S/ 200</strong> <span class=\"text-xs text-gris-principal\">(hasta 5 pers.)</span>"
+      "lista_precios": [
+        { "servicio": "Atención Individual:", "valor": "S/ 100", "nota": "" },
+        { "servicio": "Terapia de Pareja:", "valor": "S/ 150", "nota": "" },
+        { "servicio": "Terapia Familiar:", "valor": "S/ 200", "nota": "(hasta 5 pers.)" }
       ],
       "boton_texto": "Consultar Cita",
       "whatsapp_msg": "Hola, deseo consultar por *Terapia de Pareja o Familiar*."
@@ -145,7 +147,7 @@
       "precio_subtexto": "* Movilidad adicional según ubicación",
       "color": "verde-jade",
       "descripcion": "Sesión personalizada en la comodidad de tu hogar.",
-      "items": [],
+      "lista_precios": [],
       "boton_texto": "Solicitar Visita",
       "whatsapp_msg": "Hola, deseo solicitar información sobre *Atención a Domicilio*."
     },
@@ -156,7 +158,7 @@
       "precio_subtexto": " / programa completo",
       "color": "azul-pizarra",
       "descripcion": "Evaluación integral + asesoría personalizada de proyecto de vida.",
-      "items": [],
+      "lista_precios": [],
       "boton_texto": "Iniciar Orientación",
       "whatsapp_msg": "Hola, deseo agendar una *Orientación Vocacional Integral (S/ 120)*."
     },
@@ -167,10 +169,10 @@
       "precio_subtexto": "",
       "color": "gris-principal",
       "descripcion": "",
-      "items": [
-        "• Duplicado de informe: <strong>S/ 50</strong>",
-        "• 1.ª Reprogramación: <strong>Sin costo</strong>",
-        "• 2.ª Reprogramación: <strong>Penalidad S/ 25</strong>"
+      "lista_precios": [
+        { "servicio": "Duplicado de informe:", "valor": "S/ 50", "nota": "" },
+        { "servicio": "1.ª Reprogramación:", "valor": "Sin costo", "nota": "" },
+        { "servicio": "2.ª Reprogramación:", "valor": "Penalidad S/ 25", "nota": "" }
       ],
       "boton_texto": "Solicitar Trámite",
       "whatsapp_msg": "Hola, deseo solicitar un *Duplicado de Informe Psicológico*."
