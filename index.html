@@ -816,10 +816,10 @@
             if (resTarifas.ok) {
                 const t = await resTarifas.json();
 
-                // 2.1 Evaluaciones (Flex Centrado Automático + Markdown)
+                // 2.1 Evaluaciones 
                 const cEval = document.getElementById('contenedor-evaluaciones');
                 if (cEval && t.evaluaciones) {
-                    cEval.className = "flex flex-wrap justify-center gap-8 items-stretch"; // Convertido a Flex
+                    cEval.className = "flex flex-wrap justify-center gap-8 items-stretch";
                     cEval.innerHTML = t.evaluaciones.map((item) => {
                         const theme = getTheme(item.color);
                         
@@ -861,7 +861,7 @@
                     }).join('');
                 }
 
-                // 2.2 Programas Especiales (Flex Centrado Automático)
+                // 2.2 Programas Especiales 
                 if (t.programas_especiales) {
                     const badgeElem = document.getElementById('programas-promo-badge');
                     if (badgeElem && t.programas_especiales.promo_badge) {
@@ -869,7 +869,7 @@
                     }
                     const cProg = document.getElementById('contenedor-programas');
                     if (cProg && t.programas_especiales.tarjetas) {
-                        cProg.className = "flex flex-wrap justify-center gap-6 items-stretch"; // Convertido a Flex
+                        cProg.className = "flex flex-wrap justify-center gap-6 items-stretch";
                         cProg.innerHTML = t.programas_especiales.tarjetas.map((item) => {
                             const theme = getTheme(item.color);
                             return `
@@ -891,10 +891,10 @@
                     }
                 }
 
-                // 2.3 Consultas Individuales y 2.4 Terapias Virtuales (Unidos y Centrados Automáticamente)
+                // 2.3 Consultas Individuales y 2.4 Terapias Virtuales
                 const cCons = document.getElementById('contenedor-consultas');
                 if (cCons) {
-                    cCons.className = "flex flex-wrap justify-center gap-6 items-stretch"; // Convertido a Flex
+                    cCons.className = "flex flex-wrap justify-center gap-6 items-stretch"; 
                     let htmlCards = '';
                     
                     if (t.consultas_individuales) {
@@ -953,10 +953,10 @@
                     cCons.innerHTML = htmlCards;
                 }
 
-                // 2.5 Servicios Especializados (Flex Centrado Automático)
+                // 2.5 Servicios Especializados 
                 const cServ = document.getElementById('contenedor-servicios-especializados');
                 if (cServ && t.servicios_especializados) {
-                    cServ.className = "flex flex-wrap justify-center gap-6 items-stretch"; // Convertido a Flex
+                    cServ.className = "flex flex-wrap justify-center gap-6 items-stretch";
                     cServ.innerHTML = t.servicios_especializados.map((item) => {
                         const theme = getTheme(item.color);
                         const itemsHtml = item.lista_precios && item.lista_precios.length ? `
@@ -989,10 +989,10 @@
                     }).join('');
                 }
 
-                // 2.6 Convenios y Talleres (Flex Centrado Automático)
+                // 2.6 Convenios y Talleres 
                 const cConv = document.getElementById('contenedor-convenios');
                 if (cConv && t.convenios_talleres) {
-                    cConv.className = "flex flex-wrap justify-center gap-8 items-stretch"; // Convertido a Flex
+                    cConv.className = "flex flex-wrap justify-center gap-8 items-stretch";
                     cConv.innerHTML = t.convenios_talleres.map((item) => {
                         const theme = getTheme(item.color);
                         return `
@@ -1014,7 +1014,7 @@
                 }
             }
 
-            // 3. Cargar Equipo Profesional
+            // 3. Cargar Equipo Profesional 
             const resEquipo = await fetch('data/equipo.json');
             if (resEquipo.ok) {
                 const eq = await resEquipo.json();
@@ -1079,16 +1079,11 @@
                 }
             }
 
-            // Inicialización definitiva de AOS
+            // ACTUALIZACIÓN DE AOS AL FINAL DE TODA LA CARGA
             if (typeof AOS !== 'undefined') {
-                AOS.init({
-                    duration: 800,
-                    once: true,
-                    easing: 'ease-out-cubic',
-                    offset: 50,
-                    disable: false
-                });
-                AOS.refresh();
+                setTimeout(() => {
+                    AOS.refresh();
+                }, 100);
             }
 
         } catch (err) {
@@ -1107,6 +1102,17 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0, 0);
+
+        // INICIALIZACIÓN INMEDIATA DE AOS PARA CONTENIDO ESTÁTICO (HERO)
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 900,
+                once: true,
+                easing: 'ease-out-back',
+                offset: 120,
+                disable: false
+            });
+        }
 
         // Control Menú Móvil
         const menuBtn = document.getElementById('menu-btn');
