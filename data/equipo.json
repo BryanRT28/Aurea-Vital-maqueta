@@ -1,0 +1,95 @@
+{
+  "especialistas": [
+    {
+      "nombre": "Claudia Espinoza",
+      "badge": "Directora",
+      "grado": "Lic. en Psicología",
+      "subtitulo": "",
+      "foto": "img/claudia.webp",
+      "color": "oro-rosa",
+      "bg_hex": "rgba(219, 135, 128, 0.10)",
+      "border_hex": "rgba(219, 135, 128, 0.25)",
+      "descripcion": "Directora del Centro de Terapias ÁUREA. Cuenta con amplia experiencia en supervisión clínica directa en cada proceso terapéutico, garantizando un servicio altamente especializado.",
+      "tags": ["Supervisión Clínica", "Acompañamiento Integral", "Enfoque Humano"],
+      "frase": "Experiencia, vocación y compromiso en cada proceso terapéutico."
+    },
+    {
+      "nombre": "Andrea G. Vives Solano",
+      "badge": "Especialista Clínica",
+      "grado": "Lic. en Psicología",
+      "subtitulo": "",
+      "foto": "img/andrea.webp",
+      "color": "oro-rosa",
+      "bg_hex": "#F9EFEA",
+      "border_hex": "rgba(219, 135, 128, 0.25)",
+      "descripcion": "Psicóloga con experiencia en las áreas educativa y clínica para niños, adolescentes, adultos y familias. Formación en Terapia Familiar Sistémica.",
+      "tags": ["Terapia Familiar Sistémica", "Ansiedad y Estrés", "Regulación Emocional"],
+      "frase": "Acompañar con empatía es construir espacios seguros para crecer."
+    },
+    {
+      "nombre": "Dhapne Astete",
+      "badge": "Intervención Conductual",
+      "grado": "Bach. de Psicología",
+      "subtitulo": "",
+      "foto": "img/dhapne.webp",
+      "color": "verde-jade",
+      "bg_hex": "rgba(63, 125, 115, 0.10)",
+      "border_hex": "rgba(63, 125, 115, 0.25)",
+      "descripcion": "Especialista en Intervención Conductual, ABA y TCC. Cree en el poder del juego, la conexión y la confianza para acompañar el desarrollo infantil de forma cercana.",
+      "tags": ["ABA & TCC", "Enfoque Lúdico", "Presencial y Virtual"],
+      "frase": "Cada pequeño avance es un gran paso hacia el desarrollo."
+    },
+    {
+      "nombre": "Paul Llontop",
+      "badge": "Especialista Clínico",
+      "grado": "Lic. en Psicología Clínica",
+      "subtitulo": "",
+      "foto": "img/paul.webp",
+      "color": "verde-jade",
+      "bg_hex": "#E8F3EE",
+      "border_hex": "rgba(63, 125, 115, 0.25)",
+      "descripcion": "Experiencia clínica en niños, adolescentes y adultos. Especializado en abuso sexual infantil. Persona con discapacidad visual (CONADIS) de gran sensibilidad y resiliencia.",
+      "tags": ["Abuso Sexual Infantil", "Orientación Docente", "Acreditado CONADIS"],
+      "frase": "Acompañar con empatía es construir espacios seguros para crecer."
+    },
+    {
+      "nombre": "Chiara Ciccia",
+      "badge": "Clínica Infantil",
+      "grado": "Practicante de Psicología",
+      "subtitulo": "",
+      "foto": "img/chiara.webp",
+      "color": "azul-pizarra",
+      "bg_hex": "rgba(0, 78, 122, 0.10)",
+      "border_hex": "rgba(0, 78, 122, 0.25)",
+      "descripcion": "Estudiante del 11.° ciclo de la U. de Lima (Tercio Superior). Formación en Psicoterapia Humanista, trastornos del neurodesarrollo y voluntaria bombera activa.",
+      "tags": ["Psicoterapia Humanista", "Neurodesarrollo", "Trilingüe"],
+      "frase": "Regulación emocional, trabajo en equipo y toma de decisiones."
+    },
+    {
+      "nombre": "Virginia Zumaeta Zurita",
+      "badge": "Estimulación del Habla",
+      "grado": "Especialista en Psicología & Habla",
+      "subtitulo": "",
+      "foto": "img/virginia.webp",
+      "color": "oro-rosa",
+      "bg_hex": "#FDF6F0",
+      "border_hex": "rgba(219, 135, 128, 0.25)",
+      "descripcion": "Formación en Psicología con especialización complementaria en Estimulación del Habla. Cuenta con amplia experiencia en acompañamiento terapéutico y desarrollo de habilidades en niños y adolescentes con enfoque integral y humano.",
+      "tags": ["Estimulación del Habla", "Infanto-Juvenil", "Enfoque Humano"],
+      "frase": "Fortalecer la comunicación para conectar con el mundo."
+    },
+    {
+      "nombre": "Rocío del Cielo Ayquipa",
+      "badge": "Psicoeducativa",
+      "grado": "Practicante de Psicología",
+      "subtitulo": "Lic. en Educación Secundaria",
+      "foto": "img/rocio.webp",
+      "color": "oro-rosa",
+      "bg_hex": "#FAF1ED",
+      "border_hex": "rgba(219, 135, 128, 0.25)",
+      "descripcion": "Licenciada en Educación Secundaria (esp. Comunicación) y formación en Psicología. Experiencia en talleres psicoeducativos, entrevistas, evaluación y acompañamiento cercano con niños y adolescentes.",
+      "tags": ["Talleres Psicoeducativos", "Ámbito Educativo", "Acompañamiento"],
+      "frase": "Acompañando mentes, fortaleciendo futuros."
+    }
+  ]
+}
