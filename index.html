@@ -813,28 +813,25 @@
             if (resTarifas.ok) {
                 const t = await resTarifas.json();
 
-                // 2.1 Evaluaciones
+                // 2.1 Evaluaciones (Renderizado Dinámico de Listas según selección del CMS)
                 const cEval = document.getElementById('contenedor-evaluaciones');
                 if (cEval && t.evaluaciones) {
                     cEval.innerHTML = t.evaluaciones.map((item, idx) => {
                         const theme = getTheme(item.color);
-                        const hasStructureTitle = item.caja_titulo && item.caja_titulo.trim() !== "";
                         
                         let itemsHtml = '';
                         if (item.caja_items && item.caja_items.length) {
                             itemsHtml = item.caja_items.map((it, i) => {
                                 const cleanText = it.trim();
-                                if (cleanText.startsWith('✓') || !hasStructureTitle) {
-                                    if (cleanText.startsWith('✓')) {
-                                        return `<p class="pt-1 text-xs text-verde-jade font-semibold">${cleanText}</p>`;
-                                    }
-                                    return `<p class="text-sm text-gris-principal leading-relaxed">${cleanText}</p>`;
+                                if (item.tipo_lista === "Numerada (1.ª, 2.ª)") {
+                                    return `<li class="flex items-start gap-2"><span class="${theme.bullet} font-bold">${i + 1}.ª</span> <span>${cleanText}</span></li>`;
+                                } else if (item.tipo_lista === "Checks (✓)") {
+                                    return `<li class="flex items-start gap-2"><span class="text-verde-jade font-bold">✓</span> <span>${cleanText}</span></li>`;
+                                } else if (item.tipo_lista === "Viñetas (•)") {
+                                    return `<li class="flex items-start gap-2"><span class="${theme.bullet} font-bold">•</span> <span>${cleanText}</span></li>`;
+                                } else {
+                                    return `<p class="text-sm text-gris-principal leading-relaxed pt-1">${cleanText}</p>`;
                                 }
-                                return `
-                                    <li class="flex items-start gap-2">
-                                        <span class="${theme.bullet} font-bold">${i + 1}.ª</span> <span>${cleanText}</span>
-                                    </li>
-                                `;
                             }).join('');
                         }
 
@@ -858,7 +855,7 @@
                                     ${itemsHtml ? `
                                         <div class="p-4 bg-background rounded-2xl border border-gris-claro/60 space-y-2.5">
                                             ${item.caja_titulo ? `<strong class="block font-headline text-sm text-on-surface">${item.caja_titulo}</strong>` : ''}
-                                            ${hasStructureTitle ? `<ul class="space-y-2 font-body text-sm text-gris-principal font-normal">${itemsHtml}</ul>` : itemsHtml}
+                                            <ul class="space-y-2 font-body text-sm text-gris-principal font-normal">${itemsHtml}</ul>
                                         </div>
                                     ` : ''}
 
@@ -960,14 +957,18 @@
                     `;
                 }
 
-                // 2.5 Servicios Especializados
+                // 2.5 Servicios Especializados (Lógica sin HTML manual para la clienta)
                 const cServ = document.getElementById('contenedor-servicios-especializados');
                 if (cServ && t.servicios_especializados) {
                     cServ.innerHTML = t.servicios_especializados.map((item) => {
                         const theme = getTheme(item.color);
-                        const itemsHtml = item.items && item.items.length ? `
+                        
+                        // Renderizado automático de la lista de precios si existe
+                        const itemsHtml = item.lista_precios && item.lista_precios.length ? `
                             <ul class="space-y-1.5 font-body text-sm text-gris-principal font-normal pt-2 border-t border-gris-claro/60">
-                                ${item.items.map(li => `<li>${li}</li>`).join('')}
+                                ${item.lista_precios.map(li => `
+                                    <li>• ${li.servicio} <strong>${li.valor}</strong> ${li.nota ? `<span class="text-xs text-gris-principal">${li.nota}</span>` : ''}</li>
+                                `).join('')}
                             </ul>
                         ` : '';
 
@@ -1019,13 +1020,12 @@
                 }
             }
 
-            // 3. Cargar Equipo Profesional (Sin retraso de scroll)
+            // 3. Cargar Equipo Profesional
             const resEquipo = await fetch('data/equipo.json');
             if (resEquipo.ok) {
                 const eq = await resEquipo.json();
                 const cEq = document.getElementById('contenedor-equipo');
                 if (cEq && eq.especialistas) {
-                    // Se asigna la animación al contenedor completo para que no dependa de tarjetas individuales
                     cEq.setAttribute('data-aos', 'fade-up');
                     
                     cEq.innerHTML = eq.especialistas.map((item) => {
@@ -1072,7 +1072,7 @@
                 }
             }
 
-            // Inicialización definitiva de AOS tras haber montado todo el HTML en pantalla
+            // Inicialización definitiva de AOS
             if (typeof AOS !== 'undefined') {
                 AOS.init({
                     duration: 800,
