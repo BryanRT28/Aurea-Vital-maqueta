@@ -33,22 +33,6 @@
       ],
       "tipo_lista": "Checks (✓)",
       "titulo": "Tamizaje Terapéutico"
-    },
-    {
-      "caja_titulo": "wefwefwf",
-      "color": "gris-principal",
-      "badge": "wefwefwefwef",
-      "precio": "100",
-      "boton_texto": "Solicitar ewfgwefwef",
-      "aclaracion": "wefwfwefwfwef",
-      "descripcion": "qwefwefwefwef",
-      "whatsapp_msg": "wefwfweffwefewf",
-      "caja_items": [
-        "wefewfwefwfwefwfewfwefwefwefwefw",
-        "efwfwfwefwefweffefwefwef"
-      ],
-      "tipo_lista": "Solo Texto",
-      "titulo": "1qwfqfqwefwef"
     }
   ],
   "programas_especiales": {
@@ -81,6 +65,13 @@
         "color": "azul-pizarra",
         "boton_texto": "Solicitar Terapia",
         "whatsapp_msg": "Hola, deseo información de la *Terapia de Duelo (3 sesiones x S/ 120)*."
+      },
+      {
+        "boton_texto": "Solicitar wefwef",
+        "titulo": "erwgwegwegwgf",
+        "color": "gris-principal",
+        "whatsapp_msg": "wefwfwfweff",
+        "imagen": "/img/paul.webp"
       }
     ]
   },
