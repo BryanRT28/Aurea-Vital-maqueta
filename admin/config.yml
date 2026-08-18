@@ -1,194 +1,46 @@
 backend:
   name: github
-  repo: BryanRT28/Aurea-Vital-maqueta # Reemplaza con tu repositorio exacto
+  repo: BryanRT28/Limpyzas-maqueta
   branch: main
   base_url: https://decap-cms-oauth.vercel.app
 
-media_folder: "img/uploads"
-public_folder: "/img/uploads"
+media_folder: "img"
+public_folder: "/img"
 
 collections:
-  # -------------------------------------------------------------
-  # 1. INFORMACIÓN GENERAL Y DE CONTACTO
-  # -------------------------------------------------------------
-  - name: "general"
-    label: "Configuración General"
+  - name: "configuracion"
+    label: "Configuración del Sitio"
     files:
-      - file: "data/general.json"
-        label: "Datos de Contacto y Ubicación"
-        name: "contacto"
+      - file: "data/contacto.json"
+        label: "Datos de Contacto"
+        name: "datos_empresa"
         fields:
-          - label: "Etiqueta Ciudad (Hero)"
-            name: "hero_ciudad"
-            widget: "string"
-            default: "Chorrillos, Lima"
-          - label: "Enlace Google Maps (Botón & Hero)"
-            name: "link_google_maps"
-            widget: "string"
-          - label: "WhatsApp General (Ej: 922761436)"
-            name: "whatsapp_general"
-            widget: "string"
-          - label: "WhatsApp Club Lima (Ej: 907805210)"
-            name: "whatsapp_club_lima"
-            widget: "string"
-          - label: "Correo Electrónico"
-            name: "correo"
-            widget: "string"
-            default: "admision.calma@gmail.com"
-          - label: "Dirección Completa (Texto)"
-            name: "direccion_texto"
-            widget: "string"
-          - label: "URL Iframe de Google Maps"
-            name: "mapa_iframe_src"
-            widget: "string"
-          - label: "Horario Lunes a Viernes"
-            name: "horario_lv"
-            widget: "string"
-            default: "09:00 a.m. – 07:00 p.m."
-          - label: "Horario Sábados"
-            name: "horario_sab"
-            widget: "string"
-            default: "09:00 a.m. – 01:00 p.m."
-          - label: "Horario Domingos"
-            name: "horario_dom"
-            widget: "string"
-            default: "Cerrado"
-          - label: "URL Facebook"
-            name: "facebook_url"
-            widget: "string"
-          - label: "Texto Enlace Facebook"
-            name: "facebook_label"
-            widget: "string"
-            default: "Facebook: Áurea Vital - Centro Integral"
-          - label: "URL Instagram"
-            name: "instagram_url"
-            widget: "string"
-          - label: "Texto Enlace Instagram"
-            name: "instagram_label"
-            widget: "string"
-            default: "Instagram @aureavitalcentrointegral"
-
-  # -------------------------------------------------------------
-  # 2. TARIFAS Y BLOQUES TERAPÉUTICOS
-  # -------------------------------------------------------------
-  - name: "tarifas"
-    label: "Tarifas y Bloques"
-    files:
-      - file: "data/tarifas.json"
-        label: "Gestor de Precios y Secciones"
-        name: "bloques"
-        fields:
-          # 2.1 Evaluaciones Psicológicas
-          - label: "1. Evaluaciones Psicológicas"
-            name: "evaluaciones"
-            widget: "list"
-            fields:
-              - { label: "Título de la Evaluación", name: "titulo", widget: "string" }
-              - { label: "Badge / Etiqueta Superior", name: "badge", widget: "string" }
-              - { label: "Precio (Ej: S/ 250)", name: "precio", widget: "string" }
-              - { label: "Color del Tema", name: "color", widget: "select", options: ["oro-rosa", "verde-jade", "azul-pizarra", "gris-principal"] }
-              - { label: "Descripción Corta", name: "descripcion", widget: "text" }
-              - { label: "Título de la Caja de Estructura", name: "caja_titulo", widget: "string", required: false }
-              - { label: "Detalles / Pasos de la Caja (uno por línea)", name: "caja_items", widget: "list", required: false }
-              - { label: "Texto Aclaratorio Inferior (Itálica)", name: "aclaracion", widget: "text", required: false }
-              - { label: "Texto del Botón", name: "boton_texto", widget: "string", default: "Solicitar Evaluación" }
-              - { label: "Mensaje Predefinido de WhatsApp", name: "whatsapp_msg", widget: "string" }
-
-          # 2.2 Programas Especiales
-          - label: "2. Programas Especiales (Afiches)"
-            name: "programas_especiales"
+          - { label: "Teléfono / WhatsApp (ej: 908 643 336)", name: "telefono_texto", widget: "string" }
+          - { label: "Número WhatsApp sin espacios (ej: 51908643336)", name: "telefono_num", widget: "string" }
+          - { label: "Dirección de la Oficina", name: "direccion", widget: "string" }
+          - { label: "Enlace Google Maps", name: "maps_url", widget: "string" }
+          - { label: "Correo Electrónico", name: "correo", widget: "string" }
+          - label: "Redes Sociales"
+            name: "redes"
             widget: "object"
             fields:
-              - { label: "Texto de la Píldora / Insignia Promocional", name: "promo_badge", widget: "string", default: "Promoción Especial: S/ 120 (3 Sesiones)" }
-              - label: "Tarjetas de Afiches"
-                name: "tarjetas"
-                widget: "list"
-                fields:
-                  - { label: "Título / Nombre del Programa", name: "titulo", widget: "string" }
-                  - { label: "Imagen / Afiche Vertical", name: "imagen", widget: "image" }
-                  - { label: "Color del Botón", name: "color", widget: "select", options: ["oro-rosa", "verde-jade", "azul-pizarra", "gris-principal"] }
-                  - { label: "Texto del Botón", name: "boton_texto", widget: "string", default: "Solicitar Terapia" }
-                  - { label: "Mensaje Predefinido de WhatsApp", name: "whatsapp_msg", widget: "string" }
+              - { label: "Facebook URL", name: "facebook", widget: "string" }
+              - { label: "Instagram URL", name: "instagram", widget: "string" }
+              - { label: "TikTok URL", name: "tiktok", widget: "string" }
 
-          # 2.3 Consultas Individuales y Bloques
-          - label: "3. Consultas Individuales y Bloques"
-            name: "consultas_individuales"
-            widget: "list"
-            fields:
-              - { label: "Título de la Tarjeta", name: "titulo", widget: "string" }
-              - { label: "Badge / Tipo de Sesión", name: "badge", widget: "string" }
-              - { label: "Precio Principal (Ej: S/ 80)", name: "precio", widget: "string" }
-              - { label: "Subtexto de Precio (Ej: / sesión o S/ 60 x sesión)", name: "precio_subtexto", widget: "string" }
-              - { label: "Color del Tema", name: "color", widget: "select", options: ["oro-rosa", "verde-jade", "azul-pizarra", "gris-principal"] }
-              - { label: "Descripción", name: "descripcion", widget: "text" }
-              - { label: "Texto del Botón", name: "boton_texto", widget: "string", default: "Solicitar Bloque" }
-              - { label: "Mensaje Predefinido de WhatsApp", name: "whatsapp_msg", widget: "string" }
-
-          # 2.4 Terapias Virtuales (Tarjeta Promocional)
-          - label: "3.1 Tarjeta Terapias Virtuales (Centrada)"
-            name: "terapias_virtuales"
-            widget: "object"
-            fields:
-              - { label: "Activar Tarjeta", name: "activo", widget: "boolean", default: true }
-              - { label: "Badge Superior", name: "badge", widget: "string", default: "Modalidad Online" }
-              - { label: "Título", name: "titulo", widget: "string", default: "Terapias Virtuales" }
-              - { label: "Descripción", name: "descripcion", widget: "string", default: "Precios promocionales por sesión y paquetes online:" }
-              - label: "Lista de Precios"
-                name: "precios_lista"
-                widget: "list"
-                fields:
-                  - { label: "Concepto (Ej: 1 Sesión:)", name: "concepto", widget: "string" }
-                  - { label: "Monto (Ej: S/ 60)", name: "monto", widget: "string" }
-              - { label: "Texto del Botón", name: "boton_texto", widget: "string", default: "Solicitar Terapia Online" }
-              - { label: "Mensaje Predefinido de WhatsApp", name: "whatsapp_msg", widget: "string" }
-
-          # 2.5 Otros Servicios Especializados
-          - label: "4. Otros Servicios Especializados"
-            name: "servicios_especializados"
-            widget: "list"
-            fields:
-              - { label: "Título", name: "titulo", widget: "string" }
-              - { label: "Badge Superior", name: "badge", widget: "string" }
-              - { label: "Precio Destacado (opcional)", name: "precio", widget: "string", required: false }
-              - { label: "Subtexto de Precio (opcional)", name: "precio_subtexto", widget: "string", required: false }
-              - { label: "Color del Tema", name: "color", widget: "select", options: ["oro-rosa", "verde-jade", "azul-pizarra", "gris-principal"] }
-              - { label: "Descripción / Nota", name: "descripcion", widget: "text", required: false }
-              - { label: "Lista de Ítems / Viñetas (opcional)", name: "items", widget: "list", required: false }
-              - { label: "Texto del Botón", name: "boton_texto", widget: "string", default: "Consultar Cita" }
-              - { label: "Mensaje Predefinido de WhatsApp", name: "whatsapp_msg", widget: "string" }
-
-          # 2.6 Convenios y Talleres Especiales
-          - label: "5. Convenios y Talleres Especiales"
-            name: "convenios_talleres"
-            widget: "list"
-            fields:
-              - { label: "Título del Convenio / Taller", name: "titulo", widget: "string" }
-              - { label: "Imagen / Afiche Horizontal", name: "imagen", widget: "image" }
-              - { label: "Color del Botón", name: "color", widget: "select", options: ["oro-rosa", "verde-jade", "azul-pizarra", "gris-principal"] }
-              - { label: "Número de WhatsApp Destino (Dejar vacío para el General)", name: "whatsapp_destino", widget: "string", required: false }
-              - { label: "Texto del Botón", name: "boton_texto", widget: "string", default: "Solicitar Convenio" }
-              - { label: "Mensaje Predefinido de WhatsApp", name: "whatsapp_msg", widget: "string" }
-
-  # -------------------------------------------------------------
-  # 3. EQUIPO PROFESIONAL
-  # -------------------------------------------------------------
-  - name: "equipo"
-    label: "Equipo Profesional"
-    files:
-      - file: "data/equipo.json"
-        label: "Especialistas"
-        name: "lista_equipo"
+      - file: "data/faq.json"
+        label: "Preguntas Frecuentes"
+        name: "preguntas_frecuentes"
         fields:
-          - label: "Miembros del Equipo"
-            name: "especialistas"
+          - label: "Lista de Preguntas Frecuentes"
+            name: "preguntas"
             widget: "list"
+            summary: "{{fields.pregunta}}"
             fields:
-              - { label: "Nombre Completo", name: "nombre", widget: "string" }
-              - { label: "Badge Superior (Ej: Directora, Psicoeducativa)", name: "badge", widget: "string" }
-              - { label: "Grado / Título (Ej: Lic. en Psicología)", name: "grado", widget: "string" }
-              - { label: "Subtítulo / Mención Secundaria (opcional)", name: "subtitulo", widget: "string", required: false }
-              - { label: "Foto", name: "foto", widget: "image" }
-              - { label: "Color del Tema", name: "color", widget: "select", options: ["oro-rosa", "verde-jade", "azul-pizarra"] }
-              - { label: "Descripción Profesional", name: "descripcion", widget: "text" }
-              - { label: "Etiquetas / Áreas de Enfoque", name: "tags", widget: "list" }
-              - { label: "Frase Destacada", name: "frase", widget: "string" }
+              - { label: "Pregunta", name: "pregunta", widget: "string" }
+              - label: "Respuesta"
+                name: "respuesta"
+                widget: "markdown"
+                mode: "rich_text"
+                modes:
+                  - "rich_text"
