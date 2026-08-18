@@ -661,63 +661,62 @@
             </div>
         </div>
 
-        <!-- 5. BLOQUE ESPECIAL: CONVENIOS Y TALLERES -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-6">
+<!-- 5. BLOQUE ESPECIAL: CONVENIOS Y TALLERES (AFICHES VISUALES) -->
+    <div class="space-y-6 pt-6">
+        <div class="border-b border-gris-claro pb-3" data-aos="fade-up">
+            <h3 class="font-headline text-2xl font-bold text-on-surface">Convenios y Talleres Especiales</h3>
+            <p class="font-body text-sm text-gris-principal font-normal">Programas grupales e iniciativas institucionales con beneficios exclusivos.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            <!-- Taller Preadolescentes -->
-            <div class="bg-verde-jade/10 p-7 rounded-3xl border border-verde-jade/30 flex flex-col justify-between space-y-4 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="100">
-                <div class="space-y-3">
-                    <span class="bg-verde-jade text-white text-xs font-headline uppercase font-semibold px-3.5 py-1 rounded-full">12 a 16 Años</span>
-                    <h4 class="font-headline text-2xl font-bold text-on-surface">Taller Habilidades Sociales</h4>
-                    <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
-                        Fortalece autoestima, comunicación asertiva, resolución de conflictos y relaciones saludables. Todos los jueves a las 6:00 p.m.
-                    </p>
-                    <div class="pt-2 flex items-center gap-2">
-                        <span class="font-headline text-2xl font-bold text-verde-jade">S/ 200</span>
-                        <span class="font-body text-xs text-gris-principal font-normal">(Preventa Julio: S/ 170)</span>
+            <!-- 1. Taller de Habilidades Sociales -->
+            <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl h-full" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative w-full aspect-[16/10] bg-background cursor-pointer overflow-hidden" onclick="openModal('img/taller-habilidades.webp')">
+                    <img src="img/taller-habilidades.webp" alt="Taller Habilidades Sociales 12 a 16 Años" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined text-3xl drop-shadow">zoom_in</span>
                     </div>
                 </div>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20inscribir%20a%20mi%20hijo%20al%20*Taller%20de%20Habilidades%20Sociales*." target="_blank" class="block text-center py-3.5 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Reservar Vacante
-                </a>
+                <div class="p-5 bg-surface border-t border-gris-claro/50">
+                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20inscribir%20a%20mi%20hijo%20al%20*Taller%20de%20Habilidades%20Sociales%20(S/%20200)*." target="_blank" class="block text-center py-3 rounded-full bg-verde-jade text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
+                        Reservar Vacante
+                    </a>
+                </div>
             </div>
 
-            <!-- Convenio Institucional Colegios -->
-            <div class="bg-azul-pizarra/10 p-7 rounded-3xl border border-azul-pizarra/30 flex flex-col justify-between space-y-4 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="200">
-                <div class="space-y-3">
-                    <span class="bg-azul-pizarra text-white text-xs font-headline uppercase font-semibold px-3.5 py-1 rounded-full">Convenio Institucional</span>
-                    <div>
-                        <h4 class="font-headline text-2xl font-bold text-on-surface leading-tight">Áurea + Tu Colegio</h4>
-                        <p class="font-headline text-sm font-semibold text-azul-pizarra pt-0.5">Beneficios para la comunidad educativa</p>
+            <!-- 2. Convenio Tu Colegio -->
+            <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl h-full" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative w-full aspect-[16/10] bg-background cursor-pointer overflow-hidden" onclick="openModal('img/convenio-colegio.webp')">
+                    <img src="img/convenio-colegio.webp" alt="Convenio Institucional Áurea + Tu Colegio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined text-3xl drop-shadow">zoom_in</span>
                     </div>
-                    
-                    <ul class="space-y-1.5 font-body text-sm text-gris-principal pt-1 font-normal">
-                        <li class="flex items-start gap-1.5"><span class="text-azul-pizarra font-bold">✓</span> Tarifas preferenciales para familias</li>
-                        <li class="flex items-start gap-1.5"><span class="text-azul-pizarra font-bold">✓</span> Talleres para docentes</li>
-                        <li class="flex items-start gap-1.5"><span class="text-azul-pizarra font-bold">✓</span> Escuela de Padres sin costo</li>
-                    </ul>
                 </div>
-                <a href="https://wa.me/51922761436?text=Hola,%20deseo%20solicitar%20informaci%C3%B3n%20sobre%20el%20*Convenio%20Institucional%20para%20Colegios*." target="_blank" class="block text-center py-3.5 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Solicitar Convenio
-                </a>
+                <div class="p-5 bg-surface border-t border-gris-claro/50">
+                    <a href="https://wa.me/51922761436?text=Hola,%20deseo%20solicitar%20informaci%C3%B3n%20sobre%20el%20*Convenio%20Institucional%20para%20Colegios*." target="_blank" class="block text-center py-3 rounded-full bg-azul-pizarra text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
+                        Solicitar Convenio
+                    </a>
+                </div>
             </div>
 
-            <!-- Convenio Club Lima -->
-            <div class="bg-oro-rosa/10 p-7 rounded-3xl border border-oro-rosa/30 flex flex-col justify-between space-y-4 transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl" data-aos="fade-up" data-aos-delay="300">
-                <div class="space-y-3">
-                    <span class="bg-oro-rosa text-white text-xs font-headline uppercase font-semibold px-3.5 py-1 rounded-full">Convenio Exclusivo</span>
-                    <h4 class="font-headline text-2xl font-bold text-on-surface">Club Deportivo Lima</h4>
-                    <p class="font-body text-sm text-gris-principal leading-relaxed font-normal">
-                        Primera entrevista de orientación psicológica inicial <strong class="font-semibold">GRATUITA</strong> (en instalaciones del club).
-                    </p>
-                    <p class="font-headline text-sm font-semibold text-oro-rosa pt-1">WhatsApp Exclusivo: 907 805 210</p>
+            <!-- 3. Convenio Club Lima -->
+            <div class="bg-surface rounded-3xl border border-gris-claro/80 shadow-md overflow-hidden flex flex-col justify-between group transition-all duration-300 ease-out hover:-translate-y-2 hover:shadow-xl h-full" data-aos="fade-up" data-aos-delay="300">
+                <div class="relative w-full aspect-[16/10] bg-background cursor-pointer overflow-hidden" onclick="openModal('img/convenio-club-lima.webp')">
+                    <img src="img/convenio-club-lima.webp" alt="Convenio Club Cultural Deportivo Lima" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined text-3xl drop-shadow">zoom_in</span>
+                    </div>
                 </div>
-                <a href="https://wa.me/51907805210?text=Hola,%20soy%20socio%20del%20Club%20Deportivo%20Lima%20y%20deseo%20agendar%20mi%20*Entrevista%20Gratuita*." target="_blank" class="block text-center py-3.5 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity">
-                    Agendar Cita Socio
-                </a>
+                <div class="p-5 bg-surface border-t border-gris-claro/50">
+                    <a href="https://wa.me/51907805210?text=Hola,%20soy%20socio%20del%20Club%20Deportivo%20Lima%20y%20deseo%20agendar%20mi%20*Entrevista%20Gratuita*." target="_blank" class="block text-center py-3 rounded-full bg-oro-rosa text-white font-headline text-xs font-semibold uppercase tracking-wider hover:opacity-90 transition-opacity shadow-sm">
+                        Agendar Cita Socio
+                    </a>
+                </div>
             </div>
 
         </div>
+    </div>
     </div>
 </section>
 
