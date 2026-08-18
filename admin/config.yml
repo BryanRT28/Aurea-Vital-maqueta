@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: BryanRT28/nombre-del-repo-aurea # Reemplaza con tu repositorio exacto
+  repo: BryanRT28/Aurea-Vital-maqueta # Reemplaza con tu repositorio exacto
   branch: main
   base_url: https://decap-cms-oauth.vercel.app
 
