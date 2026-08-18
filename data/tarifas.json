@@ -1,38 +1,26 @@
 {
   "evaluaciones": [
     {
-      "caja_titulo": "Estructura del proceso (4 sesiones):",
-      "color": "oro-rosa",
+      "titulo": "Evaluación Integral",
       "badge": "Incluye Informe Clínico",
       "precio": "S/ 250",
-      "boton_texto": "Solicitar Evaluación Integral",
-      "aclaracion": "* Las dos primeras sesiones pueden realizarse el mismo día. Entrega de informe presencial o virtual (Lunes o Viernes de 9:00 a 11:00 a.m.).",
+      "color": "oro-rosa",
       "descripcion": "Proceso completo de diagnóstico y retroalimentación para niños y adolescentes.",
-      "whatsapp_msg": "Hola, deseo agendar una *Evaluación Integral (S/ 250)*.",
-      "caja_items": [
-        "Reunión inicial con padres o apoderados.",
-        "Sesión de evaluación directa con el niño.",
-        "Segunda sesión de evaluación con el niño.",
-        "Entrega de informe y devolución con apoderado (20 min)."
-      ],
-      "tipo_lista": "Numerada (1.ª, 2.ª)",
-      "titulo": "Evaluación Integral"
+      "detalles": "**Estructura del proceso (4 sesiones):**\n1. Reunión inicial con padres o apoderados.\n2. Sesión de evaluación directa con el niño.\n3. Segunda sesión de evaluación con el niño.\n4. Entrega de informe y devolución con apoderado (20 min).",
+      "aclaracion": "* Las dos primeras sesiones pueden realizarse el mismo día. Entrega de informe presencial o virtual (Lunes o Viernes de 9:00 a 11:00 a.m.).",
+      "boton_texto": "Solicitar Evaluación Integral",
+      "whatsapp_msg": "Hola, deseo agendar una *Evaluación Integral (S/ 250)*."
     },
     {
-      "caja_titulo": "",
-      "color": "verde-jade",
+      "titulo": "Tamizaje Terapéutico",
       "badge": "Evaluación en 1 Día",
       "precio": "S/ 100",
-      "boton_texto": "Agendar Tamizaje",
-      "aclaracion": "Paso fundamental para comprender tu situación emocional actual y diseñar un plan de trabajo a tu medida.",
+      "color": "verde-jade",
       "descripcion": "Ideal para pacientes nuevos, ingresantes o reingresos (pausa mayor a 3 meses).",
-      "whatsapp_msg": "Hola, deseo agendar un *Tamizaje Terapéutico (S/ 100)*.",
-      "caja_items": [
-        "Diseñado para evaluar estado actual, contención emocional o posibles retrocesos en pacientes con diagnóstico previo.",
-        "Incluye resumen de orientación (No incluye informe psicológico completo)."
-      ],
-      "tipo_lista": "Checks (✓)",
-      "titulo": "Tamizaje Terapéutico"
+      "detalles": "Diseñado para evaluar estado actual, contención emocional o posibles retrocesos en pacientes con diagnóstico previo.\n\n* ✓ Incluye resumen de orientación (No incluye informe psicológico completo).",
+      "aclaracion": "Paso fundamental para comprender tu situación emocional actual y diseñar un plan de trabajo a tu medida.",
+      "boton_texto": "Agendar Tamizaje",
+      "whatsapp_msg": "Hola, deseo agendar un *Tamizaje Terapéutico (S/ 100)*."
     }
   ],
   "programas_especiales": {
@@ -116,102 +104,66 @@
     "titulo": "Terapias Virtuales",
     "descripcion": "Precios promocionales por sesión y paquetes online:",
     "precios_lista": [
-      {
-        "concepto": "1 Sesión:",
-        "monto": "S/ 60"
-      },
-      {
-        "concepto": "Bloque 6 Sesiones:",
-        "monto": "S/ 300"
-      },
-      {
-        "concepto": "Bloque 8 Sesiones:",
-        "monto": "S/ 380"
-      },
-      {
-        "concepto": "Bloque 12 Sesiones:",
-        "monto": "S/ 500"
-      }
+      { "concepto": "1 Sesión:", "monto": "S/ 60" },
+      { "concepto": "Bloque 6 Sesiones:", "monto": "S/ 300" },
+      { "concepto": "Bloque 8 Sesiones:", "monto": "S/ 380" },
+      { "concepto": "Bloque 12 Sesiones:", "monto": "S/ 500" }
     ],
     "boton_texto": "Solicitar Terapia Online",
     "whatsapp_msg": "Hola, deseo solicitar información sobre las *Terapias Virtuales Promocionales*."
   },
   "servicios_especializados": [
     {
-      "color": "oro-rosa",
+      "titulo": "Pareja & Familia",
       "badge": "Vínculos & Familia",
       "precio": "",
-      "boton_texto": "Consultar Cita",
+      "precio_subtexto": "",
+      "color": "oro-rosa",
       "descripcion": "",
       "lista_precios": [
-        {
-          "servicio": "Atención Individual:",
-          "valor": "S/ 100",
-          "nota": ""
-        },
-        {
-          "servicio": "Terapia de Pareja:",
-          "valor": "S/ 150",
-          "nota": ""
-        },
-        {
-          "servicio": "Terapia Familiar:",
-          "valor": "S/ 200",
-          "nota": "(hasta 5 pers.)"
-        }
+        { "servicio": "Atención Individual:", "valor": "S/ 100", "nota": "" },
+        { "servicio": "Terapia de Pareja:", "valor": "S/ 150", "nota": "" },
+        { "servicio": "Terapia Familiar:", "valor": "S/ 200", "nota": "(hasta 5 pers.)" }
       ],
-      "whatsapp_msg": "Hola, deseo consultar por *Terapia de Pareja o Familiar*.",
-      "titulo": "Pareja & Familia",
-      "precio_subtexto": ""
+      "boton_texto": "Consultar Cita",
+      "whatsapp_msg": "Hola, deseo consultar por *Terapia de Pareja o Familiar*."
     },
     {
-      "color": "verde-jade",
+      "titulo": "Atención a Domicilio",
       "badge": "Servicio Presencial",
       "precio": "S/ 150",
-      "boton_texto": "Solicitar Visita",
+      "precio_subtexto": "* Movilidad adicional según ubicación",
+      "color": "verde-jade",
       "descripcion": "Sesión personalizada en la comodidad de tu hogar.",
       "lista_precios": [],
-      "whatsapp_msg": "Hola, deseo solicitar información sobre *Atención a Domicilio*.",
-      "titulo": "Atención a Domicilio",
-      "precio_subtexto": "* Movilidad adicional según ubicación"
+      "boton_texto": "Solicitar Visita",
+      "whatsapp_msg": "Hola, deseo solicitar información sobre *Atención a Domicilio*."
     },
     {
-      "color": "azul-pizarra",
+      "titulo": "Orientación Vocacional",
       "badge": "Futuro & Profesión",
       "precio": "S/ 120",
-      "boton_texto": "Iniciar Orientación",
+      "precio_subtexto": " / programa completo",
+      "color": "azul-pizarra",
       "descripcion": "Evaluación integral + asesoría personalizada de proyecto de vida.",
       "lista_precios": [],
-      "whatsapp_msg": "Hola, deseo agendar una *Orientación Vocacional Integral (S/ 120)*.",
-      "titulo": "Orientación Vocacional",
-      "precio_subtexto": " / programa completo"
+      "boton_texto": "Iniciar Orientación",
+      "whatsapp_msg": "Hola, deseo agendar una *Orientación Vocacional Integral (S/ 120)*."
     },
     {
-      "color": "gris-principal",
+      "titulo": "Informes & Políticas",
       "badge": "Trámites & Políticas",
       "precio": "",
-      "boton_texto": "Solicitar Trámite",
+      "precio_subtexto": "",
+      "color": "gris-principal",
       "descripcion": "",
       "lista_precios": [
-        {
-          "servicio": "Duplicado de informe:",
-          "valor": "S/ 50",
-          "nota": ""
-        },
-        {
-          "servicio": "1.ª Reprogramación:",
-          "valor": "Sin costo",
-          "nota": ""
-        },
-        {
-          "servicio": "2.ª Reprogramación:",
-          "valor": "Penalidad S/ 25",
-          "nota": ""
-        }
+        { "servicio": "Duplicado de informe:", "valor": "S/ 50", "nota": "" },
+        { "servicio": "1.ª Reprogramación:", "valor": "Sin costo", "nota": "" },
+        { "servicio": "2.ª Reprogramación:", "valor": "Penalidad S/ 25", "nota": "" }
       ],
-      "whatsapp_msg": "Hola, deseo solicitar un *Duplicado de Informe Psicológico*.",
-      "titulo": "Informes & Políticas",
-      "precio_subtexto": ""
+      "boton_texto": "Solicitar Trámite",
+      "whatsapp_msg": "Hola, deseo solicitar un *Duplicado de Informe Psicológico*."
     }
   ],
   "convenios_talleres": [
