@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html, body {
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        position: relative;
+        font-family: 'Source Sans 3', sans-serif;
+        background-color: #f8f8f8;
+        color: #2a2a2a;
+    }
+    h1, h2, h3, h4, h5, h6, .font-headline {
+        font-family: 'Montserrat', sans-serif;
+    }
+}
+
+@layer components {
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    .fill-icon { font-variation-settings: 'FILL' 1; }
+    .soft-shadow { box-shadow: 0 10px 30px rgba(102, 103, 105, 0.08); transition: box-shadow 0.4s ease, transform 0.4s ease; }
+    .soft-shadow:hover { box-shadow: 0 18px 40px rgba(219, 135, 128, 0.15); }
+    details > summary::-webkit-details-marker { display: none; }
+    .markdown-content ul { list-style-type: disc; padding-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
+    .markdown-content ol { list-style-type: decimal; padding-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
+    .markdown-content li { margin-bottom: 0.25rem; }
+    .markdown-content p { margin-bottom: 0.5rem; }
+    .markdown-content p:last-child { margin-bottom: 0; }
+    .markdown-content strong { font-weight: 700; color: #2A2A2A; }
+}
